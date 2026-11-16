@@ -1,0 +1,67 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: F=0.2, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.2'}}}
+# - {name: F=0.3, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.3'}}}
+# - {name: F=0.4, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.4'}}}
+# - {name: F=0.5, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.5'}}}
+# - {name: F=0.6, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.6'}}}
+# - {name: F=0.7, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.7'}}}
+# - {name: F=0.8, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.8'}}}
+# - {name: F=0.9, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.9'}}}
+# - {name: F=0.95, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '0.95'}}}
+# - {name: F=1.0, datatype: string, meta: {rocheometry_quantity: level_potential, level: {kind: fill_out_detached, fill_out: '1.0'}}}
+# meta:
+#   title: 'Table 2: Normalized potentials C for the chosen grid, detached configurations'
+#   reference: Mochnacki 1984, Table 2
+#   sources:
+#   - title: Mochnacki S. W., 1984, ApJS, 55, 551, Accurate Integrations of the Roche Model
+#     bibcode: 1984ApJS...55..551M
+#     url: https://ui.adsabs.harvard.edu/abs/1984ApJS...55..551M
+#   retrieval:
+#     method: 'three readings of the ADS scan: its OCR text layer and tesseract passes over
+#       the page images at 400 and 600 dpi. A row of Table 14 that the readings split differently,
+#       and nine other cells where they disagreed or one missed a value, were settled on the
+#       600 dpi image; three of those corrected a digit two readings had agreed on (Table 6
+#       q=0.12 F=1.8, Table 10 q=0.50 F=1.0, Table 11 q=0.50 F=1.9). Every value then passes
+#       the tables'' identities: Table 2 is C1/F and Table 3 linear in F between C1 and C2 of
+#       Table 1; the F = 1 columns equal the detached tables'' F = 1 columns; and Gauss''s law
+#       summed over both components ties Tables 6, 7, 10, 11, 14 and 15 (worst 0.78 of the propagated
+#       rounding)'
+#     date: '2026-11-09'
+#     typography: FORTRAN-style exponents such as 6.45428-1 and 1.68243+1 are stored as 6.45428e-1
+#       and 1.68243e+1; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: companion_mass_ratio
+#       description: q = M2/M1 <= 1; the tabulated component is the primary, qi = 1/q
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: tabulated C = 2/(1+q)/r1 + 2q/(1+q)/r2 + (x - q/(1+q))^2 + y^2 = 2U, primary
+#         at the origin
+#     fill_out:
+#       kind: fill_out_detached
+#       description: F = C1/C inside the Roche lobe, so U = U_L1/F; F = 1 is the lobe
+#   allowance_half_units: 1.5
+#   allowance_reason: 'C1/F from Table 1''s Newton-Raphson C1, printed to 5 decimals, with Table
+#     1''s allowance: the F = 1.0 column repeats C1'
+q F=0.2 F=0.3 F=0.4 F=0.5 F=0.6 F=0.7 F=0.8 F=0.9 F=0.95 F=1.0
+0.04 1.68243e+1 1.12162e+1 8.41214 6.72971 5.60809 4.80694 4.20607 3.73873 3.54195 3.36486
+0.06 1.72444e+1 1.14963e+1 8.62219 6.89776 5.74813 4.92697 4.31110 3.83209 3.63040 3.44888
+0.08 1.75770e+1 1.17180e+1 8.78850 7.03080 5.85900 5.02200 4.39425 3.90600 3.70042 3.51540
+0.10 1.78514e+1 1.19009e+1 8.92568 7.14054 5.95045 5.10039 4.46284 3.96697 3.75818 3.57027
+0.12 1.80834e+1 1.20556e+1 9.04170 7.23336 6.02780 5.16669 4.52085 4.01853 3.80703 3.61668
+0.16 1.84568e+1 1.23045e+1 9.22841 7.38273 6.15227 5.27338 4.61420 4.10152 3.88565 3.69136
+0.20 1.87450e+1 1.24966e+1 9.37248 7.49798 6.24832 5.35570 4.68624 4.16555 3.94631 3.74899
+0.24 1.89735e+1 1.26490e+1 9.48674 7.58939 6.32449 5.42099 4.74337 4.21633 3.99442 3.79469
+0.30 1.92373e+1 1.28248e+1 9.61863 7.69491 6.41242 5.49636 4.80932 4.27495 4.04995 3.84745
+0.40 1.95374e+1 1.30249e+1 9.76871 7.81497 6.51247 5.58212 4.88436 4.34165 4.11314 3.90748
+0.50 1.97279e+1 1.31519e+1 9.86393 7.89114 6.57595 5.63653 4.93196 4.38397 4.15323 3.94557
+0.60 1.98496e+1 1.32331e+1 9.92482 7.93985 6.61654 5.67132 4.96241 4.41103 4.17887 3.96993
+0.70 1.99259e+1 1.32839e+1 9.96296 7.97037 6.64197 5.69312 4.98148 4.42798 4.19493 3.98518
+0.80 1.99708e+1 1.33139e+1 9.98541 7.98833 6.65694 5.70595 4.99271 4.43796 4.20438 3.99416
+0.90 1.99935e+1 1.33290e+1 9.99674 7.99739 6.66449 5.71242 4.99837 4.44300 4.20915 3.99870
+1.00 2.00000e+1 1.33333e+1 1.00000e+1 8.00000 6.66667 5.71429 5.00000 4.44444 4.21053 4.00000

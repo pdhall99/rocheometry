@@ -1,0 +1,72 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: F=1.0, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.0'}}}
+# - {name: F=1.05, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.05'}}}
+# - {name: F=1.1, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.1'}}}
+# - {name: F=1.2, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.2'}}}
+# - {name: F=1.4, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.4'}}}
+# - {name: F=1.6, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.6'}}}
+# - {name: F=1.8, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.8'}}}
+# - {name: F=1.9, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.9'}}}
+# - {name: F=1.95, datatype: string, meta: {rocheometry_quantity: envelope_area, partners: [mochnacki1984_table11], units: separation^2, level: {kind: fill_out_contact, fill_out: '1.95'}}}
+# - {name: F=2.0, datatype: string, meta: {units: separation^2, status: 'the outer contact surface: Rocheometry''s contact levels stop strictly below L2'}}
+# meta:
+#   title: 'Table 10: Area of the primary, contact configurations'
+#   reference: Mochnacki 1984, Table 10
+#   sources:
+#   - title: Mochnacki S. W., 1984, ApJS, 55, 551, Accurate Integrations of the Roche Model
+#     bibcode: 1984ApJS...55..551M
+#     url: https://ui.adsabs.harvard.edu/abs/1984ApJS...55..551M
+#   retrieval:
+#     method: 'three readings of the ADS scan: its OCR text layer and tesseract passes over
+#       the page images at 400 and 600 dpi. A row of Table 14 that the readings split differently,
+#       and nine other cells where they disagreed or one missed a value, were settled on the
+#       600 dpi image; three of those corrected a digit two readings had agreed on (Table 6
+#       q=0.12 F=1.8, Table 10 q=0.50 F=1.0, Table 11 q=0.50 F=1.9). Every value then passes
+#       the tables'' identities: Table 2 is C1/F and Table 3 linear in F between C1 and C2 of
+#       Table 1; the F = 1 columns equal the detached tables'' F = 1 columns; and Gauss''s law
+#       summed over both components ties Tables 6, 7, 10, 11, 14 and 15 (worst 0.78 of the propagated
+#       rounding)'
+#     date: '2026-11-09'
+#     typography: FORTRAN-style exponents such as 6.45428-1 and 1.68243+1 are stored as 6.45428e-1
+#       and 1.68243e+1; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: companion_mass_ratio
+#       description: q = M2/M1 <= 1; the tabulated component is the primary, qi = 1/q
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: tabulated C = 2/(1+q)/r1 + 2q/(1+q)/r2 + (x - q/(1+q))^2 + y^2 = 2U, primary
+#         at the origin
+#     fill_out:
+#       kind: fill_out_contact
+#       description: F = (C1 - C)/(C1 - C2) + 1 between the inner and outer contact surfaces,
+#         so Rocheometry's fill-out factor is F - 1
+#   contact_split: Mochnacki divides a contact envelope by the plane through L1 normal to the
+#     line of centres; Rocheometry divides it along the gravity watershed. Only the envelope totals
+#     are comparable, so the primary table's columns compare the totals over both components
+#     with Rocheometry's two parts
+#   allowance_half_units: 4.0
+#   allowance_reason: the author states areas and gravities are accurate to +-2 in the last
+#     printed digit
+q F=1.0 F=1.05 F=1.1 F=1.2 F=1.4 F=1.6 F=1.8 F=1.9 F=1.95 F=2.0
+0.04 5.27157 5.28377 5.29559 5.31891 5.36512 5.41130 5.45772 5.48106 5.49277 5.50450
+0.06 4.83330 4.84863 4.86344 4.89265 4.95063 5.00879 5.06749 5.09711 5.11200 5.12695
+0.08 4.51094 4.52879 4.54601 4.57997 4.64751 4.71550 4.78441 4.81931 4.83688 4.85454
+0.10 4.25660 4.27657 4.29580 4.33375 4.40938 4.48577 4.56354 4.60306 4.62300 4.64306
+0.12 4.04722 4.06901 4.08998 4.13137 4.21402 4.29781 4.38345 4.42713 4.44920 4.47143
+0.16 3.71642 3.74123 3.76506 3.81215 3.90658 4.00297 4.10231 4.15331 4.17917 4.20529
+0.20 3.46161 3.48883 3.51495 3.56664 3.67070 3.77767 3.88878 3.94619 3.97541 4.00499
+0.24 3.25596 3.28517 3.31318 3.36868 3.48090 3.59701 3.71855 3.78176 3.81404 3.84680
+0.30 3.00891 3.04054 3.07085 3.13103 3.25345 3.38135 3.51677 3.58787 3.62437 3.66155
+0.40 2.70054 2.73516 2.76833 2.83444 2.97021 3.11430 3.26968 3.35258 3.39552 3.43954
+0.50 2.47115 2.50792 2.54317 2.61365 2.75978 2.91718 3.09003 3.18376 3.23279 3.28341
+0.60 2.29112 2.32949 2.36629 2.44014 2.59462 2.76340 2.95219 3.05635 3.11143 3.16878
+0.70 2.14460 2.18418 2.22217 2.29868 2.46006 2.63888 2.84266 2.95727 3.01865 3.08328
+0.80 2.02215 2.06265 2.10158 2.18021 2.34744 2.53529 2.75358 2.87905 2.94738 3.02047
+0.90 1.91773 1.95895 1.99860 2.07896 2.25121 2.44735 2.68003 2.81737 2.89397 2.97827
+1.00 1.82726 1.86902 1.90925 1.99102 2.16765 2.37151 2.61887 2.77002 2.85803 2.96664

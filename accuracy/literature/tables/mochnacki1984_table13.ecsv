@@ -1,0 +1,62 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: F=0.2, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.2'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.3, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.3'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.4, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.4'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.5, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.5'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.6, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.6'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.7, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.7'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.8, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.8'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.9, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.9'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.95, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.95'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=1.0, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '1.0'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# meta:
+#   title: 'Table 13: Average gravity of the secondary, detached configurations'
+#   reference: Mochnacki 1984, Table 13
+#   sources:
+#   - title: Mochnacki S. W., 1984, ApJS, 55, 551, Accurate Integrations of the Roche Model
+#     bibcode: 1984ApJS...55..551M
+#     url: https://ui.adsabs.harvard.edu/abs/1984ApJS...55..551M
+#   retrieval:
+#     method: 'two independent readings: values read from the ADS page images at 300 dpi, then
+#       compared digit by digit with the scan''s OCR text layer; the three disagreements (Table
+#       1 q=0.61 X2, q=0.89 C1; Table 17 q=0.60 F=0.95) were OCR misreads, settled on the page
+#       image at 220-600 dpi'
+#     date: '2026-10-14'
+#     typography: FORTRAN-style exponents such as 1.14899-1 and 1.45514+2 are stored as 1.14899e-1
+#       and 1.45514e+2; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: own_mass_ratio
+#       description: q = M2/M1 <= 1; the tabulated component is the secondary, qi = q
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: tabulated C = 2/(1+q)/r1 + 2q/(1+q)/r2 + (x - q/(1+q))^2 + y^2 = 2U, primary
+#         at the origin
+#     fill_out:
+#       kind: fill_out_detached
+#       description: F = C1/C inside the Roche lobe, so U = U_L1/F; F = 1 is the lobe
+#   allowance_half_units: 4.0
+#   allowance_reason: the author states areas and gravities are accurate to +-2 in the last
+#     printed digit
+q F=0.2 F=0.3 F=0.4 F=0.5 F=0.6 F=0.7 F=0.8 F=0.9 F=0.95 F=1.0
+0.04 2.53949e+3 9.10400e+2 4.02491e+2 1.95864e+2 9.89873e+1 4.98002e+1 2.38367e+1 1.00823e+1 5.94144 2.91338
+0.06 1.84890e+3 6.71556e+2 3.01772e+2 1.49938e+2 7.78865e+1 4.06976e+1 2.05944e+1 9.53479 6.04020 3.35838
+0.08 1.49207e+3 5.47776e+2 2.49401e+2 1.25973e+2 6.68428e+1 3.59340e+1 1.89264e+1 9.31615 6.18108 3.70470
+0.10 1.27181e+3 4.71180e+2 2.16906e+2 1.11065e+2 5.99593e+1 3.29697e+1 1.79087e+1 9.22334 6.32395 3.98871
+0.12 1.12120e+3 4.18688e+2 1.94586e+2 1.00801e+2 5.52139e+1 3.09304e+1 1.72226e+1 9.18831 6.45862 4.22882
+0.16 9.26739e+2 3.50721e+2 1.65599e+2 8.74351e+1 4.90230e+1 2.82774e+1 1.63537e+1 9.19157 6.69553 4.61697
+0.20 8.05237e+2 3.08099e+2 1.47351e+2 7.89887e+1 4.51007e+1 2.66007e+1 1.58214e+1 9.22973 6.89145 4.91961
+0.24 7.21285e+2 2.78547e+2 1.34651e+2 7.30883e+1 4.23519e+1 2.54257e+1 1.54561e+1 9.27478 7.05304 5.16273
+0.30 6.34008e+2 2.47699e+2 1.21335e+2 6.68712e+1 3.94411e+1 2.41773e+1 1.50716e+1 9.33620 7.24455 5.44817
+0.40 5.41910e+2 2.14943e+2 1.07094e+2 6.01661e+1 3.62706e+1 2.28010e+1 1.46412e+1 9.40604 7.46544 5.78228
+0.50 4.83209e+2 1.93900e+2 9.78583e+1 5.57672e+1 3.41583e+1 2.18622e+1 1.43311e+1 9.43723 7.60328 6.00281
+0.60 4.41981e+2 1.79008e+2 9.12617e+1 5.25874e+1 3.26055e+1 2.11523e+1 1.40791e+1 9.43900 7.68647 6.15067
+0.70 4.11142e+2 1.67787e+2 8.62465e+1 5.01410e+1 3.13900e+1 2.05801e+1 1.38603e+1 9.41965 7.73242 6.24940
+0.80 3.87032e+2 1.58955e+2 8.22642e+1 4.81759e+1 3.03972e+1 2.00990e+1 1.36633e+1 9.38542 7.75235 6.31371
+0.90 3.67556e+2 1.51773e+2 7.89993e+1 4.65470e+1 2.95609e+1 1.96827e+1 1.34823e+1 9.34080 7.75375 6.35323
+1.00 3.51420e+2 1.45786e+2 7.62566e+1 4.51643e+1 2.88401e+1 1.93149e+1 1.33137e+1 9.28901 7.74182 6.37456

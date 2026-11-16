@@ -1,0 +1,104 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: m, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: x2, datatype: string, description: 'L2, beyond M2 (eq. 23)', meta: {printed_symbol: x2, rocheometry_quantity: outer_position_x, component: secondary, frame: {kind: companion_origin, description: 'the paper''s x for a secondary-local quantity: x = 1 - x_local'}}}
+# - {name: x2-mu, datatype: string, description: 'L2, measured from the centre of mass', meta: {printed_symbol: x2 - mu, rocheometry_quantity: outer_position_x, component: secondary, frame: {kind: centre_of_mass, component_on: +x, description: 'x - mu, measured from the centre of mass, secondary on +x'}}}
+# - {name: C2, datatype: string, description: C at L2 (eq. 24), meta: {printed_symbol: C2, rocheometry_quantity: outer_potential, component: secondary}}
+# - {name: y21, datatype: string, description: 'radius along +y from M1 to the surface C = C2, eq. 25', meta: {printed_symbol: +-y21, rocheometry_quantity: axis_crossing, component: primary, axis: +y, level: {point: L2}}}
+# - {name: z21, datatype: string, description: 'radius along +z from M1 to the surface C = C2, eq. 26', meta: {printed_symbol: +-z21, rocheometry_quantity: axis_crossing, component: primary, axis: +z, level: {point: L2}}}
+# - {name: y22, datatype: string, description: 'radius along +y from M2 to the surface C = C2, eq. 27', meta: {printed_symbol: +-y22, rocheometry_quantity: axis_crossing, component: secondary, axis: +y, level: {point: L2}}}
+# - {name: z22, datatype: string, description: 'radius along +z from M2 to the surface C = C2, eq. 28', meta: {printed_symbol: +-z22, rocheometry_quantity: axis_crossing, component: secondary, axis: +z, level: {point: L2}}}
+# - {name: x2', datatype: string, description: 'the surface C = C2 on the x-axis behind M1, P2''', meta: {printed_symbol: x2', rocheometry_quantity: axis_crossing, component: primary, axis: -x, level: {point: L2}}}
+# meta:
+#   title: 'Table 3: the outer Lagrangian point L2 and the outermost contact surface C = C2'
+#   reference: Plavec & Kratochvil 1964, Table 3
+#   sources:
+#   - title: Plavec M., Kratochvil P., 1964, BAICz, 15, 165, Tables for the Roche Model of Close
+#       Binaries
+#     bibcode: 1964BAICz..15..165P
+#     url: https://ui.adsabs.harvard.edu/abs/1964BAICz..15..165P
+#   retrieval:
+#     method: 'two independent readings of the ADS scan (no text layer): values read from the
+#       page images at 300 dpi, and tesseract OCR of fixed column crops; 1318 of 1334 values
+#       agreed digit for digit, and all 16 disagreements were tesseract misreads, settled on
+#       the page image at 600 dpi'
+#     date: '2026-10-14'
+#     typography: raised decimal points stored as '.'; the y and z radii are printed with a
+#       leading +-, and are stored as the positive value; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: m
+#       kind: secondary_to_primary_ratio
+#       description: m = M2/M1 <= 1; each column names the component it describes
+#     frame:
+#       kind: component_local
+#       description: origin at the primary (the more massive star, M1), secondary at x = 1,
+#         separation 1
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: C = 2(1-mu)/r1 + 2mu/r2 + (x-mu)^2 + y^2 = 2U, their eqs. 4-5; identical
+#         to Mochnacki's C
+#   allowance_half_units: 2.0
+#   allowance_reason: the authors state the fifth decimal is uncertain by one unit (comparison
+#     with Kopal 1954)
+#   notes:
+#     '1.00':
+#       x2':
+#         class: ill_conditioned
+#         max_half_units: 170.0
+#         reason: at m = 1, C2 = C3, so the surface C = C2 touches the x-axis at L3 and x2'
+#           = x3. Near a tangency the crossing moves as the square root of any error in the
+#           level. The printed value is the crossing for a level 2.9e-6 above C2, inside the
+#           authors' stated one-unit uncertainty in C
+#         evidence: C2 = 3.4567962241 and x3 = -0.6984061446; C(-0.69757) - C2 = +2.90e-6, and
+#           that level (3.4567991) still rounds to the printed C2 = 3.45680. At m = 0.98 the
+#           printed x2' agrees (-1.49 half-units)
+m x2 x2-mu C2 y21 z21 y22 z22 x2'
+0.10 1.34699 1.25608 3.45154 0.62808 0.55361 0.22714 0.21457 -0.65167
+0.12 1.36924 1.26210 3.47740 0.61456 0.54480 0.24185 0.22815 -0.64057
+0.14 1.38901 1.26620 3.49770 0.60320 0.53713 0.25499 0.24024 -0.63148
+0.16 1.40684 1.26891 3.51373 0.59345 0.53034 0.26692 0.25116 -0.62391
+0.18 1.42310 1.27056 3.52639 0.58493 0.52427 0.27787 0.26114 -0.61750
+0.20 1.43808 1.27141 3.53634 0.57740 0.51878 0.28801 0.27035 -0.61203
+0.22 1.45196 1.27163 3.54409 0.57067 0.51378 0.29746 0.27890 -0.60732
+0.24 1.46489 1.27134 3.55001 0.56461 0.50919 0.30634 0.28689 -0.60325
+0.26 1.47701 1.27066 3.55443 0.55910 0.50495 0.31470 0.29439 -0.59973
+0.28 1.48841 1.26966 3.55758 0.55407 0.50103 0.32261 0.30147 -0.59668
+0.30 1.49917 1.26840 3.55966 0.54945 0.49738 0.33013 0.30816 -0.59405
+0.32 1.50936 1.26694 3.56084 0.54519 0.49396 0.33729 0.31452 -0.59177
+0.34 1.51903 1.26530 3.56125 0.54124 0.49075 0.34414 0.32056 -0.58983
+0.36 1.52823 1.26352 3.56101 0.53756 0.48774 0.35069 0.32633 -0.58817
+0.38 1.53700 1.26164 3.56021 0.53414 0.48489 0.35697 0.33184 -0.58679
+0.40 1.54538 1.25967 3.55893 0.53093 0.48220 0.36302 0.33712 -0.58566
+0.42 1.55340 1.25763 3.55725 0.52792 0.47965 0.36883 0.34219 -0.58475
+0.44 1.56109 1.25553 3.55521 0.52509 0.47723 0.37444 0.34706 -0.58405
+0.46 1.56847 1.25340 3.55287 0.52242 0.47492 0.37986 0.35174 -0.58356
+0.48 1.57556 1.25124 3.55027 0.51990 0.47272 0.38510 0.35625 -0.58327
+0.50 1.58238 1.24905 3.54746 0.51751 0.47062 0.39017 0.36061 -0.58316
+0.52 1.58895 1.24684 3.54446 0.51524 0.46861 0.39509 0.36481 -0.58322
+0.54 1.59529 1.24464 3.54129 0.51310 0.46668 0.39986 0.36887 -0.58347
+0.56 1.60141 1.24244 3.53800 0.51105 0.46483 0.40448 0.37281 -0.58388
+0.58 1.60732 1.24023 3.53459 0.50910 0.46306 0.40898 0.37661 -0.58447
+0.60 1.61304 1.23804 3.53109 0.50724 0.46135 0.41336 0.38030 -0.58522
+0.62 1.61857 1.23585 3.52751 0.50547 0.45970 0.41762 0.38388 -0.58615
+0.64 1.62393 1.23369 3.52387 0.50377 0.45812 0.42177 0.38736 -0.58725
+0.66 1.62912 1.23153 3.52017 0.50215 0.45659 0.42581 0.39074 -0.58853
+0.68 1.63415 1.22939 3.51644 0.50059 0.45511 0.42975 0.39402 -0.59000
+0.70 1.63904 1.22728 3.51268 0.49910 0.45368 0.43360 0.39721 -0.59166
+0.72 1.64378 1.22518 3.50890 0.49767 0.45230 0.43736 0.40032 -0.59353
+0.74 1.64839 1.22310 3.50511 0.49629 0.45096 0.44103 0.40334 -0.59562
+0.76 1.65287 1.22105 3.50131 0.49497 0.44966 0.44461 0.40629 -0.59796
+0.78 1.65723 1.21903 3.49751 0.49369 0.44840 0.44812 0.40916 -0.60055
+0.80 1.66147 1.21703 3.49371 0.49247 0.44718 0.45155 0.41196 -0.60345
+0.82 1.66560 1.21505 3.48993 0.49128 0.44599 0.45491 0.41469 -0.60667
+0.84 1.66962 1.21310 3.48615 0.49014 0.44483 0.45820 0.41736 -0.61028
+0.86 1.67354 1.21117 3.48240 0.48904 0.44371 0.46142 0.41996 -0.61434
+0.88 1.67736 1.20927 3.47866 0.48797 0.44262 0.46458 0.42250 -0.61896
+0.90 1.68108 1.20740 3.47495 0.48695 0.44155 0.46767 0.42499 -0.62426
+0.92 1.68471 1.20554 3.47126 0.48595 0.44052 0.47071 0.42742 -0.63048
+0.94 1.68826 1.20372 3.46760 0.48499 0.43951 0.47368 0.42979 -0.63797
+0.96 1.69172 1.20192 3.46397 0.48406 0.43852 0.47660 0.43212 -0.64747
+0.98 1.69510 1.20015 3.46037 0.48315 0.43756 0.47947 0.43439 -0.66088
+1.00 1.69841 1.19841 3.45680 0.48228 0.43662 0.48228 0.43662 -0.69757

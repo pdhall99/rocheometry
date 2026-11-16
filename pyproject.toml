@@ -1,0 +1,410 @@
+# [build-system]
+[build-system]
+build-backend = "hatchling.build"
+requires = [ "hatch-vcs", "hatchling" ]
+
+# --------------------------------------------------------------------------------------
+# [project]
+[project]
+name = "rocheometry"
+description = """\
+    Compute the equipotential geometry of binary systems in the classical Roche model\
+    """
+readme = { file = "README.md", content-type = "text/markdown" }
+keywords = [
+    "astronomy",
+    "astrophysics",
+    "bezier curves",
+    "binary stars",
+    "close binaries",
+    "contact binaries",
+    "equipotential surfaces",
+    "lagrange points",
+    "roche lobe",
+    "roche model",
+    "roche potential",
+    "svg",
+]
+license = "MIT"
+license-files = [ "LICENSE" ]
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dynamic = [ "version" ]
+dependencies = []
+
+[[project.authors]]
+name = "PD Hall"
+email = "20580126+pdhall99@users.noreply.github.com"
+
+[project.optional-dependencies]
+plot = [ "matplotlib>=3.8" ]
+
+[project.urls]
+Homepage = "https://github.com/pdhall99/rocheometry"
+Documentation = "https://pdhall99.github.io/rocheometry/"
+Source = "https://github.com/pdhall99/rocheometry"
+Issues = "https://github.com/pdhall99/rocheometry/issues"
+Changelog = "https://pdhall99.github.io/rocheometry/project/changelog/"
+
+# --------------------------------------------------------------------------------------
+# [dependency-groups]
+[dependency-groups]
+dev = [
+    { include-group = "check-code" },
+    { include-group = "check-fmt" },
+    { include-group = "check-types" },
+    { include-group = "test" },
+]
+test = [
+    "coverage[toml]~=7.11",
+    "coverage-enable-subprocess==1",
+    "hypothesis~=6.0",
+    "pytest~=9.0",
+    "pytest-mock~=3.10",
+    "pytest-randomly~=5.0",
+    "pytest-rerunfailures~=16.0",
+    "pytest-sugar",
+    "pytest-xdist[psutil]~=3.5",
+    "typing-extensions>=4.4",
+    # The crosschecks' dependencies, and accuracy/tests, which the tests also run.
+    { include-group = "accuracy" },
+]
+docs = [
+    "mkdocstrings-python",
+    "zensical",
+]
+# accuracy, fits and speed: one group per tool directory, named after it,
+# which the Hatch environment of the same name installs.
+accuracy = [
+    "mpmath>=1.3,<2",
+    "numpy",
+    "pyyaml>=6,<7",
+]
+check-code = [
+    "ruff==0.17.5", # keep consistent with pre-commit-config.yaml
+]
+check-fmt = [
+    { include-group = "check-code" },
+]
+check-types = [
+    "pyrefly==1.4.1",
+    # The accuracy, fits and speed tools are type-checked too.
+    "scipy",
+    "types-pyyaml",
+    { include-group = "accuracy" },
+    { include-group = "test" },
+]
+fits = [
+    # Exact pins: a packaged fit rebuilds bit for bit only with these, on Python 3.12.
+    "numpy==2.5.3",
+    "pyyaml==6.0.3",
+    "scipy==1.18.1",
+]
+speed = []
+
+# --------------------------------------------------------------------------------------
+# [tool.hatch]
+[tool.hatch.version.raw-options]
+version_scheme = "no-guess-dev"
+local_scheme = "no-local-version"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/rocheometry/_version.py"
+
+[tool.hatch.build.targets.sdist]
+# The library, its tests and the crosschecks they import; the accuracy, fits
+# and speed tools and the docs stay in the repository.
+only-include = [
+    "src/rocheometry",
+    "tests",
+    "crosschecks",
+    "README.md",
+    "docs/CHANGELOG.md",
+    "CITATION.cff",
+    "LICENSE",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [ "src/rocheometry" ]
+
+[tool.hatch.envs.accuracy]
+python = "3.11"
+installer = "uv"
+dependency-groups = [ "accuracy" ]
+
+[tool.hatch.envs.accuracy.scripts]
+check = "python -m accuracy check {args}"
+report = "python -m accuracy report {args}"
+run = "python -m accuracy run {args}"
+sample = "python -m accuracy sample {args}"
+smoke = "python -m accuracy smoke {args}"
+study = "python -m accuracy study {args}"
+
+[tool.hatch.envs.default]
+python = "3.11"
+installer = "uv"
+dependencies = []
+
+[tool.hatch.envs.dev]
+dependencies = []
+post-install-commands = [ "hatch run pre-commit:install" ]
+dependency-groups = [ "dev" ]
+
+[tool.hatch.envs.docs]
+features = [ "plot" ]  # the recipe figures
+dependencies = []
+dependency-groups = [ "docs" ]
+
+[tool.hatch.envs.docs.scripts]
+build = "zensical build"
+check = "python docs/figures.py check {args}"
+figures = "python docs/figures.py write {args}"
+serve = "zensical serve"
+
+[tool.hatch.envs.fits]
+python = "3.12"  # the fits' recorded build environment
+installer = "uv"
+dependency-groups = [ "fits" ]
+
+[tool.hatch.envs.fits.scripts]
+build = "python -m fits build {args}"
+check = "python -m fits check {args}"
+
+[tool.hatch.envs.hatch-check-code]
+dependencies = []
+config-path = "pyproject.toml"
+dependency-groups = [ "check-code" ]
+
+[tool.hatch.envs.hatch-check-fmt]
+dependencies = []
+config-path = "pyproject.toml"
+dependency-groups = [ "check-fmt" ]
+
+[tool.hatch.envs.hatch-check-types]
+python = "3.11"
+features = [ "plot" ]
+dependencies = []
+config-path = "pyproject.toml"
+dependency-groups = [ "check-types" ]
+
+[tool.hatch.envs.hatch-static-analysis]
+dependencies = []
+config-path = "pyproject.toml"
+dependency-groups = [ "check-code" ]
+
+[tool.hatch.envs.hatch-test]
+features = [ "plot" ]
+dependencies = []
+default-args = []
+dependency-groups = [ "test" ]
+
+[[tool.hatch.envs.hatch-test.matrix]]
+python = [ "3.11", "3.12", "3.13", "3.14", "3.15" ]
+
+[tool.hatch.envs.hatch-test.scripts]
+cov-combine = "coverage combine"
+cov-report = [ "coverage report {args}", "coverage html" ]
+cov-report-markdown = "coverage report --format=markdown"
+fingerprints = "python -m tests._fingerprints"
+run = "pytest{env:HATCH_TEST_ARGS:} {args}"
+run-cov = "coverage run -m pytest{env:HATCH_TEST_ARGS:} {args}"
+
+[tool.hatch.envs.lint]
+python = "3.11"
+installer = "uv"
+features = [ "plot" ]
+dependencies = []
+extra-dependencies = [ "pre-commit" ]
+dependency-groups = [ "check-types" ]
+
+[tool.hatch.envs.lint.scripts]
+hooks = "pre-commit run --all-files {args}"
+types = "pyrefly check {args}"
+
+[tool.hatch.envs.plot]
+python = "3.11"
+installer = "uv"
+features = [ "plot" ]
+
+[tool.hatch.envs.pre-commit]
+skip-install = true
+dependencies = [ "pre-commit" ]
+
+[tool.hatch.envs.pre-commit.scripts]
+ci = "pre-commit run --all-files"
+install = "pre-commit install"
+run = "pre-commit run --all {args}"
+
+[tool.hatch.envs.speed]
+python = "3.11"
+installer = "uv"
+dependency-groups = [ "speed" ]
+
+[tool.hatch.envs.speed.scripts]
+check = "python -m speed check {args}"
+compare = "python -m speed compare {args}"
+profile = "python -m speed profile {args}"
+report = "python -m speed report {args}"
+run = "python -m speed run {args}"
+sample = "python -m speed sample {args}"
+
+# --------------------------------------------------------------------------------------
+# [tool.ruff]
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+indent-width = 4
+src = [ "src" ]
+include = [
+    "accuracy/**/*.py",
+    "crosschecks/**/*.py",
+    "fits/**/*.py",
+    "speed/**/*.py",
+    "src/**/*.py",
+    "src/**/*.pyi",
+    "tests/**/*.py",
+]
+exclude = [ "**/_version.py" ]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [ "F401" ]
+# A hashed build input of both fits: editing it, docstrings included, changes
+# their provenance, so it waits for the next rebuild.
+"fits/common.py" = [ "D401" ]
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "double"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint]
+select = [
+    "D",
+    "D401",   # non-imperative-mood
+    "E",
+    "F",
+    "I",
+    "RUF022", # unsorted-dunder-all
+    "UP",
+    "W",
+]
+ignore = [
+    "D1",
+    # Below as recommended at https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "D203",
+    "D206",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "E203",
+    "E501",
+    "W191",
+]
+
+# --------------------------------------------------------------------------------------
+# [tool.pyproject-fmt]
+[tool.pyproject-fmt]
+column_width = 88
+indent = 4
+keep_full_version = false
+generate_python_version_classifiers = false
+max_supported_python = "3.14"
+table_format = "long"
+sub_table_spacing = "\n"
+separate_root_table = "\n"
+expand_tables = []
+collapse_tables = []
+skip_wrap_for_keys = []
+
+# --------------------------------------------------------------------------------------
+# [tool.pyrefly]
+[tool.pyrefly]
+python-version = "3.11"
+project-includes = [
+    "accuracy",
+    "crosschecks",
+    "fits",
+    "speed",
+    "src/rocheometry",
+    "tests",
+]
+search-path = [ "src", "." ]
+errors = { implicit-any-lambda = "ignore", unannotated-return = "error" }
+disable-search-path-heuristics = true
+preset = "strict"
+
+# A hashed build input of a fit: editing it changes the fit's provenance, so
+# its fix waits for the next rebuild.
+[[tool.pyrefly.sub-config]]
+matches = "fits/lobe_volume_radius/build.py"
+errors = { implicit-any-empty-container = "ignore" }
+
+# --------------------------------------------------------------------------------------
+# [tool.pytest]
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "crosschecks/tests",
+    "accuracy/tests",
+    "src/rocheometry",
+    "README.md",
+    "docs/site",
+]
+# The crosschecks and the tools (accuracy, fits, speed) are imported from the
+# checkout.
+pythonpath = [ "." ]
+# The slow tier is opt-in: `hatch test -- -m slow` overrides this selection.
+addopts = "-ra -q --doctest-modules --doctest-glob='*.md' -m 'not slow'"
+markers = [ "slow: numerical sweeps with independent integration references" ]
+
+# --------------------------------------------------------------------------------------
+# [tool.coverage]
+[tool.coverage.run]
+source_pkgs = [ "rocheometry" ]
+# node_backward execs copies of library code under a ":dd-capture" filename,
+# which has no source file to report.
+omit = [ "*/_version.py", "*:dd-capture" ]
+branch = true
+parallel = true
+
+[tool.coverage.paths]
+rocheometry = [ "src/rocheometry", "*/site-packages/rocheometry" ]
+
+[tool.coverage.report]
+exclude_lines = [
+    ".*\\.\\.\\.$",
+    "if __name__ == .__main__.:",
+    "if 0:",
+    "if self\\.debug",
+    "if TYPE_CHECKING:",
+    "no cov",
+    "raise AssertionError",
+    "raise NotImplementedError",
+]

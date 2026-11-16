@@ -1,0 +1,284 @@
+{
+  "provenance": "Exact digests of each accuracy setting's outputs, recorded by tests/_fingerprints.py. They change only when an output changes.",
+  "source_commit": "eb61517ab2c131552609f25604c454d29c63fb34",
+  "environment": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": [
+      "3",
+      "14"
+    ]
+  },
+  "cases": [
+    {
+      "reference": false,
+      "qi": 0.001,
+      "kind": "detached",
+      "values": {
+        "potential": "ca81bb94b29bf8b4fcc9375f433caf8d944e766c62203da89839c4a5256a1b58",
+        "volume": "d70064cafe8e1bc1de4eb85a9877f5c36f221612af6ccdb137495dee35e0d375",
+        "area": "6d15528cc5dc3832568006f7b4a848e36f10a1d2667f1aa7a95403052907d031",
+        "mean_curvature": "6f4200d6361c278419e441bdbeddffdbdb35e2fb644eda3cd55fd34aaa5d18bc",
+        "mean_gravity": "ef19b45dad6795388a69c4ebcb8fcb4b203c8755a675aa521976eb0babf6297c",
+        "quadrature": "72048588718bb8854f02882fedbba8e6cfba2c813df587fccce70d60422197a9",
+        "section": "caad86a442d6a4dac5f906cab1b6627b005994d3715bb624c8e64dcb9a79bec9",
+        "silhouette": "ea3399cfdce441c6dbb6fcb6c8e4dafa9ab1b108de857b83cfdab856900c4864"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.001,
+      "kind": "critical",
+      "values": {
+        "potential": "e4829f2772f8f504072961f797378a0379d8bfb52632aea33aba2687f6726354",
+        "volume": "c27d05123a3f5506920a63df755e35fd58cec852ec4ef46d990112eef4eafcc3",
+        "area": "ec3d03275eecfa976e2343bff1aff3c0cbe389a1035cdf985f6e006782ec4d4a",
+        "mean_curvature": "d1d0b71511a76be53ab89296117b727e698c7c619d321a75341a36a47c3e7f45",
+        "mean_gravity": "666149eeb2c9d28b3a257fc0bb3847d64d424af04c89efee50f0bdd913f6d34e",
+        "quadrature": "b8a127382b348fd44c3819320138df3a312e6d96f374dfb4ea4ae1f84d26fa4d",
+        "section": "a0bb9ef53929bbb50910240dbe06e4215398e8cd67ec6a5073a146dcce254b94",
+        "silhouette": "989140cb57aee058b09626170d9462a716375eb3d9a49d56f980a45db9bb0d99"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.001,
+      "kind": "contact",
+      "values": {
+        "potential": "3f99b68e55cf71ef76f6b7e44eee31686d6d13ec73d0cfe92be0c3e72cdfb96b",
+        "volume": "d0c08ef48df419eb81678a21bd27183bcb76c820b8c24ca9c8fce50c0841508c",
+        "area": "adf584a6287a8320615ae2a22171af79437256253bde3079911356d87b7884c9",
+        "mean_curvature": "7af0b795749cfe6a32b9df833a3d2437527fdd686fd99dbc153020e192f59318",
+        "mean_gravity": "1b86666242bec1ad79204cc81fe5ba6ea36c22e1ced7873024a07a327e6a6557",
+        "quadrature": "7b998143f3b8e654c9e691adcd087039ced334957c86591d86a71e19612e7610",
+        "section": "cb9c3304c22a6c2a6a782577f782de30e0acdf23b618b2cbb598bd5727767989",
+        "silhouette": "efb5cc6d029999f68e752fcda6dc535b9282dfa2588260e06342136930febbbf"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1.0,
+      "kind": "detached",
+      "values": {
+        "potential": "ac6981cc77779cd5c75eb67e1676fa87a4f802b6b118d2d2c9465b0bd1ffe174",
+        "volume": "1adfd397fa7c76eb1846254301d7fd82389c88afd3a6cd623a2ba6d2c455cecc",
+        "area": "a79c53a09056b5ebc8217df91f4562eac99465dfa158306b19f931ad716a0224",
+        "mean_curvature": "e7befb6b526e698d4b158d6d505dc8cc0131d5095f76ae63054595ce92a142be",
+        "mean_gravity": "157c62b470dfdec480af22f9b22da048f3bfd1f3eaa0549b7fce17fed92cb0d9",
+        "quadrature": "142c0b05a5ee445f49b0a53b927e578515bd005c5493a551b8b4645a79c80475",
+        "section": "b0f70ddef288272ff4f576275608462e583dca7fd0d210941f46f391bacc2598",
+        "silhouette": "4c86c9ffec1f768fd91405df2a6e1437fc1acd670d3cf51a6c608079226eec2f"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1.0,
+      "kind": "critical",
+      "values": {
+        "potential": "9041ee393354087971e20857b36b688bf9969907f0c8f0094a3f87a68f33dda8",
+        "volume": "235eaaea48b72355ba9546ca004080a42e9b859669ca24d21d6735cd1b53fea0",
+        "area": "c625b4ac2286c513cbed97ff1d62c7633de60ada19b1a9afdccfd6c1b3601b7c",
+        "mean_curvature": "97c2ba51ec49cd006949cc784dac17ab7444e3f4692acaa7572170cc39e26bea",
+        "mean_gravity": "185c6cfb74573fccdc9531178fbc32a90f09dec8738da0220ebd5f9c0c1cff3f",
+        "quadrature": "bd68013088bb0acdd6f388452c69b5a41f74355e647dc16e271810557c72f0f6",
+        "section": "e4b129dfdb0fd3590a0c15c937cb53c1914aa37052f78ff1058d64f7f2908fe3",
+        "silhouette": "08b5f9a83ef02e8041a9d64a87a17f3096335ecb2e74b327cbd162fbaa9c6d9a"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1.0,
+      "kind": "contact",
+      "values": {
+        "potential": "ee8c592168603058e399e67198d283b832374613e080630bcee9f9ee805014f1",
+        "volume": "f57efb9ef227dbe044d5d3f55411084530d2e78764d4b705274ce46f03aeab19",
+        "area": "7d0c5a5cfa4ef785165279ee4ff798e9cd2e888cba69c5790cbf1ec17811a1c2",
+        "mean_curvature": "b2cd61941ac280477911e550caead67f6fc4b485baedd3b794bae9c52e6e4386",
+        "mean_gravity": "b768ada60c97c82bc6f3cdeba7dce6540e6fa1a8b790bc7f99b03b7898ebc37e",
+        "quadrature": "c4f27402f70957cde5a45b4008163885d93ec65d387f3e661b21bddfe5cefb6c",
+        "section": "20338c0bc08407d0df54b84c42a2b6c0f41d0189c2a07f34fb5aff9576de9d51",
+        "silhouette": "4dfc5a45626af5f2268db53d44e1d828418f13119f765caf7003abc6af9490e4"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "kind": "detached",
+      "values": {
+        "potential": "f54331fd3e2c60c11c69b4dfb25410a5194c8abe556ceb6a707257581829cc22",
+        "volume": "ec11c7d090c5261c91278bffa004f97dc66f91bebb46c5bb67bc168b97169e47",
+        "area": "15a6137076dfe42f8accfe88bc7ac377f38925b96d9bc3c22638f42e60355b39",
+        "mean_curvature": "d9742dc739b6160ee76ae243873a48589ed48dc1c5c13623a31ec7b0e381da27",
+        "mean_gravity": "834ce855be76d130212779624c45f9b46d51939b4d7426be8bbcb9ef3cd9381d",
+        "quadrature": "12a18c30b0f46289833b8359933bf6f233936cf92333de71fc995099013ee05c",
+        "section": "90202c91a8bf74412d91f7287335795bab0725c0d89ed873c723b72352030c0b",
+        "silhouette": "432a062422e905c8d089d94760c8e92fc99b3251ead9d73b6eade1499040662e"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "kind": "critical",
+      "values": {
+        "potential": "f034d76bde54b08eb875ae3dbd78fd4ba1cfe10d0ed255d1acce7121cbd2a09e",
+        "volume": "f2fb7983142e170ff0e123da678874e17c96a04e3b84a2e52ef421bfb8ef5a85",
+        "area": "970d19aef68410c731d4985fb0150184c81d0f31eeb6f9d12aa9e2a703500ad4",
+        "mean_curvature": "48332d06fa3898b28a639b45e0a3a39b678f9d8e824b8c78a7d3a5b0291ded9a",
+        "mean_gravity": "47bac2927a6fd957cc11f505464d7ee811c52ed5235cf813e4ab16c9ce4093f6",
+        "quadrature": "ea4c32bb4831ce7169797005173fda3880463e48c96b06937dd90bf20cb8dc97",
+        "section": "46a255dc50966d34f46da1541a69e2596b7751a2d80274a626bb65711eff192a",
+        "silhouette": "2d621e640a684516ed41c7c1d914d079e7742a862907c4af3349421250e6f648"
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "kind": "contact",
+      "values": {
+        "potential": "38de30b38f81886c24cfa6f990e8a82df7c99e4f67dc3e1a5ac89ff0efea392e",
+        "volume": "cf54b9811e338f02cd0a5e9726673cc64d93d35cde1101fd5b208f979a9e2d20",
+        "area": "4049676b6d51fa9dbae015d766822a63a50323c94921251cc737c3bef98af4e1",
+        "mean_curvature": "75d3d926e680ef3f3fdc0c8f7ee9dbf26bfa35e3c44033783b03b96b8b1a1ac3",
+        "mean_gravity": "cc06e06a4ad70973c0ee1d3f25a00eb23c379bf7ffd5f87505175c19529b5456",
+        "quadrature": "c7fdcbdfb800157ff4a85887f66b1b442d693873752863dfe2975e0f667065f7",
+        "section": "3b756b44a568d7fe6520ede4b797f9c288361cd3a14a9cdf94f3c89f473d6d33",
+        "silhouette": "fd9a8fffeeb7ddb96fe588a721cae2ea538e440dad7eb794a40a1b8503fcf7e5"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "kind": "detached",
+      "values": {
+        "potential": "9f64bcf9b91f2fc7b655cb07d6466f1c3f64812d4331a3ee4c5bcd001b7c8efb",
+        "volume": "f3da5f0c6c1c5de6975a8434371dcceaccb2b6d7420e1140ec3267235c7ef8f5",
+        "area": "5b9151237595a620da4b80757e13aa856688ce882fe8c0dd3e9d230a3a164626",
+        "mean_curvature": "c1b6504171eaf14790f1f79676dd6dcca6c5b9003efdf1969b68f0eefd94375b",
+        "mean_gravity": "994f4ef24cbb1fe724d5b0538c066e343882e986a6be3f6c86db628dab86b5f7",
+        "quadrature": "f909d848d602121b00e2a066600a90d9d96fee8901ce006fe88f5ce141c72924",
+        "section": "9982b18ef8d1fe959cb485d7c067015beeae728f7423b9ce418d1ecdcc8f7d6d",
+        "silhouette": "8d9549876bf95c9e7fd06bdc968dc955cfa8fbcc5f9159281cac6e2e8088b580"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "kind": "critical",
+      "values": {
+        "potential": "e4829f2772f8f504072961f797378a0379d8bfb52632aea33aba2687f6726354",
+        "volume": "4f23fe436cf1dfba22bf25557f5dc5df16e567216a8397320eacbd0f04f3c5bd",
+        "area": "b02fa0a6826df44cff7df681769ee9e7d4fda8208d55a2aa308d8c47b3ce95e0",
+        "mean_curvature": "b4f43faa97776dc6bef7396176a088df74257accb904c5fe40cb906183fcf835",
+        "mean_gravity": "6192d225bce257eca135053b11f92e445ee529b8ae9ce029e0af067c8fa19999",
+        "quadrature": "fd2ecc6abafe9b41eecfe69ef2fb0347b26a8f385bf1f0d256729211c8f8b548",
+        "section": "ed3008869bc2da469d31568be0c82b5c9903c9c2b2a293e565f1e2aa0f0f950a",
+        "silhouette": "581faffe39a29a24e6e96f10bdb484397107f931561eba0658fc938e5149148b"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "kind": "contact",
+      "values": {
+        "potential": "3f99b68e55cf71ef76f6b7e44eee31686d6d13ec73d0cfe92be0c3e72cdfb96b",
+        "volume": "9a69db85db1ffa75d8b9b5531afc8640dd648b894457c016a454be7a0184d09a",
+        "area": "9b00a5cc3e91239750e926809e64751f2910740c1b562a2be013293528a361db",
+        "mean_curvature": "901b50d0c619a0171dc81c62000c53f32f3d4ed4e794d05dd7ad12ec95940380",
+        "mean_gravity": "ef2fe4b649a2a653e2818cd4c9056d3ad03e7689752b50cc6abd24616076c47e",
+        "quadrature": "21243d1d92c60389735029edd13fece4472d8b5dd5ae07b5d3bd5357aed0fd54",
+        "section": "2ce9ba279bb5c6c2a4a7de3bc046cb18539bfaf37caecddbef1cece866060515",
+        "silhouette": "174e7824d5fbe65678001925856810a82fb173cf760ab0d290da7fd482ea5fea"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 1.0,
+      "kind": "detached",
+      "values": {
+        "potential": "84ce9ea3348fb0eb5da72906acfc49b8c6b7cad12321ed1e540358953915df3d",
+        "volume": "869dcf2c55c8d7ad165458aba4152a6b30ccb7d2329ac01dddb485885e12ebb2",
+        "area": "632fb0c062a5c9dbd86d94a3fcb856520173f0886c97c4c805f14fc2bbc4695a",
+        "mean_curvature": "ada95f2d16ea57a97059e49a7f0bfa5a3857caba4440e3c9d539d17acd867779",
+        "mean_gravity": "b257eb5348c29f8271bc16e0a93ee978cdbddb92aa8dfc56920e94b28552f18b",
+        "quadrature": "eebeda7141bdaa4655395b91c27f39feb72cd8eb59996f62cbe8d61bc8eb5429",
+        "section": "08d1ceec2e62b903727f0bbae4906c5137088da6c2dd0de3bb0af9a474089d05",
+        "silhouette": "df4b05bb08fed90113e47436f2ae9b24a12fb4dc3f7a1eb1ec745f5e6634fded"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 1.0,
+      "kind": "critical",
+      "values": {
+        "potential": "9041ee393354087971e20857b36b688bf9969907f0c8f0094a3f87a68f33dda8",
+        "volume": "f137798f3a29e18f05856fdce16324338999efbe6a593a50866c6693f8c382a6",
+        "area": "9ff6cb99bc65fabaf387e8a5d9bc6987c9a1057c62c81588b39e3b30adfbbc86",
+        "mean_curvature": "5b4284d77ffa3e11f372458cc57db68956d925aecacab083bdb34f54f94fa545",
+        "mean_gravity": "7f24f3371070d02542ec445d1b740fceeff65f41320425943028641483a35f5b",
+        "quadrature": "c5426b30c769d6f720b16bc8930061a46daf5bf313ced1db6476a9544d2bdf17",
+        "section": "02f917b8241a5607758479d4e2f2baf8eea17397be218706df94e16fdb2a87b8",
+        "silhouette": "26dcb09c7d4f9fcfa0e701d8e6d687ffe0d4522afa60fbd5a7d7e3216c0eb043"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 1.0,
+      "kind": "contact",
+      "values": {
+        "potential": "ee8c592168603058e399e67198d283b832374613e080630bcee9f9ee805014f1",
+        "volume": "00a79bb05d70d17af808a40c135c3c50b9ec7ebabe55cb2ab95b73263b5aaa00",
+        "area": "c13495bfb6310c17ae1c99e36cf8e1f6f0e3792ae903c13c39845e66d4dbe4fc",
+        "mean_curvature": "dd1d67cbc579efd768f011d47b3214b6307f1d7fa38f109c7d0faa9782e5e03c",
+        "mean_gravity": "b768ada60c97c82bc6f3cdeba7dce6540e6fa1a8b790bc7f99b03b7898ebc37e",
+        "quadrature": "18c637b44b0d2133cb214bcd15d3fa40ed05d8513e6c46aa3d71867fa482df43",
+        "section": "75f5b13d3fe4f2311f3977b35546f1cda0d305cdf28e7765a9f7ef3e31862328",
+        "silhouette": "3e93c009fec01130974e9b0bdacd1d61a180decf0957617020ea068398026e58"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "kind": "detached",
+      "values": {
+        "potential": "6450ee4932897dffd4e671a69e0b8b2b4a4fe542b5ca9d229b9fc2874503ae41",
+        "volume": "25482e58330c9d33691e88d948645c8d2358c66495fa326ff26448f7afe1cdf7",
+        "area": "9de04e5640f07845a094082ecf3e35920d03d5dbb4b74e0c5e6f9bc47e309802",
+        "mean_curvature": "f4efa70e126cf62892564ddf4406b0a61dcac7f06092f751b57f7ce99f565afe",
+        "mean_gravity": "89ff2a6b0c0224340a83d39ba34f6aed95ddc4ff35357a127685b7f28aecafdc",
+        "quadrature": "53330b387cf05afd58abe0c608f62b2ff83ed51d2e1e4c7c12aa60fb70024b81",
+        "section": "fe546afd6e78493d7cb0fd395e36cf0ce2731583edb7bfe7334286ee763c8b4e",
+        "silhouette": "019ea8cd757d0deeece5cc8b6e7f5dc5303ec89ed2d9205d89167ff2c8d5fe37"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "kind": "critical",
+      "values": {
+        "potential": "f034d76bde54b08eb875ae3dbd78fd4ba1cfe10d0ed255d1acce7121cbd2a09e",
+        "volume": "2bc97385ebff186850f559f1e4d9f7a4ba13ad621e2a7dba4fd9dd2c0739d964",
+        "area": "41bfb31345aa9a53e006e5c5a5a2cfc8ff8d2adaf0d5db196f620f330d6644c9",
+        "mean_curvature": "81659ac12471627687ee0477e78bee4538aec55dcca4e9d2c1e7f53079c770e1",
+        "mean_gravity": "88d32070c04d620316aefd426ace5d6ba7dd17e7d6703419620072c88f198bdf",
+        "quadrature": "2e5d46b287dcc55b33ccaaf9b9b0480d6a411202a430d9f0607124f3889d362f",
+        "section": "a53e156257e8e91c656d2ecca6ff3229e0ca7ccde6a4b6634bfbec8c0d050cb7",
+        "silhouette": "48a2745ccadf84fc04166c33afb9354a6fc0050a04a514113735ec2e64e641ee"
+      }
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "kind": "contact",
+      "values": {
+        "potential": "38de30b38f81886c24cfa6f990e8a82df7c99e4f67dc3e1a5ac89ff0efea392e",
+        "volume": "407dac8682d1d6c31a2e6ccc5387ec9a661918bb9489f3be7fc46453e66b29ca",
+        "area": "4049676b6d51fa9dbae015d766822a63a50323c94921251cc737c3bef98af4e1",
+        "mean_curvature": "fbc1d30fcfc120860df4e5fbabd0f0b2c153bc7dc8af416d858a2c437da1928e",
+        "mean_gravity": "1808f7266ed0e58a9677b0f8c939561027957851752f0c22da40218d03645144",
+        "quadrature": "38ca83877c306961301dee641c46a93ad39218958ac013adb597c78e312f0be2",
+        "section": "5796479021401f7a4bee9376375a50bdd17cfc9d5e2afd5ee3d9ed31f87a1836",
+        "silhouette": "efbd2f2d2ed4d834619bedbcf82980da32e9041440e576a4a9f665c3b5fd2592"
+      }
+    }
+  ]
+}

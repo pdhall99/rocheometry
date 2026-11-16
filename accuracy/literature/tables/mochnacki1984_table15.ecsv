@@ -1,0 +1,69 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: F=1.0, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.05, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.1, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.2, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.4, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.6, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.8, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.9, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=1.95, datatype: string, meta: {units: '|grad C|'}}
+# - {name: F=2.0, datatype: string, meta: {units: '|grad C|'}}
+# meta:
+#   title: 'Table 15: Mean gravity of the secondary, contact configurations'
+#   reference: Mochnacki 1984, Table 15
+#   sources:
+#   - title: Mochnacki S. W., 1984, ApJS, 55, 551, Accurate Integrations of the Roche Model
+#     bibcode: 1984ApJS...55..551M
+#     url: https://ui.adsabs.harvard.edu/abs/1984ApJS...55..551M
+#   retrieval:
+#     method: 'three readings of the ADS scan: its OCR text layer and tesseract passes over
+#       the page images at 400 and 600 dpi. A row of Table 14 that the readings split differently,
+#       and nine other cells where they disagreed or one missed a value, were settled on the
+#       600 dpi image; three of those corrected a digit two readings had agreed on (Table 6
+#       q=0.12 F=1.8, Table 10 q=0.50 F=1.0, Table 11 q=0.50 F=1.9). Every value then passes
+#       the tables'' identities: Table 2 is C1/F and Table 3 linear in F between C1 and C2 of
+#       Table 1; the F = 1 columns equal the detached tables'' F = 1 columns; and Gauss''s law
+#       summed over both components ties Tables 6, 7, 10, 11, 14 and 15 (worst 0.78 of the propagated
+#       rounding)'
+#     date: '2026-11-09'
+#     typography: FORTRAN-style exponents such as 6.45428-1 and 1.68243+1 are stored as 6.45428e-1
+#       and 1.68243e+1; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: own_mass_ratio
+#       description: q = M2/M1 <= 1; the tabulated component is the secondary, qi = q
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: tabulated C = 2/(1+q)/r1 + 2q/(1+q)/r2 + (x - q/(1+q))^2 + y^2 = 2U, primary
+#         at the origin
+#     fill_out:
+#       kind: fill_out_contact
+#       description: F = (C1 - C)/(C1 - C2) + 1 between the inner and outer contact surfaces,
+#         so Rocheometry's fill-out factor is F - 1
+#   contact_split: Mochnacki divides a contact envelope by the plane through L1 normal to the
+#     line of centres; Rocheometry divides it along the gravity watershed. Only the envelope totals
+#     are comparable, so the primary table's columns compare the totals over both components
+#     with Rocheometry's two parts; this table is read as a partner of the primary's
+q F=1.0 F=1.05 F=1.1 F=1.2 F=1.4 F=1.6 F=1.8 F=1.9 F=1.95 F=2.0
+0.04 2.91338 2.87305 2.83593 2.76482 2.62855 2.49567 2.36224 2.29310 2.25674 2.21620
+0.06 3.35838 3.30700 3.25974 3.16931 2.99630 2.82797 2.65917 2.57166 2.52558 2.47403
+0.08 3.70470 3.64401 3.58820 3.48146 3.27750 3.07936 2.88081 2.77782 2.72354 2.66265
+0.10 3.98871 3.91992 3.85666 3.73572 3.50484 3.28077 3.05631 2.93985 2.87839 2.80934
+0.12 4.22882 4.15285 4.08298 3.94944 3.69468 3.44760 3.20015 3.07170 3.00387 2.92752
+0.16 4.61697 4.52874 4.44755 4.29244 3.99679 3.71027 3.42336 3.27429 3.19548 3.10656
+0.20 4.91961 4.82122 4.73064 4.55759 4.22791 3.90852 3.58862 3.42229 3.33427 3.23480
+0.24 5.16273 5.05575 4.95721 4.76897 4.41039 4.06303 3.71501 3.53394 3.43804 3.32952
+0.30 5.44817 5.33057 5.22216 5.01502 4.62042 4.23809 3.85480 3.65519 3.54939 3.42950
+0.40 5.78228 5.65132 5.53042 5.29929 4.85879 4.43164 4.00293 3.77938 3.66077 3.52619
+0.50 6.00281 5.86227 5.73231 5.48375 5.00962 4.54938 4.08693 3.84554 3.71736 3.57183
+0.60 6.15067 6.00313 5.86651 5.60503 5.10579 4.62063 4.13258 3.87759 3.74212 3.58826
+0.70 6.24940 6.09673 5.95517 5.68403 5.16585 4.66168 4.15397 3.88849 3.74739 3.58711
+0.80 6.31371 6.15726 6.01203 5.73366 5.20113 4.68240 4.15946 3.88583 3.74033 3.57506
+0.90 6.35323 6.19406 6.04611 5.76235 5.21896 4.68905 4.15431 3.87430 3.72537 3.55620
+1.00 6.37456 6.21346 6.06354 5.77581 5.22426 4.68582 4.14193 3.85695 3.70533 3.53312

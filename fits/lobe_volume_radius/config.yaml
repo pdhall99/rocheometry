@@ -1,0 +1,24 @@
+# Lobe volume radius: R_RL,vol / a of the critical lobe, for every qi > 0.
+#
+# Coordinate v = qi^(1/6) / (1 + qi^(1/6)) maps 0 < qi < inf onto 0 < v < 1.
+# The fitted quantity is F(v) = R / v^2, finite at both ends:
+#   F(0) = H0 (Hill limit), F'(0) = 2 H0;  F(1) = H1 (qi -> inf), F'(1) = -2 H1.
+# Two Horner polynomials, split at qi = 1 (v = 1/2), joined with C2 continuity
+# and constrained to give a monotone radius on a dense grid.
+low_degree: 17          # x = 4v - 1 on v <= 1/2
+high_degree: 19         # x = 4v - 3 on v >= 1/2
+training_nodes: 257     # Chebyshev-Lobatto nodes in v over [0, 1]
+# Reference() supplies the radius at interior nodes inside this range. Outside
+# it the binary64 mass pair loses accuracy, and the endpoint limits carry the fit.
+reference_qi_min: 1.0e-12
+reference_qi_max: 1.0e+12
+reference:
+  polar_order: 128
+  azimuth_order: 64
+# Endpoint limits of F, from the scaled-potential Cartesian x-slice integrals
+# at 320 x 32 order (issue #75). They are physical constants of the model, not
+# fitted values; studies/literature/asymptotic_limits compares them with the literature.
+hill_limit: 0.493306231152633      # H0 = lim R / qi^(1/3), qi -> 0
+infinite_limit: 0.8148856767821752 # H1 = lim R, qi -> inf
+monotone_grid: 1200
+accuracy_bound: 1.0e-8   # held-out relative radius error

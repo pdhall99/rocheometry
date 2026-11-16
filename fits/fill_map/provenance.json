@@ -1,0 +1,17 @@
+{
+  "artefact": "surface-potential-map.json",
+  "sha256": "eee8cb2636bb8d83adfc1df820cfa648d22b5903dba41c7e1af24bb4a555d1bf",
+  "reproducible": true,
+  "inputs": {
+    "fits/fill_map/build.py": "c9b3c2306e6d5ca5ddb80791464456751e0ec36c72772b442090e569c22e7498",
+    "fits/fill_map/config.yaml": "2401efff74cae4e1e38865272f57b7dd179f1021745f344406312dcff1bb2f2c",
+    "fits/common.py": "3659f4e6cb0eb62e17cda2d9d4858275df3b548e2dc4c697fc25a1b6343e160f"
+  },
+  "environment": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "python": "3.12",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  }
+}

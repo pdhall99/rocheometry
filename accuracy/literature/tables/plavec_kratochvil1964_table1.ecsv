@@ -1,0 +1,91 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: m, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: x1, datatype: string, description: 'L1, measured from M1 (eq. 9)', meta: {printed_symbol: x1, rocheometry_quantity: l1_position_x, component: primary}}
+# - {name: x1-mu, datatype: string, description: 'L1, measured from the centre of mass', meta: {printed_symbol: x1 - mu, rocheometry_quantity: l1_position_x, component: primary, frame: {kind: centre_of_mass, component_on: -x, description: 'x - mu, measured from the centre of mass, primary on -x'}}}
+# - {name: C1, datatype: string, description: C at L1 (eq. 10), meta: {printed_symbol: C1, rocheometry_quantity: l1_potential, component: primary}}
+# - {name: Omega1, datatype: string, description: Omega at L1 (eq. 3), meta: {printed_symbol: Omega1, rocheometry_quantity: l1_potential, component: primary, potential: {kind: plavec_kratochvil_omega, description: 'Omega = (1+m) C / 2, their eq. 3 (4.00000 at m = 1). It differs from the Kopal/Wilson-Devinney Omega = 1/r1 + m(1/r2 - x) + (1+m)(x^2+y^2)/2 by the constant m^2/(2(1+m)): eq. 2 omits it but eq. 4 keeps it, and the tabulated values follow eqs. 3-4'}}}
+# - {name: x1', datatype: string, description: 'back of the primary''s lobe on the x-axis, P1'' (eq. 11)', meta: {printed_symbol: x1', rocheometry_quantity: named_point_x, component: primary, radius: back}}
+# - {name: x1'', datatype: string, description: 'back of the secondary''s lobe on the x-axis, P1'''' (eq. 12)', meta: {printed_symbol: x1'', rocheometry_quantity: named_point_x, component: secondary, radius: back, frame: {kind: companion_origin, description: 'the paper''s x for a secondary-local quantity: x = 1 - x_local'}}}
+# - {name: phi, datatype: string, description: 'angle in degrees between the x-axis and the critical curve at L1, tan^2 phi = -C_xx/C_yy (eq. 15)', meta: {printed_symbol: phi, rocheometry_quantity: l1_cone_angle_degrees, component: primary, units: degrees}}
+# meta:
+#   title: 'Table 1: the inner Lagrangian point L1 and the innermost contact surface C = C1'
+#   reference: Plavec & Kratochvil 1964, Table 1
+#   sources:
+#   - title: Plavec M., Kratochvil P., 1964, BAICz, 15, 165, Tables for the Roche Model of Close
+#       Binaries
+#     bibcode: 1964BAICz..15..165P
+#     url: https://ui.adsabs.harvard.edu/abs/1964BAICz..15..165P
+#   retrieval:
+#     method: 'two independent readings of the ADS scan (no text layer): values read from the
+#       page images at 300 dpi, and tesseract OCR of fixed column crops; 1318 of 1334 values
+#       agreed digit for digit, and all 16 disagreements were tesseract misreads, settled on
+#       the page image at 600 dpi'
+#     date: '2026-10-14'
+#     typography: raised decimal points stored as '.'; the y and z radii are printed with a
+#       leading +-, and are stored as the positive value; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: m
+#       kind: secondary_to_primary_ratio
+#       description: m = M2/M1 <= 1; each column names the component it describes
+#     frame:
+#       kind: component_local
+#       description: origin at the primary (the more massive star, M1), secondary at x = 1,
+#         separation 1
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: C = 2(1-mu)/r1 + 2mu/r2 + (x-mu)^2 + y^2 = 2U, their eqs. 4-5; identical
+#         to Mochnacki's C
+#   allowance_half_units: 2.0
+#   allowance_reason: the authors state the fifth decimal is uncertain by one unit (comparison
+#     with Kopal 1954)
+m x1 x1-mu C1 Omega1 x1' x1'' phi
+0.10 0.71751 0.62660 3.57027 1.96365 -0.61414 1.22831 57.9243
+0.12 0.70273 0.59559 3.61668 2.02534 -0.59821 1.23986 57.8469
+0.14 0.68982 0.56701 3.65660 2.08426 -0.58455 1.24997 57.7831
+0.16 0.67834 0.54041 3.69136 2.14099 -0.57260 1.25900 57.7294
+0.18 0.66799 0.51545 3.72192 2.19593 -0.56196 1.26715 57.6836
+0.20 0.65856 0.49189 3.74899 2.24939 -0.55238 1.27460 57.6440
+0.22 0.64989 0.46956 3.77310 2.30159 -0.54368 1.28147 57.6095
+0.24 0.64187 0.44832 3.79469 2.35271 -0.53570 1.28785 57.5791
+0.26 0.63441 0.42806 3.81410 2.40288 -0.52834 1.29380 57.5522
+0.28 0.62743 0.40868 3.83161 2.45223 -0.52152 1.29938 57.5282
+0.30 0.62087 0.39010 3.84745 2.50084 -0.51515 1.30464 57.5068
+0.32 0.61468 0.37226 3.86182 2.54880 -0.50919 1.30961 57.4877
+0.34 0.60883 0.35510 3.87487 2.59616 -0.50358 1.31433 57.4704
+0.36 0.60327 0.33856 3.88676 2.64300 -0.49829 1.31882 57.4548
+0.38 0.59799 0.32263 3.89759 2.68934 -0.49329 1.32311 57.4407
+0.40 0.59295 0.30724 3.90748 2.73524 -0.48855 1.32720 57.4279
+0.42 0.58813 0.29236 3.91652 2.78073 -0.48404 1.33113 57.4163
+0.44 0.58352 0.27796 3.92478 2.82584 -0.47974 1.33489 57.4058
+0.46 0.57909 0.26402 3.93233 2.87060 -0.47563 1.33852 57.3962
+0.48 0.57484 0.25052 3.93925 2.91505 -0.47170 1.34200 57.3874
+0.50 0.57075 0.23742 3.94557 2.95918 -0.46794 1.34537 57.3795
+0.52 0.56681 0.22470 3.95136 3.00303 -0.46432 1.34862 57.3722
+0.54 0.56301 0.21236 3.95665 3.04662 -0.46085 1.35176 57.3656
+0.56 0.55933 0.20036 3.96148 3.08995 -0.45751 1.35481 57.3596
+0.58 0.55578 0.18869 3.96590 3.13306 -0.45428 1.35775 57.3541
+0.60 0.55234 0.17734 3.96993 3.17594 -0.45118 1.36061 57.3491
+0.62 0.54901 0.16629 3.97360 3.21862 -0.44817 1.36339 57.3445
+0.64 0.54578 0.15554 3.97693 3.26108 -0.44527 1.36609 57.3404
+0.66 0.54264 0.14505 3.97996 3.30337 -0.44246 1.36872 57.3367
+0.68 0.53960 0.13484 3.98271 3.34548 -0.43973 1.37127 57.3333
+0.70 0.53663 0.12487 3.98518 3.38740 -0.43710 1.37376 57.3303
+0.72 0.53375 0.11515 3.98741 3.42917 -0.43453 1.37619 57.3275
+0.74 0.53095 0.10566 3.98941 3.47079 -0.43204 1.37855 57.3251
+0.76 0.52821 0.09639 3.99119 3.51225 -0.42963 1.38087 57.3229
+0.78 0.52555 0.08735 3.99277 3.55357 -0.42727 1.38312 57.3210
+0.80 0.52295 0.07851 3.99417 3.59475 -0.42498 1.38532 57.3193
+0.82 0.52041 0.06986 3.99538 3.63580 -0.42276 1.38748 57.3178
+0.84 0.51794 0.06142 3.99643 3.67672 -0.42059 1.38959 57.3165
+0.86 0.51552 0.05315 3.99733 3.71752 -0.41847 1.39165 57.3154
+0.88 0.51316 0.04507 3.99808 3.75820 -0.41640 1.39367 57.3145
+0.90 0.51084 0.03716 3.99870 3.79877 -0.41439 1.39565 57.3138
+0.92 0.50858 0.02941 3.99918 3.83921 -0.41242 1.39759 57.3132
+0.94 0.50637 0.02183 3.99955 3.87956 -0.41050 1.39949 57.3127
+0.96 0.50420 0.01440 3.99980 3.91980 -0.40862 1.40136 57.3124
+0.98 0.50208 0.00713 3.99995 3.95995 -0.40678 1.40319 57.3122
+1.00 0.50000 0.00000 4.00000 4.00000 -0.40498 1.40498 57.3122

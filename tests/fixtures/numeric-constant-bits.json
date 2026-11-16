@@ -1,0 +1,1603 @@
+[
+  {
+    "module": "rocheometry._component_geometry",
+    "name": "NAMED_RADIUS_DIRECTIONS",
+    "bits": [
+      "dict",
+      [
+        [
+          "point",
+          [
+            "tuple",
+            [
+              [
+                "float",
+                "0x1.0000000000000p+0"
+              ],
+              [
+                "float",
+                "0x0.0p+0"
+              ],
+              [
+                "float",
+                "0x0.0p+0"
+              ]
+            ]
+          ]
+        ],
+        [
+          "back",
+          [
+            "tuple",
+            [
+              [
+                "float",
+                "-0x1.0000000000000p+0"
+              ],
+              [
+                "float",
+                "0x0.0p+0"
+              ],
+              [
+                "float",
+                "0x0.0p+0"
+              ]
+            ]
+          ]
+        ],
+        [
+          "side",
+          [
+            "tuple",
+            [
+              [
+                "float",
+                "0x0.0p+0"
+              ],
+              [
+                "float",
+                "0x1.0000000000000p+0"
+              ],
+              [
+                "float",
+                "0x0.0p+0"
+              ]
+            ]
+          ]
+        ],
+        [
+          "pole",
+          [
+            "tuple",
+            [
+              [
+                "float",
+                "0x0.0p+0"
+              ],
+              [
+                "float",
+                "0x0.0p+0"
+              ],
+              [
+                "float",
+                "0x1.0000000000000p+0"
+              ]
+            ]
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_component_geometry.py",
+    "original_name": "_RADIUS_DIRECTIONS",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.critical_point.bisection",
+    "name": "CRITICAL_POINT_DISTANCE_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-49"
+    ],
+    "source": "src/rocheometry/_computers/critical_point/bisection.py",
+    "original_name": "_DISTANCE_RELATIVE_TOLERANCE",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.critical_point.bisection",
+    "name": "CRITICAL_POINT_MINIMUM_DISTANCE",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-537"
+    ],
+    "source": "src/rocheometry/_computers/critical_point/bisection.py",
+    "original_name": "_MINIMUM_DISTANCE",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.critical_point.bisection",
+    "name": "CRITICAL_POINT_COMPANION_COORDINATE_GAP",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-53"
+    ],
+    "source": "src/rocheometry/_computers/critical_point/bisection.py",
+    "original_name": "_COMPANION_COORDINATE_GAP",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.defaults",
+    "name": "DEFAULT_REFERENCE_POLAR_ORDER",
+    "bits": [
+      "int",
+      "128"
+    ],
+    "source": "src/rocheometry/_computers/defaults.py",
+    "original_name": "DEFAULT_REFERENCE_POLAR_ORDER",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.defaults",
+    "name": "DEFAULT_REFERENCE_AZIMUTH_ORDER",
+    "bits": [
+      "int",
+      "64"
+    ],
+    "source": "src/rocheometry/_computers/defaults.py",
+    "original_name": "DEFAULT_REFERENCE_AZIMUTH_ORDER",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.defaults",
+    "name": "DEFAULT_REFERENCE_FILL_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.c25c268497682p-44"
+    ],
+    "source": "src/rocheometry/_computers/defaults.py",
+    "original_name": "DEFAULT_REFERENCE_FILL_TOLERANCE",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.defaults",
+    "name": "REFERENCE_SECTION_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.b7cdfd9d7bdbbp-34"
+    ],
+    "source": "src/rocheometry/_computers/defaults.py",
+    "original_name": "REFERENCE_SECTION_TOLERANCE",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.fitted",
+    "name": "FITTED_QI_MIN",
+    "bits": [
+      "float",
+      "0x1.5798ee2308c3ap-27"
+    ],
+    "source": "src/rocheometry/_computers/fitted.py",
+    "original_name": "FITTED_QI_MIN",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.fitted",
+    "name": "FITTED_QI_MAX",
+    "bits": [
+      "float",
+      "0x1.7d78400000000p+26"
+    ],
+    "source": "src/rocheometry/_computers/fitted.py",
+    "original_name": "FITTED_QI_MAX",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.fitted",
+    "name": "FITTED_FILL_ABSOLUTE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.0c6f7a0b5ed8dp-19"
+    ],
+    "source": "src/rocheometry/_computers/fitted.py",
+    "original_name": "FITTED_FILL_ABSOLUTE_TOLERANCE",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.lobe_volume_radius.fitted.computer",
+    "name": "FITTED_LOBE_INTERPOLATOR_REGISTRY",
+    "bits": [
+      "dict",
+      [
+        [
+          "linear",
+          [
+            "dataclass",
+            "LinearInterpolator",
+            []
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/lobe_volume_radius/fitted/computer.py",
+    "original_name": "_INTERPOLATORS",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.ownership",
+    "name": "FIELD_CERTIFICATE_BOUND_ULPS",
+    "bits": [
+      "int",
+      "32"
+    ],
+    "source": "src/rocheometry/_computers/ownership.py",
+    "original_name": "FIELD_CERTIFICATE_BOUND_ULPS",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.ownership",
+    "name": "OWNERSHIP_SIDE_ULPS",
+    "bits": [
+      "int",
+      "64"
+    ],
+    "source": "src/rocheometry/_computers/ownership.py",
+    "original_name": "OWNERSHIP_SIDE_ULPS",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.axis_contact",
+    "name": "AXIS_CONTACT_ROOT_AND_BRACKET_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.6849b86a12b9bp-46"
+    ],
+    "source": "src/rocheometry/_computers/section_path/axis_contact.py",
+    "original_name": "_LEVEL_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.axis_contact",
+    "name": "AXIS_CONTACT_ROOT_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.cd2b297d889bcp-51"
+    ],
+    "source": "src/rocheometry/_computers/section_path/axis_contact.py",
+    "original_name": "_ROOT_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.axis_contact",
+    "name": "AXIS_CONTACT_FOLD_ROOT_ABSOLUTE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-49"
+    ],
+    "source": "src/rocheometry/_computers/section_path/axis_contact.py",
+    "original_name": "_FOLD_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.axis_contact",
+    "name": "AXIS_CONTACT_INNER_BRACKET_SEED",
+    "bits": [
+      "float",
+      "0x1.6849b86a12b9bp-47"
+    ],
+    "source": "src/rocheometry/_computers/section_path/axis_contact.py",
+    "original_name": "_INNER_BRACKET_SEED",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.axis_contact",
+    "name": "AXIS_CONTACT_REFLECT_X",
+    "bits": [
+      "dataclass",
+      "AffineTransform2D",
+      [
+        [
+          "xx",
+          [
+            "float",
+            "-0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "xy",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yy",
+          [
+            "float",
+            "0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "tx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "ty",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/section_path/axis_contact.py",
+    "original_name": "_REFLECT_X",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.section_path.axis_contact",
+    "name": "AXIS_CONTACT_REFLECT_Y",
+    "bits": [
+      "dataclass",
+      "AffineTransform2D",
+      [
+        [
+          "xx",
+          [
+            "float",
+            "0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "xy",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yy",
+          [
+            "float",
+            "-0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "tx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "ty",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/section_path/axis_contact.py",
+    "original_name": "_REFLECT_Y",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.section_path.axis_contact",
+    "name": "AXIS_CONTACT_MAX_REFINEMENT_DEPTH",
+    "bits": [
+      "int",
+      "56"
+    ],
+    "source": "src/rocheometry/_computers/section_path/axis_contact.py",
+    "original_name": "_MAX_DEPTH",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.section_path.contact",
+    "name": "CONTACT_PLANE_PARALLEL_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.6849b86a12b9bp-47"
+    ],
+    "source": "src/rocheometry/_computers/section_path/contact.py",
+    "original_name": "_PARALLEL_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.contact",
+    "name": "CONTACT_PLANE_SEED_DEPTH_FACTOR",
+    "bits": [
+      "float",
+      "0x1.19799812dea11p-40"
+    ],
+    "source": "src/rocheometry/_computers/section_path/contact.py",
+    "original_name": "_SEED_DEPTH_FACTOR",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.contact",
+    "name": "CONTACT_PLANE_REFLECT_Y",
+    "bits": [
+      "dataclass",
+      "AffineTransform2D",
+      [
+        [
+          "xx",
+          [
+            "float",
+            "0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "xy",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yy",
+          [
+            "float",
+            "-0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "tx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "ty",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/section_path/contact.py",
+    "original_name": "_REFLECTION",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.section_path.gauge_fixed",
+    "name": "NECK_SLOT_PLACEMENT_MULTIPLIER",
+    "bits": [
+      "float",
+      "0x1.4000000000000p+3"
+    ],
+    "source": "src/rocheometry/_computers/section_path/gauge_fixed.py",
+    "original_name": "NECK_BETA",
+    "classification": "shape multiplier verified on the holdout"
+  },
+  {
+    "module": "rocheometry._computers.section_path.traced",
+    "name": "SECTION_TRIG_CLEANUP_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.6849b86a12b9bp-47"
+    ],
+    "source": "src/rocheometry/_computers/section_path/traced.py",
+    "original_name": "_TRIG_CLEANUP",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.traced",
+    "name": "SECTION_ARM_ROOT_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.cd2b297d889bcp-51"
+    ],
+    "source": "src/rocheometry/_computers/section_path/traced.py",
+    "original_name": "_MINIMUM_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.traced",
+    "name": "SECTION_RAY_ROOT_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-47"
+    ],
+    "source": "src/rocheometry/_computers/section_path/traced.py",
+    "original_name": "_ROOT_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.traced",
+    "name": "SECTION_ARM_CURVATURE_RESIDUAL_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.12e0be826d695p-30"
+    ],
+    "source": "src/rocheometry/_computers/section_path/traced.py",
+    "original_name": "_LEVEL_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.section_path.traced",
+    "name": "SECTION_MAX_REFINEMENT_DEPTH",
+    "bits": [
+      "int",
+      "24"
+    ],
+    "source": "src/rocheometry/_computers/section_path/traced.py",
+    "original_name": "_MAX_DEPTH",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.section_path.traced",
+    "name": "SECTION_REFLECT_SECOND_AXIS",
+    "bits": [
+      "dataclass",
+      "AffineTransform2D",
+      [
+        [
+          "xx",
+          [
+            "float",
+            "0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "xy",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yy",
+          [
+            "float",
+            "-0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "tx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "ty",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/section_path/traced.py",
+    "original_name": "_REFLECT_SECOND",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.section_path.traced",
+    "name": "SECTION_REFLECT_FIRST_AXIS",
+    "bits": [
+      "dataclass",
+      "AffineTransform2D",
+      [
+        [
+          "xx",
+          [
+            "float",
+            "-0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "xy",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "yy",
+          [
+            "float",
+            "0x1.0000000000000p+0"
+          ]
+        ],
+        [
+          "tx",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ],
+        [
+          "ty",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/section_path/traced.py",
+    "original_name": "_REFLECT_FIRST",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.chord",
+    "name": "LOS_STATIONARY_INTERVAL_BOUND_ULPS",
+    "bits": [
+      "int",
+      "32"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/chord.py",
+    "original_name": "_BOUND_ULPS",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.chord",
+    "name": "LOS_STATIONARY_ROOT_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-50"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/chord.py",
+    "original_name": "_ROOT_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.chord",
+    "name": "LOS_INTERVAL_EPSILON",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-52"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/chord.py",
+    "original_name": "_EPS",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.junction_polish",
+    "name": "LIMB_JUNCTION_NEWTON_STEP_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.cd2b297d889bcp-52"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/junction_polish.py",
+    "original_name": "_STEP_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.limb",
+    "name": "LIMB_BRANCH_BOUND_ULPS",
+    "bits": [
+      "int",
+      "32"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/limb.py",
+    "original_name": "_BOUND_ULPS",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.limb",
+    "name": "LIMB_JUNCTION_ANGLE_ROOT_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.cd2b297d889bcp-51"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/limb.py",
+    "original_name": "_ROOT_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.limb",
+    "name": "LIMB_JUNCTION_POLISH_ACCEPTANCE_FACTOR",
+    "bits": [
+      "float",
+      "0x1.0000000000000p+0"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/limb.py",
+    "original_name": "_POLISH_ACCEPTANCE_FACTOR",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.projected",
+    "name": "LOS_RESIDUAL_VALUE_ULPS",
+    "bits": [
+      "int",
+      "8"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/projected.py",
+    "original_name": "_VALUE_ULPS",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.projected",
+    "name": "LOS_MAXIMUM_RADIUS_ROOT_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-49"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/projected.py",
+    "original_name": "_ROOT_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.projected",
+    "name": "LOS_RIM_CROSSING_ROOT_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-50"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/projected.py",
+    "original_name": "_CROSSING_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.projected",
+    "name": "LOS_START_ANGLE_MATCH_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.cd2b297d889bcp-51"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/projected.py",
+    "original_name": "_ANGLE_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.silhouette.projected",
+    "name": "LOS_STATIONARITY_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.c25c268497682p-43"
+    ],
+    "source": "src/rocheometry/_computers/silhouette/projected.py",
+    "original_name": "_STATIONARITY_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.surface_potential.bisection",
+    "name": "DEFAULT_VOLUME_RADIUS_FILL_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.5798ee2308c3ap-26"
+    ],
+    "source": "src/rocheometry/_computers/surface_potential/bisection.py",
+    "original_name": "DEFAULT_VOLUME_RADIUS_FILL_TOLERANCE",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.surface_potential.bisection",
+    "name": "FILL_INVERSION_MAX_ITERATIONS",
+    "bits": [
+      "int",
+      "80"
+    ],
+    "source": "src/rocheometry/_computers/surface_potential/bisection.py",
+    "original_name": "_MAX_POTENTIAL_ITERATIONS",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.surface_potential.bisection",
+    "name": "FILL_INVERSION_MAX_BRACKET_EXPANSIONS",
+    "bits": [
+      "int",
+      "128"
+    ],
+    "source": "src/rocheometry/_computers/surface_potential/bisection.py",
+    "original_name": "_MAX_BRACKET_EXPANSIONS",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.surface_radius.bisection",
+    "name": "RADIUS_SOLVE_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-44"
+    ],
+    "source": "src/rocheometry/_computers/surface_radius/bisection.py",
+    "original_name": "_SURFACE_REL_TOL",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.surface_radius.radial",
+    "name": "RADIUS_INNER_BRACKET_SEED_FACTOR",
+    "bits": [
+      "float",
+      "0x1.19799812dea11p-40"
+    ],
+    "source": "src/rocheometry/_computers/surface_radius/radial.py",
+    "original_name": "_INNER_BRACKET_SEED",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.surface_radius.radial",
+    "name": "RADIUS_INVERSE_COORDINATE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-44"
+    ],
+    "source": "src/rocheometry/_computers/surface_radius/radial.py",
+    "original_name": "_INVERSE_COORDINATE_TOLERANCE",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.surface_sample.angular",
+    "name": "DEFAULT_FITTED_POLAR_ORDER",
+    "bits": [
+      "int",
+      "64"
+    ],
+    "source": "src/rocheometry/_computers/surface_sample/angular.py",
+    "original_name": "DEFAULT_POLAR_ORDER",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.surface_sample.angular",
+    "name": "DEFAULT_FITTED_AZIMUTH_ORDER",
+    "bits": [
+      "int",
+      "24"
+    ],
+    "source": "src/rocheometry/_computers/surface_sample/angular.py",
+    "original_name": "DEFAULT_AZIMUTH_ORDER",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.surface_sample.angular",
+    "name": "SADDLE_CLUSTERING_FACTOR",
+    "bits": [
+      "float",
+      "0x1.0000000000000p+1"
+    ],
+    "source": "src/rocheometry/_computers/surface_sample/angular.py",
+    "original_name": "SADDLE_CLUSTERING_FACTOR",
+    "classification": "shape multiplier verified on the holdout"
+  },
+  {
+    "module": "rocheometry._computers.surface_sample.angular",
+    "name": "AZIMUTH_CLUSTERING_FACTOR",
+    "bits": [
+      "float",
+      "0x1.0000000000000p+0"
+    ],
+    "source": "src/rocheometry/_computers/surface_sample/angular.py",
+    "original_name": "AZIMUTH_CLUSTERING_FACTOR",
+    "classification": "shape multiplier verified on the holdout"
+  },
+  {
+    "module": "rocheometry._computers.surface_sample.angular",
+    "name": "FRONT_POWER_FACTOR",
+    "bits": [
+      "float",
+      "0x1.9000000000000p+6"
+    ],
+    "source": "src/rocheometry/_computers/surface_sample/angular.py",
+    "original_name": "FRONT_POWER_FACTOR",
+    "classification": "shape multiplier verified on the holdout"
+  },
+  {
+    "module": "rocheometry._computers.surface_sample.angular",
+    "name": "RIM_QUARTIC_COEFFICIENT",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-2"
+    ],
+    "source": "src/rocheometry/_computers/surface_sample/angular.py",
+    "original_name": "RIM_QUARTIC_COEFFICIENT",
+    "classification": "shape multiplier verified on the holdout"
+  },
+  {
+    "module": "rocheometry._computers.surface_sample.angular",
+    "name": "RIM_CUBIC_FACTOR",
+    "bits": [
+      "float",
+      "0x1.e000000000000p+4"
+    ],
+    "source": "src/rocheometry/_computers/surface_sample/angular.py",
+    "original_name": "RIM_CUBIC_FACTOR",
+    "classification": "shape multiplier verified on the holdout"
+  },
+  {
+    "module": "rocheometry._computers.watershed.family",
+    "name": "WATERSHED_FIT_RANK_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.b7cdfd9d7bdbbp-34"
+    ],
+    "source": "src/rocheometry/_computers/watershed/family.py",
+    "original_name": "_QR_RANK_THRESHOLD",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.family",
+    "name": "WATERSHED_FIT_TRIG_CLEANUP_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-50"
+    ],
+    "source": "src/rocheometry/_computers/watershed/family.py",
+    "original_name": "_TRIG_CLEANUP",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_RIM_DEPTH_COVERAGE_FACTOR",
+    "bits": [
+      "float",
+      "0x1.0cccccccccccdp+0"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_RIM_DEPTH_FACTOR",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_FAMILY_DEPTH_COVERAGE_FACTOR",
+    "bits": [
+      "float",
+      "0x1.0000000000000p+1"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_FAMILY_DEPTH_FACTOR",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_SEED_DEPTH_FACTOR",
+    "bits": [
+      "float",
+      "0x1.19799812dea11p-40"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_SEED_DEPTH_FACTOR",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_INITIAL_LOG_STEP",
+    "bits": [
+      "float",
+      "0x1.999999999999ap-4"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_INITIAL_LOG_STEP",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_RK_SAFETY_FACTOR",
+    "bits": [
+      "float",
+      "0x1.ccccccccccccdp-1"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_RK_SAFETY",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_RK_MIN_STEP_FACTOR",
+    "bits": [
+      "float",
+      "0x1.999999999999ap-3"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_RK_MIN_FACTOR",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_RK_MAX_STEP_FACTOR",
+    "bits": [
+      "float",
+      "0x1.4000000000000p+2"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_RK_MAX_FACTOR",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_RIM_RADIUS_ROOT_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-47"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_RADIUS_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_TRIG_CLEANUP_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.203af9ee75616p-50"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_TRIG_CLEANUP",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_AZIMUTH_MATCH_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.6849b86a12b9bp-47"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_ANGLE_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_DEPTH_ROOT_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.6849b86a12b9bp-46"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_ROOT_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_RIM_STATIONARITY_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.c25c268497682p-43"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_STATIONARITY_ROUNDOFF",
+    "classification": "insensitive control"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "DORMAND_PRINCE_STAGE_COEFFICIENTS",
+    "bits": [
+      "tuple",
+      [
+        [
+          "tuple",
+          []
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x1.999999999999ap-3"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x1.3333333333333p-4"
+            ],
+            [
+              "float",
+              "0x1.ccccccccccccdp-3"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x1.f49f49f49f49fp-1"
+            ],
+            [
+              "float",
+              "-0x1.ddddddddddddep+1"
+            ],
+            [
+              "float",
+              "0x1.c71c71c71c71cp+1"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x1.79eec0fc37181p+1"
+            ],
+            [
+              "float",
+              "-0x1.7310bd29520e4p+3"
+            ],
+            [
+              "float",
+              "0x1.3a552363c5290p+3"
+            ],
+            [
+              "float",
+              "-0x1.29c9eba1e3345p-2"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x1.6c52bf5a814b0p+1"
+            ],
+            [
+              "float",
+              "-0x1.583e0f83e0f84p+3"
+            ],
+            [
+              "float",
+              "0x1.1d016a3721e8bp+3"
+            ],
+            [
+              "float",
+              "0x1.1d1745d1745d1p-2"
+            ],
+            [
+              "float",
+              "-0x1.1818970d9cc2fp-2"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x1.7555555555555p-4"
+            ],
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "0x1.cc0499a5605fbp-2"
+            ],
+            [
+              "float",
+              "0x1.4d55555555555p-1"
+            ],
+            [
+              "float",
+              "-0x1.4a1cfb2b78c13p-2"
+            ],
+            [
+              "float",
+              "0x1.0c30c30c30c31p-3"
+            ]
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_A",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "DORMAND_PRINCE_STAGE_TIMES",
+    "bits": [
+      "tuple",
+      [
+        [
+          "float",
+          "0x0.0p+0"
+        ],
+        [
+          "float",
+          "0x1.999999999999ap-3"
+        ],
+        [
+          "float",
+          "0x1.3333333333333p-2"
+        ],
+        [
+          "float",
+          "0x1.999999999999ap-1"
+        ],
+        [
+          "float",
+          "0x1.c71c71c71c71cp-1"
+        ],
+        [
+          "float",
+          "0x1.0000000000000p+0"
+        ],
+        [
+          "float",
+          "0x1.0000000000000p+0"
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_C",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "DORMAND_PRINCE_ERROR_COEFFICIENTS",
+    "bits": [
+      "tuple",
+      [
+        [
+          "float",
+          "0x1.4320fedcba987p-10"
+        ],
+        [
+          "float",
+          "0x0.0p+0"
+        ],
+        [
+          "float",
+          "-0x1.16b5a550abfc4p-8"
+        ],
+        [
+          "float",
+          "0x1.2eeeeeeeeeeefp-5"
+        ],
+        [
+          "float",
+          "-0x1.a0ad1d2ca1858p-5"
+        ],
+        [
+          "float",
+          "0x1.5748a7bdaf0e2p-5"
+        ],
+        [
+          "float",
+          "-0x1.999999999999ap-6"
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_E",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "DORMAND_PRINCE_DENSE_COEFFICIENTS",
+    "bits": [
+      "tuple",
+      [
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x1.0000000000000p+0"
+            ],
+            [
+              "float",
+              "-0x1.6d421c90ad023p+1"
+            ],
+            [
+              "float",
+              "0x1.892ee3cc04af1p+1"
+            ],
+            [
+              "float",
+              "-0x1.208439215a046p+0"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "0x0.0p+0"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "0x1.017b046ccf5e3p+2"
+            ],
+            [
+              "float",
+              "-0x1.8ff4e27046a46p+2"
+            ],
+            [
+              "float",
+              "0x1.56744f3b9a987p+1"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "-0x1.ddbf58f446418p+1"
+            ],
+            [
+              "float",
+              "0x1.423501cf78761p+3"
+            ],
+            [
+              "float",
+              "-0x1.6bdfac7a2320cp+2"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "0x1.4703cfd92b80bp+1"
+            ],
+            [
+              "float",
+              "-0x1.998b0ea409b10p+2"
+            ],
+            [
+              "float",
+              "0x1.c2ceae0978c92p+1"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "-0x1.5fda423d67152p+0"
+            ],
+            [
+              "float",
+              "0x1.a2e673007345fp+1"
+            ],
+            [
+              "float",
+              "-0x1.c46c8b61f95e5p+0"
+            ]
+          ]
+        ],
+        [
+          "tuple",
+          [
+            [
+              "float",
+              "0x0.0p+0"
+            ],
+            [
+              "float",
+              "0x1.61e97be1b9227p+0"
+            ],
+            [
+              "float",
+              "-0x1.e1e97be1b9227p+1"
+            ],
+            [
+              "float",
+              "0x1.30f4bdf0dc914p+1"
+            ]
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_P",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_AZIMUTH_LINE_COUNT",
+    "bits": [
+      "int",
+      "25"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_LINE_COUNT",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._computers.watershed.traced",
+    "name": "WATERSHED_COSINE_SERIES_TERMS",
+    "bits": [
+      "int",
+      "17"
+    ],
+    "source": "src/rocheometry/_computers/watershed/traced.py",
+    "original_name": "_SERIES_TERMS",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._numerics.roots",
+    "name": "DEFAULT_ROOT_ABSOLUTE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.6849b86a12b9bp-47"
+    ],
+    "source": "src/rocheometry/_numerics/roots.py",
+    "original_name": "DEFAULT_ABSOLUTE_TOLERANCE",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._numerics.roots",
+    "name": "DEFAULT_ROOT_RELATIVE_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.0000000000000p-48"
+    ],
+    "source": "src/rocheometry/_numerics/roots.py",
+    "original_name": "DEFAULT_RELATIVE_TOLERANCE",
+    "classification": "resolution budget"
+  },
+  {
+    "module": "rocheometry._numerics.roots",
+    "name": "ROOT_MAX_ITERATIONS",
+    "bits": [
+      "int",
+      "256"
+    ],
+    "source": "src/rocheometry/_numerics/roots.py",
+    "original_name": "DEFAULT_MAX_ITERATIONS",
+    "classification": "work guard or cache capacity"
+  },
+  {
+    "module": "rocheometry._orbit",
+    "name": "NOMINAL_SOLAR_MASS_PARAMETER",
+    "bits": [
+      "float",
+      "0x1.cc70534284d5ep+66"
+    ],
+    "source": "src/rocheometry/_orbit.py",
+    "original_name": "NOMINAL_SOLAR_MASS_PARAMETER",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._orbit",
+    "name": "NOMINAL_SOLAR_RADIUS",
+    "bits": [
+      "float",
+      "0x1.4bbc510000000p+29"
+    ],
+    "source": "src/rocheometry/_orbit.py",
+    "original_name": "NOMINAL_SOLAR_RADIUS",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._orbit",
+    "name": "SECONDS_PER_DAY",
+    "bits": [
+      "float",
+      "0x1.5180000000000p+16"
+    ],
+    "source": "src/rocheometry/_orbit.py",
+    "original_name": "_SECONDS_PER_DAY",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._orbit",
+    "name": "KEPLER_SOLAR_UNIT_FACTOR",
+    "bits": [
+      "float",
+      "0x1.2a1b99dc545fcp+6"
+    ],
+    "source": "src/rocheometry/_orbit.py",
+    "original_name": "_KEPLER_CONSTANT",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._planes",
+    "name": "ORBITAL_PLANE",
+    "bits": [
+      "dataclass",
+      "CentrelinePlane",
+      [
+        [
+          "inclination",
+          [
+            "float",
+            "0x0.0p+0"
+          ]
+        ]
+      ]
+    ],
+    "source": "src/rocheometry/_planes.py",
+    "original_name": "ORBITAL_PLANE",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._roche.triangular",
+    "name": "TRIANGULAR_POINT_Y_COORDINATE",
+    "bits": [
+      "float",
+      "0x1.bb67ae8584caap-1"
+    ],
+    "source": "src/rocheometry/_roche/triangular.py",
+    "original_name": "_TRIANGULAR_Y",
+    "classification": "derived"
+  },
+  {
+    "module": "rocheometry._surface_quadrature",
+    "name": "QUADRATURE_NORMAL_LENGTH_TOLERANCE",
+    "bits": [
+      "float",
+      "0x1.19799812dea11p-40"
+    ],
+    "source": "src/rocheometry/_surface_quadrature.py",
+    "original_name": "_NORMAL_ROUNDOFF",
+    "classification": "resolution budget"
+  }
+]

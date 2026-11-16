@@ -1,0 +1,17 @@
+{
+  "artefact": "volume-radius-model.json",
+  "sha256": "84fc4dc1f0aab2f058ff2ed1711e7e3d64fede09a94874d4b26b7a4dfcc2eb06",
+  "reproducible": true,
+  "inputs": {
+    "fits/lobe_volume_radius/build.py": "28a17fd4cfb5094f4dc81c4115c24a76fd567b62b16ba2d6c1653b118664e09a",
+    "fits/lobe_volume_radius/config.yaml": "b8d62bd2a11f86379c0b898ec4c3e148d0b7220fa237c282c7b4f229d291a13b",
+    "fits/common.py": "3659f4e6cb0eb62e17cda2d9d4858275df3b548e2dc4c697fc25a1b6343e160f"
+  },
+  "environment": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "python": "3.12",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  }
+}

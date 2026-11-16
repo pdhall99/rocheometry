@@ -1,0 +1,130 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: F=0.2, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.2'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.3, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.3'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.4, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.4'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.5, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.5'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.6, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.6'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.7, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.7'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.8, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.8'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.9, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.9'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=0.95, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '0.95'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# - {name: F=1.0, datatype: string, meta: {rocheometry_quantity: mean_gravity, level: {kind: fill_out_detached, fill_out: '1.0'}, units: '|grad C| = 2|grad U|, units G(M1+M2)/a^2'}}
+# meta:
+#   title: 'Table 12: Average gravity of the primary, detached configurations'
+#   reference: Mochnacki 1984, Table 12
+#   sources:
+#   - title: Mochnacki S. W., 1984, ApJS, 55, 551, Accurate Integrations of the Roche Model
+#     bibcode: 1984ApJS...55..551M
+#     url: https://ui.adsabs.harvard.edu/abs/1984ApJS...55..551M
+#   - title: 'Mochnacki S. W., 1985, ApJS, 59, 445, Erratum: Accurate Integrations of the Roche
+#       Model'
+#     bibcode: 1985ApJS...59..445M
+#     url: https://ui.adsabs.harvard.edu/abs/1985ApJS...59..445M
+#   retrieval:
+#     method: 'two independent readings: values read from the ADS page images at 300 dpi, then
+#       compared digit by digit with the scan''s OCR text layer; the three disagreements (Table
+#       1 q=0.61 X2, q=0.89 C1; Table 17 q=0.60 F=0.95) were OCR misreads, settled on the page
+#       image at 220-600 dpi'
+#     date: '2026-10-14'
+#     typography: FORTRAN-style exponents such as 1.14899-1 and 1.45514+2 are stored as 1.14899e-1
+#       and 1.45514e+2; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: companion_mass_ratio
+#       description: q = M2/M1 <= 1; the tabulated component is the primary, qi = 1/q
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: tabulated C = 2/(1+q)/r1 + 2q/(1+q)/r2 + (x - q/(1+q))^2 + y^2 = 2U, primary
+#         at the origin
+#     fill_out:
+#       kind: fill_out_detached
+#       description: F = C1/C inside the Roche lobe, so U = U_L1/F; F = 1 is the lobe
+#   allowance_half_units: 4.0
+#   allowance_reason: the author states areas and gravities are accurate to +-2 in the last
+#     printed digit
+#   errata:
+#     '0.04':
+#       F=0.9:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '5.17042'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#       F=0.95:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '4.41915'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#     '0.06':
+#       F=0.9:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '5.56027'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#       F=0.95:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '4.78517'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#     '0.08':
+#       F=0.9:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '5.87071'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#       F=0.95:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '5.07604'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#     '0.10':
+#       F=0.9:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '6.12862'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#       F=0.95:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '5.31746'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#     '0.12':
+#       F=0.9:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '6.34971'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#       F=0.95:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '5.52309'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#     '0.16':
+#       F=0.9:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '7.08263'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#       F=0.95:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '5.85739'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#     '0.20':
+#       F=0.9:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '7.40866'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+#       F=0.95:
+#         source: 1985ApJS...59..445M
+#         printed_1984: '6.11854'
+#         reason: programming mistake for primaries at fill-out 0.90 and 0.95, q = 0.04-0.20
+q F=0.2 F=0.3 F=0.4 F=0.5 F=0.6 F=0.7 F=0.8 F=0.9 F=0.95 F=1.0
+0.04 1.45514e+2 6.40441e+1 3.54944e+1 2.22215e+1 1.49465e+1 1.04905e+1 7.52161 5.39348 4.52429 3.72965
+0.06 1.55191e+2 6.81920e+1 3.77488e+1 2.36201e+1 1.58927e+1 1.11730e+1 8.04093 5.80998 4.90609 4.08645
+0.08 1.63646e+2 7.17884e+1 3.96871e+1 2.48116e+1 1.66907e+1 1.17420e+1 8.46824 6.14696 5.21146 4.36708
+0.10 1.71282e+2 7.50137e+1 4.14122e+1 2.58632e+1 1.73885e+1 1.22345e+1 8.83368 6.43094 5.46640 4.59839
+0.12 1.78314e+2 7.79656e+1 4.29801e+1 2.68115e+1 1.80123e+1 1.26705e+1 9.15356 6.67617 5.68472 4.79435
+0.16 1.91063e+2 8.32708e+1 4.57709e+1 2.84815e+1 1.90975e+1 1.34186e+1 9.69385 7.08263 6.04251 5.11095
+0.20 2.02537e+2 8.79955e+1 4.82269e+1 2.99313e+1 2.00252e+1 1.40468e+1 1.01381e+1 7.40866 6.32527 5.35661
+0.24 2.13087e+2 9.22981e+1 5.04392e+1 3.12208e+1 2.08383e+1 1.45880e+1 1.05132e+1 7.67712 6.55465 5.55227
+0.30 2.27626e+2 9.81653e+1 5.34191e+1 3.29329e+1 2.18995e+1 1.52799e+1 1.09808e+1 8.00145 6.82651 5.77867
+0.40 2.49431e+2 1.06836e+2 5.77467e+1 3.53680e+1 2.33709e+1 1.62095e+1 1.15844e+1 8.39864 7.14844 6.03531
+0.50 2.69141e+2 1.14551e+2 6.15255e+1 3.74455e+1 2.45901e+1 1.69510e+1 1.20417e+1 8.67819 7.36370 6.19489
+0.60 2.87379e+2 1.21599e+2 6.49228e+1 3.92762e+1 2.56368e+1 1.75654e+1 1.24015e+1 8.88078 7.50992 6.29253
+0.70 3.04519e+2 1.28150e+2 6.80387e+1 4.09266e+1 2.65587e+1 1.80890e+1 1.26929e+1 9.03032 7.60913 6.34859
+0.80 3.20802e+2 1.34317e+2 7.09386e+1 4.24398e+1 2.73869e+1 1.85453e+1 1.29344e+1 9.14199 7.67520 6.37581
+0.90 3.36396e+2 1.40177e+2 7.36672e+1 4.38453e+1 2.81424e+1 1.89502e+1 1.31384e+1 9.22589 7.71733 6.38256
+1.00 3.51420e+2 1.45786e+2 7.62566e+1 4.51643e+1 2.88401e+1 1.93149e+1 1.33137e+1 9.28901 7.74182 6.37456

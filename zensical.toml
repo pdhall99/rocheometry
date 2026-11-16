@@ -1,0 +1,190 @@
+[project]
+site_url = "https://pdhall99.github.io/rocheometry"
+site_name = "Rocheometry"
+site_description = "Compute the equipotential geometry of binary systems in the classical Roche model"
+site_author = "PD Hall"
+copyright = "Copyright &copy; 2026 PD Hall"
+
+repo_url = "https://github.com/pdhall99/rocheometry"
+repo_name = "pdhall99/rocheometry"
+edit_uri = "edit/main/docs/site/"
+
+docs_dir = "docs/site"
+
+nav = [
+  { "Home" = "index.md" },
+
+  { "Getting started" = [
+    "getting-started/index.md",
+    "getting-started/installation.md",
+    "getting-started/quickstart.md",
+  ] },
+
+  { "User guide" = [
+    "guide/index.md",
+    "guide/model.md",
+    "guide/binaries-and-components.md",
+    "guide/surfaces.md",
+    "guide/sections-and-silhouettes.md",
+    "guide/quadrature.md",
+    "guide/potentials.md",
+    "guide/accuracy.md",
+  ] },
+
+  { "Recipes" = [
+    "recipes/index.md",
+    "recipes/wilson-devinney-and-phoebe.md",
+    "recipes/surface-gravity.md",
+    "recipes/roche-lobe-diagram.md",
+    "recipes/potential-diagram.md",
+    "recipes/potential-well.md",
+    "recipes/contour-map.md",
+    "recipes/mesh.md",
+    "recipes/temperature-map.md",
+    "recipes/lobe-radii.md",
+    "recipes/gravity-darkening.md",
+    "recipes/l1-nozzle.md",
+  ] },
+
+  { "API reference" = [
+    "api/index.md",
+    "api/rocheometry.md",
+    "api/svg.md",
+    "api/matplotlib.md",
+  ] },
+
+  { "Project" = [
+    "project/index.md",
+    "project/changelog.md",
+    "project/compatibility-and-versioning.md",
+    "project/contributing.md",
+    "project/license.md",
+  ] },
+]
+
+extra_css = ["stylesheets/extra.css"]
+extra_javascript = [
+  "javascripts/doctest-copy.js",
+  "javascripts/mathjax.js",
+  "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+]
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/pdhall99"
+name = "PD Hall on GitHub"
+
+[project.theme]
+# variant = "classic"
+# custom_dir = "overrides"
+# favicon = "images/favicon.png"
+language = "en"
+features = [
+  "announce.dismiss",
+  # "content.action.edit",
+  # "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  # "header.autohide",
+  # "navigation.expand",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  # "navigation.instant.progress",
+  "navigation.path",
+  # "navigation.prune",
+  "navigation.sections",
+  # "navigation.tabs",
+  # "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  # "toc.follow",
+  # "toc.integrate",
+]
+
+# logo = "assets/logo.png"
+
+# [project.theme.icon]
+# logo = "lucide/smile"
+
+# [project.theme.font]
+# text = "Inter"
+# code = "Jetbrains Mono"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+# [[project.extra.social]]
+# icon = "fontawesome/brands/github"
+# link = "https://github.com/user/repo"
+
+# [[project.extra.social]]
+# icon = "fontawesome/brands/mastodon"
+# link = "https://fosstodon.org/@user"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc.permalink = true
+pymdownx.arithmatex.generic = true
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.magiclink = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.snippets.base_path = ["."]
+# pymdownx.snippets.base_path = "includes"
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+pymdownx.tabbed.alternate_style = true
+pymdownx.tabbed.combine_header_slug = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.tilde = {}
+
+[project.plugins.mkdocstrings.handlers.python]
+inventories = ["https://docs.python.org/3/objects.inv"]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+filters = ["!^_"]
+inherited_members = true
+show_source = false
+show_signature = true
+show_signature_annotations = true
+separate_signature = true
+signature_crossrefs = true
+annotations_path = "brief"

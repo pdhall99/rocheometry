@@ -1,0 +1,902 @@
+{
+  "line_count": 513,
+  "samples": [
+    {
+      "reference": false,
+      "qi": 1e-06,
+      "factor": 1e-06,
+      "potential": 1.500214671735344,
+      "volume": 4.991285889905101e-07,
+      "area": 0.0003110276783397567,
+      "integrated_mean_curvature": 0.0636209763326544,
+      "mean_gravity": 0.037193155708102194,
+      "matched": {
+        "volume": 4.991285889905101e-07,
+        "area": 0.0003110276783397567,
+        "integrated_mean_curvature": 0.0636209763326544,
+        "mean_gravity": 0.037193155708102194
+      },
+      "converged": {
+        "volume": 4.991285889905101e-07,
+        "area": 0.0003110276783397567,
+        "integrated_mean_curvature": 0.0636209763326544,
+        "mean_gravity": 0.037193155708102194
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1e-06,
+      "factor": 0.01,
+      "potential": 1.500214665069317,
+      "volume": 4.992038090248612e-07,
+      "area": 0.0003110679723416406,
+      "integrated_mean_curvature": 0.06336793933917158,
+      "mean_gravity": 0.03718785429072236,
+      "matched": {
+        "volume": 4.992038090248629e-07,
+        "area": 0.0003110679723416393,
+        "integrated_mean_curvature": 0.06336793933918922,
+        "mean_gravity": 0.03718785429072252
+      },
+      "converged": {
+        "volume": 4.992038090248621e-07,
+        "area": 0.000311067972341639,
+        "integrated_mean_curvature": 0.06336793933919112,
+        "mean_gravity": 0.03718785429072254
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1e-06,
+      "factor": 0.5,
+      "potential": 1.5002143384013413,
+      "volume": 5.029233939627151e-07,
+      "area": 0.0003126949727062166,
+      "integrated_mean_curvature": 0.061977450810231524,
+      "mean_gravity": 0.036970569625809226,
+      "matched": {
+        "volume": 5.029233939627499e-07,
+        "area": 0.00031269497270617177,
+        "integrated_mean_curvature": 0.061977450810314735,
+        "mean_gravity": 0.036970569625814347
+      },
+      "converged": {
+        "volume": 5.029233939627541e-07,
+        "area": 0.0003126949727061674,
+        "integrated_mean_curvature": 0.061977450810323416,
+        "mean_gravity": 0.03697056962581481
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1e-06,
+      "factor": 0.99,
+      "potential": 1.5002140117333653,
+      "volume": 5.067337519183759e-07,
+      "area": 0.0003143392659832259,
+      "integrated_mean_curvature": 0.06149268345689762,
+      "mean_gravity": 0.03675293478855699,
+      "matched": {
+        "volume": 5.067337519185038e-07,
+        "area": 0.0003143392659831108,
+        "integrated_mean_curvature": 0.06149268345704635,
+        "mean_gravity": 0.036752934788569634
+      },
+      "converged": {
+        "volume": 5.067337519185097e-07,
+        "area": 0.0003143392659831044,
+        "integrated_mean_curvature": 0.061492683457055136,
+        "mean_gravity": 0.036752934788570384
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.001,
+      "factor": 1e-06,
+      "potential": 1.5199616328835792,
+      "volume": 0.00046958473051703607,
+      "area": 0.029732888037388137,
+      "integrated_mean_curvature": 0.6196918840237124,
+      "mean_gravity": 0.39063300281904967,
+      "matched": {
+        "volume": 0.00046958473051703607,
+        "area": 0.029732888037388137,
+        "integrated_mean_curvature": 0.6196918840237233,
+        "mean_gravity": 0.39063300281904967
+      },
+      "converged": {
+        "volume": 0.00046958473051703607,
+        "area": 0.029732888037388137,
+        "integrated_mean_curvature": 0.6196918840237238,
+        "mean_gravity": 0.39063300281904967
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.001,
+      "factor": 0.01,
+      "potential": 1.5199549722095853,
+      "volume": 0.0004702273284204533,
+      "area": 0.029762281344636713,
+      "integrated_mean_curvature": 0.6122977669445849,
+      "mean_gravity": 0.3902040306064601,
+      "matched": {
+        "volume": 0.0004702273284204585,
+        "area": 0.029762281344635464,
+        "integrated_mean_curvature": 0.6122977669450891,
+        "mean_gravity": 0.3902040306064759
+      },
+      "converged": {
+        "volume": 0.00047022732842045764,
+        "area": 0.029762281344635367,
+        "integrated_mean_curvature": 0.6122977669451252,
+        "mean_gravity": 0.390204030606477
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.001,
+      "factor": 0.5,
+      "potential": 1.5196285665433145,
+      "volume": 0.0005029188544368709,
+      "area": 0.030911483482130287,
+      "integrated_mean_curvature": 0.5762386885361458,
+      "mean_gravity": 0.3735821703724982,
+      "matched": {
+        "volume": 0.000502918854438099,
+        "area": 0.030911483482082468,
+        "integrated_mean_curvature": 0.5762386885388917,
+        "mean_gravity": 0.3735821703729967
+      },
+      "converged": {
+        "volume": 0.0005029188544381771,
+        "area": 0.030911483482079356,
+        "integrated_mean_curvature": 0.5762386885390659,
+        "mean_gravity": 0.37358217037302877
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.001,
+      "factor": 0.99,
+      "potential": 1.5193021608770434,
+      "volume": 0.000538919176490793,
+      "area": 0.03214007454635998,
+      "integrated_mean_curvature": 0.5676601032870725,
+      "mean_gravity": 0.3570613511809579,
+      "matched": {
+        "volume": 0.0005389191764936952,
+        "area": 0.032140074546276896,
+        "integrated_mean_curvature": 0.5676601032903605,
+        "mean_gravity": 0.3570613511817007
+      },
+      "converged": {
+        "volume": 0.0005389191764937906,
+        "area": 0.03214007454627433,
+        "integrated_mean_curvature": 0.5676601032904639,
+        "mean_gravity": 0.357061351181723
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.05,
+      "factor": 1e-06,
+      "potential": 1.704804631120331,
+      "volume": 0.01950778115595908,
+      "area": 0.3549593788485647,
+      "integrated_mean_curvature": 2.1345915370131134,
+      "mean_gravity": 1.575907193060816,
+      "matched": {
+        "volume": 0.01950778115595908,
+        "area": 0.3549593788485647,
+        "integrated_mean_curvature": 2.134591537013158,
+        "mean_gravity": 1.575907193060816
+      },
+      "converged": {
+        "volume": 0.01950778115595908,
+        "area": 0.3549593788485647,
+        "integrated_mean_curvature": 2.1345915370131605,
+        "mean_gravity": 1.575907193060816
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.05,
+      "factor": 0.01,
+      "potential": 1.7044900846623732,
+      "volume": 0.019592086735937764,
+      "area": 0.3559845969430955,
+      "integrated_mean_curvature": 2.0928899486842942,
+      "mean_gravity": 1.5708950106661108,
+      "matched": {
+        "volume": 0.019592086735938652,
+        "area": 0.35598459694306445,
+        "integrated_mean_curvature": 2.092889948686288,
+        "mean_gravity": 1.5708950106662443
+      },
+      "converged": {
+        "volume": 0.019592086735938707,
+        "area": 0.35598459694306206,
+        "integrated_mean_curvature": 2.092889948686424,
+        "mean_gravity": 1.5708950106662531
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.05,
+      "factor": 0.5,
+      "potential": 1.6890757667906562,
+      "volume": 0.024170836363875514,
+      "area": 0.3980813153631367,
+      "integrated_mean_curvature": 1.933023178313338,
+      "mean_gravity": 1.3817702733780612,
+      "matched": {
+        "volume": 0.02417083636412809,
+        "area": 0.39808131536183056,
+        "integrated_mean_curvature": 1.9330231783238239,
+        "mean_gravity": 1.3817702733813235
+      },
+      "converged": {
+        "volume": 0.024170836364148185,
+        "area": 0.39808131536172797,
+        "integrated_mean_curvature": 1.933023178324654,
+        "mean_gravity": 1.3817702733815795
+      }
+    },
+    {
+      "reference": false,
+      "qi": 0.05,
+      "factor": 0.99,
+      "potential": 1.673661448918939,
+      "volume": 0.030115510035928827,
+      "area": 0.45035444057785334,
+      "integrated_mean_curvature": 1.9482597390672676,
+      "mean_gravity": 1.19498673072122,
+      "matched": {
+        "volume": 0.030115510036620496,
+        "area": 0.4503544405752466,
+        "integrated_mean_curvature": 1.9482597390808931,
+        "mean_gravity": 1.1949867307250637
+      },
+      "converged": {
+        "volume": 0.030115510036654636,
+        "area": 0.4503544405751139,
+        "integrated_mean_curvature": 1.948259739081564,
+        "mean_gravity": 1.1949867307252642
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1.0,
+      "factor": 1e-06,
+      "potential": 1.9999997283981121,
+      "volume": 0.22959939564406984,
+      "area": 1.8272593731387532,
+      "integrated_mean_curvature": 4.825799836233209,
+      "mean_gravity": 3.1872795956095454,
+      "matched": {
+        "volume": 0.22959939564406984,
+        "area": 1.8272593731387532,
+        "integrated_mean_curvature": 4.825799836233209,
+        "mean_gravity": 3.1872795956095454
+      },
+      "converged": {
+        "volume": 0.22959939564406984,
+        "area": 1.8272593731387532,
+        "integrated_mean_curvature": 4.825799836233209,
+        "mean_gravity": 3.1872795956095454
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1.0,
+      "factor": 0.01,
+      "potential": 1.9972839811204308,
+      "volume": 0.23131619651558655,
+      "area": 1.8361724589766235,
+      "integrated_mean_curvature": 4.7263890206806085,
+      "mean_gravity": 3.169938033703247,
+      "matched": {
+        "volume": 0.23131619651558655,
+        "area": 1.8361724589766228,
+        "integrated_mean_curvature": 4.7263890206806085,
+        "mean_gravity": 3.169938033703247
+      },
+      "converged": {
+        "volume": 0.23131619651558655,
+        "area": 1.8361724589766235,
+        "integrated_mean_curvature": 4.726389020680608,
+        "mean_gravity": 3.169938033703247
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1.0,
+      "factor": 0.5,
+      "potential": 1.8641990560215382,
+      "volume": 0.33564508390461967,
+      "area": 2.265395872052797,
+      "integrated_mean_curvature": 4.581592706425068,
+      "mean_gravity": 2.477224933885438,
+      "matched": {
+        "volume": 0.33564508390461967,
+        "area": 2.2653958720527974,
+        "integrated_mean_curvature": 4.581592706425068,
+        "mean_gravity": 2.477224933885438
+      },
+      "converged": {
+        "volume": 0.33564508390461967,
+        "area": 2.265395872052797,
+        "integrated_mean_curvature": 4.581592706425068,
+        "mean_gravity": 2.477224933885438
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1.0,
+      "factor": 0.99,
+      "potential": 1.7311141309226457,
+      "volume": 0.5152859776977765,
+      "area": 2.9407284768816604,
+      "integrated_mean_curvature": 5.003665318757863,
+      "mean_gravity": 1.7861606037677706,
+      "matched": {
+        "volume": 0.5152859776977765,
+        "area": 2.9407284768816595,
+        "integrated_mean_curvature": 5.003665318757863,
+        "mean_gravity": 1.7861606037677706
+      },
+      "converged": {
+        "volume": 0.5152859776977765,
+        "area": 2.9407284768816604,
+        "integrated_mean_curvature": 5.003665318757863,
+        "mean_gravity": 1.7861606037677706
+      }
+    },
+    {
+      "reference": false,
+      "qi": 20.0,
+      "factor": 1e-06,
+      "potential": 1.7048046311203313,
+      "volume": 1.0513323394908038,
+      "area": 5.03307030625236,
+      "integrated_mean_curvature": 7.990577572313489,
+      "mean_gravity": 1.9600972635805542,
+      "matched": {
+        "volume": 1.0513323394908038,
+        "area": 5.03307030625236,
+        "integrated_mean_curvature": 7.990577572313448,
+        "mean_gravity": 1.9600972635805542
+      },
+      "converged": {
+        "volume": 1.0513323394908038,
+        "area": 5.03307030625236,
+        "integrated_mean_curvature": 7.990577572313445,
+        "mean_gravity": 1.9600972635805542
+      }
+    },
+    {
+      "reference": false,
+      "qi": 20.0,
+      "factor": 0.01,
+      "potential": 1.7044900846623734,
+      "volume": 1.0522005165560016,
+      "area": 5.0359550988993975,
+      "integrated_mean_curvature": 7.948407790864098,
+      "mean_gravity": 1.9586296515469457,
+      "matched": {
+        "volume": 1.0522005165560007,
+        "area": 5.035955098899425,
+        "integrated_mean_curvature": 7.948407790862191,
+        "mean_gravity": 1.9586296515469344
+      },
+      "converged": {
+        "volume": 1.0522005165560007,
+        "area": 5.035955098899426,
+        "integrated_mean_curvature": 7.948407790862141,
+        "mean_gravity": 1.958629651546934
+      }
+    },
+    {
+      "reference": false,
+      "qi": 20.0,
+      "factor": 0.5,
+      "potential": 1.6890757667906562,
+      "volume": 1.0960882093651918,
+      "area": 5.168063536438979,
+      "integrated_mean_curvature": 7.792744526761564,
+      "mean_gravity": 1.8915780593674676,
+      "matched": {
+        "volume": 1.0960882093650524,
+        "area": 5.168063536439689,
+        "integrated_mean_curvature": 7.792744526755819,
+        "mean_gravity": 1.8915780593672589
+      },
+      "converged": {
+        "volume": 1.0960882093650408,
+        "area": 5.168063536439762,
+        "integrated_mean_curvature": 7.792744526755345,
+        "mean_gravity": 1.8915780593672413
+      }
+    },
+    {
+      "reference": false,
+      "qi": 20.0,
+      "factor": 0.99,
+      "potential": 1.673661448918939,
+      "volume": 1.1428035736391466,
+      "area": 5.303149698827556,
+      "integrated_mean_curvature": 7.784377897336269,
+      "mean_gravity": 1.8257762681181235,
+      "matched": {
+        "volume": 1.1428035736386022,
+        "area": 5.303149698829614,
+        "integrated_mean_curvature": 7.784377897325537,
+        "mean_gravity": 1.8257762681176222
+      },
+      "converged": {
+        "volume": 1.1428035736385738,
+        "area": 5.303149698829711,
+        "integrated_mean_curvature": 7.7843778973249895,
+        "mean_gravity": 1.8257762681175966
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "factor": 1e-06,
+      "potential": 1.519961632883579,
+      "volume": 2.000486536608645,
+      "area": 7.858803873603071,
+      "integrated_mean_curvature": 10.036750131059543,
+      "mean_gravity": 1.0883136749439022,
+      "matched": {
+        "volume": 2.000486536608645,
+        "area": 7.858803873603071,
+        "integrated_mean_curvature": 10.036750131059527,
+        "mean_gravity": 1.0883136749439022
+      },
+      "converged": {
+        "volume": 2.000486536608645,
+        "area": 7.858803873603071,
+        "integrated_mean_curvature": 10.036750131059527,
+        "mean_gravity": 1.0883136749439022
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "factor": 0.01,
+      "potential": 1.519954972209585,
+      "volume": 2.0005524649372095,
+      "area": 7.859006573741934,
+      "integrated_mean_curvature": 10.029211211826748,
+      "mean_gravity": 1.0882688272921186,
+      "matched": {
+        "volume": 2.0005524649372095,
+        "area": 7.859006573741935,
+        "integrated_mean_curvature": 10.029211211826231,
+        "mean_gravity": 1.0882688272921186
+      },
+      "converged": {
+        "volume": 2.0005524649372095,
+        "area": 7.859006573741937,
+        "integrated_mean_curvature": 10.02921121182618,
+        "mean_gravity": 1.0882688272921186
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "factor": 0.5,
+      "potential": 1.5196285665433142,
+      "volume": 2.0037926402056643,
+      "area": 7.868616481456036,
+      "integrated_mean_curvature": 9.989843741870432,
+      "mean_gravity": 1.086116159974398,
+      "matched": {
+        "volume": 2.0037926402056625,
+        "area": 7.868616481456104,
+        "integrated_mean_curvature": 9.989843741866833,
+        "mean_gravity": 1.0861161599743898
+      },
+      "converged": {
+        "volume": 2.0037926402056625,
+        "area": 7.868616481456114,
+        "integrated_mean_curvature": 9.989843741866647,
+        "mean_gravity": 1.0861161599743894
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "factor": 0.99,
+      "potential": 1.5193021608770434,
+      "volume": 2.0070513861198283,
+      "area": 7.878174799950297,
+      "integrated_mean_curvature": 9.97574413198327,
+      "mean_gravity": 1.0839711281064546,
+      "matched": {
+        "volume": 2.0070513861198256,
+        "area": 7.8781747999503615,
+        "integrated_mean_curvature": 9.975744131980571,
+        "mean_gravity": 1.0839711281064457
+      },
+      "converged": {
+        "volume": 2.0070513861198256,
+        "area": 7.878174799950372,
+        "integrated_mean_curvature": 9.975744131980324,
+        "mean_gravity": 1.083971128106445
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000000.0,
+      "factor": 1e-06,
+      "potential": 1.500214671735344,
+      "volume": 2.260266234754723,
+      "area": 8.762213931985363,
+      "integrated_mean_curvature": 10.689350495200962,
+      "mean_gravity": 0.9182411706613783,
+      "matched": {
+        "volume": 2.260266234754723,
+        "area": 8.762213931985363,
+        "integrated_mean_curvature": 10.689350495200962,
+        "mean_gravity": 0.9182411706613783
+      },
+      "converged": {
+        "volume": 2.260266234754723,
+        "area": 8.762213931985363,
+        "integrated_mean_curvature": 10.689350495200962,
+        "mean_gravity": 0.9182411706613783
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000000.0,
+      "factor": 0.01,
+      "potential": 1.500214665069317,
+      "volume": 2.2602664083890476,
+      "area": 8.762215139359684,
+      "integrated_mean_curvature": 10.689093810410684,
+      "mean_gravity": 0.9182410045014022,
+      "matched": {
+        "volume": 2.2602664083890467,
+        "area": 8.762215139359684,
+        "integrated_mean_curvature": 10.689093810410663,
+        "mean_gravity": 0.9182410045014022
+      },
+      "converged": {
+        "volume": 2.2602664083890467,
+        "area": 8.762215139359684,
+        "integrated_mean_curvature": 10.689093810410663,
+        "mean_gravity": 0.9182410045014022
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000000.0,
+      "factor": 0.5,
+      "potential": 1.5002143384013413,
+      "volume": 2.260274918243483,
+      "area": 8.76227393753333,
+      "integrated_mean_curvature": 10.687563397551095,
+      "mean_gravity": 0.9182329003718788,
+      "matched": {
+        "volume": 2.260274918243483,
+        "area": 8.762273937533333,
+        "integrated_mean_curvature": 10.68756339755099,
+        "mean_gravity": 0.918232900371879
+      },
+      "converged": {
+        "volume": 2.260274918243483,
+        "area": 8.762273937533331,
+        "integrated_mean_curvature": 10.687563397550976,
+        "mean_gravity": 0.918232900371879
+      }
+    },
+    {
+      "reference": false,
+      "qi": 1000000.0,
+      "factor": 0.99,
+      "potential": 1.5002140117333653,
+      "volume": 2.2602834299065773,
+      "area": 8.762332646098416,
+      "integrated_mean_curvature": 10.686869965020968,
+      "mean_gravity": 0.9182248053285796,
+      "matched": {
+        "volume": 2.2602834299065764,
+        "area": 8.762332646098422,
+        "integrated_mean_curvature": 10.686869965020882,
+        "mean_gravity": 0.9182248053285799
+      },
+      "converged": {
+        "volume": 2.2602834299065764,
+        "area": 8.762332646098422,
+        "integrated_mean_curvature": 10.68686996502088,
+        "mean_gravity": 0.9182248053285794
+      }
+    },
+    {
+      "reference": true,
+      "qi": 1e-06,
+      "factor": 1e-06,
+      "potential": 1.500214671735344,
+      "volume": 4.99128588990511e-07,
+      "area": 0.00031102767833976366,
+      "integrated_mean_curvature": 0.06362097631981455,
+      "mean_gravity": 0.03719315570810145
+    },
+    {
+      "reference": true,
+      "qi": 1e-06,
+      "factor": 0.01,
+      "potential": 1.500214665069317,
+      "volume": 4.992038090248663e-07,
+      "area": 0.00031106797234181735,
+      "integrated_mean_curvature": 0.0633679393386291,
+      "mean_gravity": 0.03718785429069916
+    },
+    {
+      "reference": true,
+      "qi": 1e-06,
+      "factor": 0.5,
+      "potential": 1.5002143384013413,
+      "volume": 5.029233939636807e-07,
+      "area": 0.0003126949727050806,
+      "integrated_mean_curvature": 0.06197745081255891,
+      "mean_gravity": 0.03697056962593495
+    },
+    {
+      "reference": true,
+      "qi": 1e-06,
+      "factor": 0.99,
+      "potential": 1.5002140117333653,
+      "volume": 5.067337519225543e-07,
+      "area": 0.0003143392659792273,
+      "integrated_mean_curvature": 0.061492683453711,
+      "mean_gravity": 0.036752934788995544
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "factor": 1e-06,
+      "potential": 1.5199616328835792,
+      "volume": 0.00046958473051703347,
+      "area": 0.029732888037400353,
+      "integrated_mean_curvature": 0.6196918835386336,
+      "mean_gravity": 0.39063300281888974
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "factor": 0.01,
+      "potential": 1.5199549722095853,
+      "volume": 0.0004702273284205392,
+      "area": 0.02976228134461257,
+      "integrated_mean_curvature": 0.6122977669544973,
+      "mean_gravity": 0.39020403060677067
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "factor": 0.5,
+      "potential": 1.5196285665433145,
+      "volume": 0.0005029188544376619,
+      "area": 0.0309114834820997,
+      "integrated_mean_curvature": 0.5762386885379353,
+      "mean_gravity": 0.37358217037281743
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "factor": 0.99,
+      "potential": 1.5193021608770434,
+      "volume": 0.0005389191764937507,
+      "area": 0.0321400745462755,
+      "integrated_mean_curvature": 0.5676601032903327,
+      "mean_gravity": 0.35706135118171384
+    },
+    {
+      "reference": true,
+      "qi": 0.05,
+      "factor": 1e-06,
+      "potential": 1.704804631120331,
+      "volume": 0.019507781155959192,
+      "area": 0.354959378848148,
+      "integrated_mean_curvature": 2.1345915396697963,
+      "mean_gravity": 1.5759071930626618
+    },
+    {
+      "reference": true,
+      "qi": 0.05,
+      "factor": 0.01,
+      "potential": 1.7044900846623732,
+      "volume": 0.019592086735936487,
+      "area": 0.35598459694314366,
+      "integrated_mean_curvature": 2.092889948681357,
+      "mean_gravity": 1.5708950106659094
+    },
+    {
+      "reference": true,
+      "qi": 0.05,
+      "factor": 0.5,
+      "potential": 1.6890757667906562,
+      "volume": 0.024170836364148185,
+      "area": 0.3980813153617274,
+      "integrated_mean_curvature": 1.9330231783246525,
+      "mean_gravity": 1.3817702733815795
+    },
+    {
+      "reference": true,
+      "qi": 0.05,
+      "factor": 0.99,
+      "potential": 1.673661448918939,
+      "volume": 0.030115510036654358,
+      "area": 0.45035444057511576,
+      "integrated_mean_curvature": 1.9482597390815575,
+      "mean_gravity": 1.194986730725262
+    },
+    {
+      "reference": true,
+      "qi": 1.0,
+      "factor": 1e-06,
+      "potential": 1.9999997283981121,
+      "volume": 0.22959939564406984,
+      "area": 1.8272593731386009,
+      "integrated_mean_curvature": 4.825799836600559,
+      "mean_gravity": 3.187279595609817
+    },
+    {
+      "reference": true,
+      "qi": 1.0,
+      "factor": 0.01,
+      "potential": 1.9972839811204308,
+      "volume": 0.23131619651558522,
+      "area": 1.8361724589766366,
+      "integrated_mean_curvature": 4.726389020680283,
+      "mean_gravity": 3.1699380337032235
+    },
+    {
+      "reference": true,
+      "qi": 1.0,
+      "factor": 0.5,
+      "potential": 1.8641990560215382,
+      "volume": 0.33564508390461967,
+      "area": 2.2653958720528014,
+      "integrated_mean_curvature": 4.581592706425072,
+      "mean_gravity": 2.4772249338854397
+    },
+    {
+      "reference": true,
+      "qi": 1.0,
+      "factor": 0.99,
+      "potential": 1.7311141309226457,
+      "volume": 0.5152859776977761,
+      "area": 2.940728476881662,
+      "integrated_mean_curvature": 5.003665318757861,
+      "mean_gravity": 1.786160603767772
+    },
+    {
+      "reference": true,
+      "qi": 20.0,
+      "factor": 1e-06,
+      "potential": 1.7048046311203313,
+      "volume": 1.0513323394908047,
+      "area": 5.0330703062516085,
+      "integrated_mean_curvature": 7.990577577064085,
+      "mean_gravity": 1.960097263580842
+    },
+    {
+      "reference": true,
+      "qi": 20.0,
+      "factor": 0.01,
+      "potential": 1.7044900846623734,
+      "volume": 1.0522005165560024,
+      "area": 5.035955098899364,
+      "integrated_mean_curvature": 7.948407790865185,
+      "mean_gravity": 1.9586296515469506
+    },
+    {
+      "reference": true,
+      "qi": 20.0,
+      "factor": 0.5,
+      "potential": 1.6890757667906562,
+      "volume": 1.096088209365039,
+      "area": 5.168063536439733,
+      "integrated_mean_curvature": 7.792744526755365,
+      "mean_gravity": 1.8915780593672413
+    },
+    {
+      "reference": true,
+      "qi": 20.0,
+      "factor": 0.99,
+      "potential": 1.673661448918939,
+      "volume": 1.142803573638572,
+      "area": 5.30314969882971,
+      "integrated_mean_curvature": 7.784377897324989,
+      "mean_gravity": 1.8257762681175966
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "factor": 1e-06,
+      "potential": 1.519961632883579,
+      "volume": 2.000486536608644,
+      "area": 7.858803873603126,
+      "integrated_mean_curvature": 10.036750128487224,
+      "mean_gravity": 1.088313674943893
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "factor": 0.01,
+      "potential": 1.519954972209585,
+      "volume": 2.0005524649372104,
+      "area": 7.859006573741383,
+      "integrated_mean_curvature": 10.029211212054419,
+      "mean_gravity": 1.0882688272921937
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "factor": 0.5,
+      "potential": 1.5196285665433142,
+      "volume": 2.0037926402056616,
+      "area": 7.868616481456108,
+      "integrated_mean_curvature": 9.989843741866613,
+      "mean_gravity": 1.0861161599743887
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "factor": 0.99,
+      "potential": 1.5193021608770434,
+      "volume": 2.007051386119824,
+      "area": 7.878174799950377,
+      "integrated_mean_curvature": 9.975744131980335,
+      "mean_gravity": 1.0839711281064446
+    },
+    {
+      "reference": true,
+      "qi": 1000000.0,
+      "factor": 1e-06,
+      "potential": 1.500214671735344,
+      "volume": 2.2602662347547122,
+      "area": 8.762213931985034,
+      "integrated_mean_curvature": 10.689350495680651,
+      "mean_gravity": 0.9182411706614162
+    },
+    {
+      "reference": true,
+      "qi": 1000000.0,
+      "factor": 0.01,
+      "potential": 1.500214665069317,
+      "volume": 2.260266408389037,
+      "area": 8.762215139359105,
+      "integrated_mean_curvature": 10.689093813947146,
+      "mean_gravity": 0.9182410045014662
+    },
+    {
+      "reference": true,
+      "qi": 1000000.0,
+      "factor": 0.5,
+      "potential": 1.5002143384013413,
+      "volume": 2.2602749182434723,
+      "area": 8.762273937533047,
+      "integrated_mean_curvature": 10.687563397704407,
+      "mean_gravity": 0.9182329003719099
+    },
+    {
+      "reference": true,
+      "qi": 1000000.0,
+      "factor": 0.99,
+      "potential": 1.5002140117333653,
+      "volume": 2.2602834299065675,
+      "area": 8.762332646097978,
+      "integrated_mean_curvature": 10.686869965401916,
+      "mean_gravity": 0.9182248053286282
+    }
+  ],
+  "provenance": "Volume, area, integrated mean curvature and mean gravity of contact parts, computed with an independent 513-line alpha-family representation of the watershed at each recorded potential. Default: 64x24 with integration tolerance 1e-10; matched: 64x24, 1e-11; converged: 64x24, 1e-14. Reference: 128x64, 1e-13. Volumes are measured on the surface sample."
+}

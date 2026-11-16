@@ -1,0 +1,90 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: x1, datatype: string, description: 'L1, measured from the primary (eqs. 3-4, 3-5)', meta: {printed_symbol: x1, rocheometry_quantity: l1_position_x, component: primary}}
+# - {name: Omega1, datatype: string, description: Kopal's Omega at L1 (eq. 3-9), meta: {printed_symbol: Omega1, rocheometry_quantity: l1_potential, component: primary}}
+# - {name: x4, datatype: string, description: x of the secondary lobe's orbital-plane vertex P4 (eq. 3-10), meta: {printed_symbol: x4, rocheometry_quantity: lobe_vertex, component: secondary, coordinate: x, frame: {kind: companion_origin, description: 'Kopal''s x for a secondary-local quantity: x = 1 - x_local'}}}
+# - {name: y4, datatype: string, description: y of P4 (eq. 3-10), meta: {printed_symbol: +-y4, rocheometry_quantity: lobe_vertex, component: secondary, coordinate: y}}
+# - {name: x5, datatype: string, description: x of the primary lobe's orbital-plane vertex P5 (eq. 3-10), meta: {printed_symbol: x5, rocheometry_quantity: lobe_vertex, component: primary, coordinate: x}}
+# - {name: y5, datatype: string, description: y of P5 (eq. 3-10), meta: {printed_symbol: +-y5, rocheometry_quantity: lobe_vertex, component: primary, coordinate: y}}
+# - {name: z6, datatype: string, description: 'z-radius of the secondary''s lobe at x = x4, P6 (eq. 3-11)', meta: {printed_symbol: +-z6, rocheometry_quantity: lobe_vertex, component: secondary, coordinate: z}}
+# - {name: z7, datatype: string, description: 'z-radius of the primary''s lobe at x = x5, P7 (eq. 3-11)', meta: {printed_symbol: +-z7, rocheometry_quantity: lobe_vertex, component: primary, coordinate: z}}
+# meta:
+#   title: 'Table 3-1: L1 and the vertices of the Roche limits'
+#   reference: Kopal 1959, Table 3-1
+#   sources:
+#   - title: Kopal Z., 1959, Close Binary Systems (Chapman & Hall / Wiley), section III.3, pp.
+#       135-136
+#     bibcode: 1959cbs..book.....K
+#     url: https://archive.org/details/closebinarysyste00kopa
+#   retrieval:
+#     method: 'two independent readings of the Internet Archive scan: values read from the page
+#       images at 500 dpi, and tesseract OCR of the table crops; 247 of 255 values agreed digit
+#       for digit. The other 8 are the q = 0 row of Table 3-1, which tesseract garbled; the
+#       page image and the scan''s own archive.org text layer both give the visual reading'
+#     date: '2026-10-14'
+#     typography: raised decimal points stored as '.'; the y and z coordinates are printed with
+#       a leading +-, and are stored as the positive value; some extreme-q entries are printed
+#       with fewer decimals and are stored as printed; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: secondary_to_primary_ratio
+#       description: q = m'/m = M2/M1 <= 1; each column names the component it describes
+#     frame:
+#       kind: component_local
+#       description: origin at the primary (the more massive star), secondary at x = 1, separation
+#         1
+#     potential:
+#       kind: kopal_omega
+#       description: Kopal's Omega = 1/r + q(1/r' - x) + (1+q)(x^2+y^2)/2 in the primary's frame
+#         (eq. 1-3; 3.75 at q = 1), the convention of Wilson-Devinney and PHOEBE; C1 = 2 Omega1/(1+q)
+#         + (q/(1+q))^2 (eq. 3-12)
+#   allowance_half_units: 2.0
+#   allowance_reason: Plavec & Kratochvil (1964) found Kopal's five-decimal values uncertain
+#     by one unit of the fifth decimal, apart from a few larger discrepancies
+#   row_status:
+#     '0': the q = 0 limit; Rocheometry requires a positive mass ratio
+#   notes:
+#     '0.2':
+#       y5:
+#         class: source_error
+#         max_half_units: 13.0
+#         reason: the printed vertex is 6 units of the fifth decimal too small
+#         evidence: Plavec & Kratochvil (1964, Table 5) list this as a major discrepancy in
+#           Kopal's 1954 tables (Kopal 0.52983, theirs 0.52989); mpmath gives y5 = 0.529893198614
+#           at x5 = -0.0116303385 (printed -0.01163 agrees); Rocheometry gives 0.5298931986
+#       z7:
+#         class: source_error
+#         max_half_units: 72.0
+#         reason: the printed z-radius is 36 units of the fifth decimal too large
+#         evidence: Plavec & Kratochvil (1964, Table 5) list this as a major discrepancy in
+#           Kopal's 1954 tables (Kopal 0.48750, theirs 0.48714); mpmath gives z7 = 0.487144029056;
+#           Rocheometry gives 0.4871440291
+#     '0.02':
+#       z7:
+#         class: source_error
+#         max_half_units: 915.0
+#         reason: the printed z-radius is 0.00457 too large; not listed by Plavec & Kratochvil,
+#           whose tables stop at m = 0.1
+#         evidence: mpmath gives z7 = 0.609768570544 at x5 = -0.0061797436 (printed -0.00618
+#           agrees); Kopal's Omega at (x5, 0, 0.61434) is 0.0122 below Omega1, well outside
+#           the lobe; the column's step pattern breaks there (0.57291, 0.61434, 0.62867 at q
+#           = 0.05, 0.02, 0.01; computed 0.57291, 0.60977, 0.62867); Rocheometry gives 0.6097685705
+q x1 Omega1 x4 y4 x5 y5 z6 z7
+1.0 0.50000 3.75000 1.01134 0.37420 -0.01134 0.37420 0.35621 0.35621
+0.8 0.52295 3.41697 1.01092 0.35388 -0.01168 0.39501 0.33770 0.37491
+0.6 0.55234 3.06344 1.01029 0.32853 -0.01198 0.42244 0.31431 0.39909
+0.4 0.59295 2.67810 1.00926 0.29465 -0.01213 0.46189 0.28260 0.43278
+0.3 0.62087 2.46622 1.00847 0.27204 -0.01204 0.49015 0.26123 0.45599
+0.2 0.65856 2.23273 1.00735 0.24233 -0.01163 0.52983 0.23294 0.48750
+0.15 0.68392 2.10309 1.00656 0.22280 -0.01117 0.55774 0.21425 0.50781
+0.1 0.71751 1.95910 1.00552 0.19746 -0.01034 0.59609 0.18991 0.53451
+0.05 0.76875 1.78886 1.00397 0.15979 -0.00859 0.65804 0.15366 0.57291
+0.02 0.82456 1.65702 1.00245 0.11992 -0.00618 0.73070 0.11522 0.61434
+0.01 0.85853 1.59911 1.00165 0.09613 -0.00457 0.77779 0.09231 0.62867
+0.005 0.88635 1.56256 1.00110 0.07689 -0.00327 0.81807 0.07379 0.64170
+0.001 0.93231 1.52148 1.00041 0.04550 -0.00137 0.88816 0.04361 0.65762
+0.0002 0.96001 1.50737 1.00015 0.02678 -0.00052 0.93264 0.02566 0.66348
+0 1.00000 1.50000 1.00000 0.00000 0.00000 1.00000 0.00000 0.66667

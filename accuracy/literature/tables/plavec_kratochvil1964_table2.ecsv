@@ -1,0 +1,101 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: m, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: mu, datatype: string, description: M2/(M1+M2), meta: {printed_symbol: mu, rocheometry_quantity: own_mass_fraction, component: secondary}}
+# - {name: x11, datatype: string, description: 'x of the primary lobe''s orbital-plane vertex, C = C1 and C_x = 0 (eq. 16)', meta: {printed_symbol: x11, rocheometry_quantity: lobe_vertex, component: primary, coordinate: x}}
+# - {name: y11, datatype: string, description: y of the primary lobe's orbital-plane vertex (eq. 16), meta: {printed_symbol: +-y11, rocheometry_quantity: lobe_vertex, component: primary, coordinate: y}}
+# - {name: z11, datatype: string, description: 'z-radius of the primary lobe at x = x11, C(x11, 0, z) = C1 (eq. 21)', meta: {printed_symbol: +-z11, rocheometry_quantity: lobe_vertex, component: primary, coordinate: z}}
+# - {name: x12, datatype: string, description: x of the secondary lobe's orbital-plane vertex (eq. 16), meta: {printed_symbol: x12, rocheometry_quantity: lobe_vertex, component: secondary, coordinate: x, frame: {kind: companion_origin, description: 'the paper''s x for a secondary-local quantity: x = 1 - x_local'}}}
+# - {name: y12, datatype: string, description: y of the secondary lobe's orbital-plane vertex (eq. 16), meta: {printed_symbol: +-y12, rocheometry_quantity: lobe_vertex, component: secondary, coordinate: y}}
+# - {name: z12, datatype: string, description: 'z-radius of the secondary lobe at x = x12, C(x12, 0, z) = C1 (eq. 22)', meta: {printed_symbol: +-z12, rocheometry_quantity: lobe_vertex, component: secondary, coordinate: z}}
+# meta:
+#   title: 'Table 2: vertices and z-radii of the critical Roche lobes C = C1'
+#   reference: Plavec & Kratochvil 1964, Table 2
+#   sources:
+#   - title: Plavec M., Kratochvil P., 1964, BAICz, 15, 165, Tables for the Roche Model of Close
+#       Binaries
+#     bibcode: 1964BAICz..15..165P
+#     url: https://ui.adsabs.harvard.edu/abs/1964BAICz..15..165P
+#   retrieval:
+#     method: 'two independent readings of the ADS scan (no text layer): values read from the
+#       page images at 300 dpi, and tesseract OCR of fixed column crops; 1318 of 1334 values
+#       agreed digit for digit, and all 16 disagreements were tesseract misreads, settled on
+#       the page image at 600 dpi'
+#     date: '2026-10-14'
+#     typography: raised decimal points stored as '.'; the y and z radii are printed with a
+#       leading +-, and are stored as the positive value; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: m
+#       kind: secondary_to_primary_ratio
+#       description: m = M2/M1 <= 1; each column names the component it describes
+#     frame:
+#       kind: component_local
+#       description: origin at the primary (the more massive star, M1), secondary at x = 1,
+#         separation 1
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: C = 2(1-mu)/r1 + 2mu/r2 + (x-mu)^2 + y^2 = 2U, their eqs. 4-5; identical
+#         to Mochnacki's C
+#   allowance_half_units: 2.0
+#   allowance_reason: the authors state the fifth decimal is uncertain by one unit (comparison
+#     with Kopal 1954)
+#   notes:
+#     '0.22':
+#       x11:
+#         class: source_error
+#         max_half_units: 5.0
+#         reason: the printed vertex abscissa is 2.2 units of the last digit from the solution
+#           of the paper's eq. 16
+#         evidence: the scan reads -0.01173 unambiguously; solving C(x, y, 0) = C1 with C_x
+#           = 0 gives x11 = -0.011752442552 and y11 = 0.520586517981 (the printed y11 = 0.52059
+#           agrees); Rocheometry gives -0.0117524426
+m mu x11 y11 z11 x12 y12 z12
+0.10 0.09091 -0.01034 0.59609 0.53451 1.00552 0.19745 0.18991
+0.12 0.10714 -0.01074 0.57901 0.52287 1.00598 0.20854 0.20057
+0.14 0.12281 -0.01104 0.56435 0.51256 1.00638 0.21831 0.20994
+0.16 0.13793 -0.01129 0.55153 0.50329 1.00674 0.22707 0.21834
+0.18 0.15254 -0.01148 0.54014 0.49487 1.00706 0.23503 0.22596
+0.20 0.16667 -0.01163 0.52989 0.48714 1.00735 0.24233 0.23294
+0.22 0.18033 -0.01173 0.52059 0.48002 1.00761 0.24909 0.23939
+0.24 0.19355 -0.01184 0.51207 0.47340 1.00785 0.25538 0.24539
+0.26 0.20635 -0.01193 0.50421 0.46723 1.00808 0.26127 0.25100
+0.28 0.21875 -0.01199 0.49693 0.46144 1.00828 0.26681 0.25626
+0.30 0.23077 -0.01204 0.49015 0.45599 1.00847 0.27204 0.26123
+0.32 0.24242 -0.01207 0.48381 0.45085 1.00865 0.27701 0.26594
+0.34 0.25373 -0.01210 0.47785 0.44598 1.00882 0.28173 0.27041
+0.36 0.26471 -0.01212 0.47223 0.44136 1.00898 0.28623 0.27466
+0.38 0.27536 -0.01213 0.46692 0.43697 1.00912 0.29053 0.27872
+0.40 0.28571 -0.01213 0.46189 0.43278 1.00926 0.29465 0.28260
+0.42 0.29577 -0.01213 0.45711 0.42877 1.00939 0.29860 0.28633
+0.44 0.30556 -0.01212 0.45256 0.42493 1.00951 0.30241 0.28990
+0.46 0.31507 -0.01211 0.44822 0.42126 1.00963 0.30607 0.29334
+0.48 0.32432 -0.01210 0.44407 0.41773 1.00974 0.30960 0.29665
+0.50 0.33333 -0.01209 0.44009 0.41433 1.00984 0.31301 0.29984
+0.52 0.34211 -0.01207 0.43628 0.41106 1.00994 0.31631 0.30293
+0.54 0.35065 -0.01205 0.43262 0.40791 1.01003 0.31951 0.30591
+0.56 0.35897 -0.01203 0.42910 0.40487 1.01012 0.32261 0.30880
+0.58 0.36709 -0.01200 0.42571 0.40193 1.01021 0.32561 0.31159
+0.60 0.37500 -0.01198 0.42244 0.39909 1.01029 0.32853 0.31431
+0.62 0.38272 -0.01195 0.41929 0.39634 1.01037 0.33137 0.31694
+0.64 0.39024 -0.01193 0.41624 0.39367 1.01044 0.33413 0.31950
+0.66 0.39759 -0.01190 0.41329 0.39108 1.01051 0.33681 0.32199
+0.68 0.40476 -0.01187 0.41044 0.38857 1.01058 0.33943 0.32441
+0.70 0.41176 -0.01184 0.40767 0.38614 1.01064 0.34199 0.32677
+0.72 0.41860 -0.01181 0.40499 0.38377 1.01070 0.34448 0.32906
+0.74 0.42529 -0.01178 0.40239 0.38146 1.01076 0.34691 0.33130
+0.76 0.43182 -0.01175 0.39986 0.37922 1.01082 0.34929 0.33349
+0.78 0.43820 -0.01171 0.39740 0.37704 1.01087 0.35161 0.33562
+0.80 0.44444 -0.01168 0.39501 0.37491 1.01093 0.35388 0.33770
+0.82 0.45055 -0.01164 0.39269 0.37284 1.01097 0.35610 0.33974
+0.84 0.45652 -0.01161 0.39042 0.37081 1.01102 0.35827 0.34173
+0.86 0.46237 -0.01157 0.38822 0.36884 1.01107 0.36040 0.34367
+0.88 0.46809 -0.01154 0.38607 0.36691 1.01111 0.36249 0.34558
+0.90 0.47368 -0.01151 0.38397 0.36502 1.01115 0.36454 0.34744
+0.92 0.47917 -0.01148 0.38192 0.36318 1.01119 0.36654 0.34927
+0.94 0.48454 -0.01144 0.37992 0.36138 1.01123 0.36851 0.35105
+0.96 0.48980 -0.01140 0.37797 0.35962 1.01127 0.37044 0.35281
+0.98 0.49495 -0.01137 0.37606 0.35790 1.01131 0.37234 0.35453
+1.00 0.50000 -0.01134 0.37420 0.35621 1.01134 0.37420 0.35621

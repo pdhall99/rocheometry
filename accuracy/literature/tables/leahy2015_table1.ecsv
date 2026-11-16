@@ -1,0 +1,39 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: M2/M1}
+# - {name: theta, datatype: string, description: 'polar angle from +z, degrees: 90 is the orbital plane'}
+# - {name: phi, datatype: string, description: 'angle from the direction of M2, degrees'}
+# - {name: F, datatype: string, description: 'fill-out factor: 1 is the Roche lobe'}
+# - {name: R, datatype: string, description: 'radius of the lobe in the direction (theta, phi)', meta: {rocheometry_quantity: level_radius, theta_column: theta, phi_column: phi, level: {kind: fill_out_detached, fill_out_column: F}, units: separation}}
+# meta:
+#   title: 'Table 1: the equal-mass Roche lobe''s radius in the orbital plane'
+#   reference: Leahy & Leahy 2015, Table 1
+#   sources:
+#   - title: Leahy D. A., Leahy J. C., 2015, Computational Astrophysics and Cosmology, 2, 4,
+#       A calculator for Roche lobe properties, Table 1
+#     bibcode: 2015ComAC...2....4L
+#     url: https://doi.org/10.1186/s40668-015-0008-8
+#   retrieval:
+#     method: the four values Rocheometry first compared by hand (accuracy/literature/literature_tables.py),
+#       carried over unchanged; one reading only, not yet re-read against the paper
+#     date: '2026-11-09'
+#     typography: stored as printed, to seven decimals
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: companion_mass_ratio
+#       description: q = M2/M1 = 1
+#     frame:
+#       kind: component_local
+#       description: origin at M1, M2 at x = 1, separation 1
+#     potential:
+#       kind: kopal_omega
+#       description: Kopal's Omega about M1
+#   allowance_half_units: 1.0
+#   allowance_reason: root-found radii printed to seven decimals
+q theta phi F R
+1 90 0 1 0.5000000
+1 90 30 1 0.4055942
+1 90 60 1 0.3769055
+1 90 90 1 0.3740461

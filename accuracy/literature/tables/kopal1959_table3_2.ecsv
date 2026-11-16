@@ -1,0 +1,91 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: C1, datatype: string, description: C at L1 (eq. 3-12), meta: {printed_symbol: C1, rocheometry_quantity: l1_potential, component: primary}}
+# - {name: r0_1, datatype: string, description: Kopal's r0 for the primary's Roche limit (eq. 3-15), meta: {printed_symbol: (r0)1, rocheometry_quantity: l1_potential, component: primary, potential: {kind: kopal_r0, description: 'Kopal''s mean-radius parameter r0 = 1/(Omega - q), with Omega and q = M_companion/M_component in the component''s own frame (eqs. 2-3, 3-15)'}}}
+# - {name: r0_2, datatype: string, description: Kopal's r0 for the secondary's Roche limit (eq. 3-15), meta: {printed_symbol: (r0)2, rocheometry_quantity: l1_potential, component: secondary, potential: {kind: kopal_r0, description: 'Kopal''s mean-radius parameter r0 = 1/(Omega - q), with Omega and q = M_companion/M_component in the component''s own frame (eqs. 2-3, 3-15)'}}}
+# - {name: V1, datatype: string, description: 'volume of the primary''s Roche lobe, from Kopal''s volume series (eq. 2-28) in powers of r0, which he says converges well only when the masses are not too unequal; asymptotic solutions were used as one mass becomes negligible', meta: {printed_symbol: V1, rocheometry_quantity: volume, component: primary, level: {kind: fill_out_detached, fill_out: '1'}, units: separation^3, status: series_approximation, status_reason: 'Kopal''s truncated volume series (eq. 2-28) is too coarse to compare at the printed precision; the column checks only that V, r* and v mean the volume, volume radius and eq. 3-17 of the critical lobe', evidence: 'against Rocheometry, (r*)1 and (r*)2 are low by 0.31-0.61% for q >= 0.05 and by 1.3-5.1% for q <= 0.02, V and v by about three times that; Mochnacki''s (1984) independent integrations agree with Rocheometry at the shared mass ratios (q = 1: r* = 0.379863 in both, Kopal 0.37845; q = 0.1: 0.580314 and 0.205401, Kopal 0.57760 and 0.20414)'}}
+# - {name: V2, datatype: string, description: 'volume of the secondary''s Roche lobe, from Kopal''s volume series (eq. 2-28) in powers of r0, which he says converges well only when the masses are not too unequal; asymptotic solutions were used as one mass becomes negligible', meta: {printed_symbol: V2, rocheometry_quantity: volume, component: secondary, level: {kind: fill_out_detached, fill_out: '1'}, units: separation^3, status: series_approximation, status_reason: 'Kopal''s truncated volume series (eq. 2-28) is too coarse to compare at the printed precision; the column checks only that V, r* and v mean the volume, volume radius and eq. 3-17 of the critical lobe', evidence: 'against Rocheometry, (r*)1 and (r*)2 are low by 0.31-0.61% for q >= 0.05 and by 1.3-5.1% for q <= 0.02, V and v by about three times that; Mochnacki''s (1984) independent integrations agree with Rocheometry at the shared mass ratios (q = 1: r* = 0.379863 in both, Kopal 0.37845; q = 0.1: 0.580314 and 0.205401, Kopal 0.57760 and 0.20414)'}}
+# - {name: rstar1, datatype: string, description: 'volume radius of the primary''s Roche lobe, from Kopal''s volume series (eq. 2-28) in powers of r0, which he says converges well only when the masses are not too unequal; asymptotic solutions were used as one mass becomes negligible', meta: {printed_symbol: (r*)1, rocheometry_quantity: volume_radius, component: primary, level: {kind: fill_out_detached, fill_out: '1'}, status: series_approximation, status_reason: 'Kopal''s truncated volume series (eq. 2-28) is too coarse to compare at the printed precision; the column checks only that V, r* and v mean the volume, volume radius and eq. 3-17 of the critical lobe', evidence: 'against Rocheometry, (r*)1 and (r*)2 are low by 0.31-0.61% for q >= 0.05 and by 1.3-5.1% for q <= 0.02, V and v by about three times that; Mochnacki''s (1984) independent integrations agree with Rocheometry at the shared mass ratios (q = 1: r* = 0.379863 in both, Kopal 0.37845; q = 0.1: 0.580314 and 0.205401, Kopal 0.57760 and 0.20414)'}}
+# - {name: rstar2, datatype: string, description: 'volume radius of the secondary''s Roche lobe, from Kopal''s volume series (eq. 2-28) in powers of r0, which he says converges well only when the masses are not too unequal; asymptotic solutions were used as one mass becomes negligible', meta: {printed_symbol: (r*)2, rocheometry_quantity: volume_radius, component: secondary, level: {kind: fill_out_detached, fill_out: '1'}, status: series_approximation, status_reason: 'Kopal''s truncated volume series (eq. 2-28) is too coarse to compare at the printed precision; the column checks only that V, r* and v mean the volume, volume radius and eq. 3-17 of the critical lobe', evidence: 'against Rocheometry, (r*)1 and (r*)2 are low by 0.31-0.61% for q >= 0.05 and by 1.3-5.1% for q <= 0.02, V and v by about three times that; Mochnacki''s (1984) independent integrations agree with Rocheometry at the shared mass ratios (q = 1: r* = 0.379863 in both, Kopal 0.37845; q = 0.1: 0.580314 and 0.205401, Kopal 0.57760 and 0.20414)'}}
+# - {name: v1, datatype: string, description: 'omega^2/(2 pi G rho) = (2/3)(1 + m2/m1) r*^3 for the primary (eq. 3-17), from Kopal''s volume series (eq. 2-28) in powers of r0, which he says converges well only when the masses are not too unequal; asymptotic solutions were used as one mass becomes negligible', meta: {printed_symbol: v1, rocheometry_quantity: kopal_rotation_density, component: primary, level: {kind: fill_out_detached, fill_out: '1'}, status: series_approximation, status_reason: 'Kopal''s truncated volume series (eq. 2-28) is too coarse to compare at the printed precision; the column checks only that V, r* and v mean the volume, volume radius and eq. 3-17 of the critical lobe', evidence: 'against Rocheometry, (r*)1 and (r*)2 are low by 0.31-0.61% for q >= 0.05 and by 1.3-5.1% for q <= 0.02, V and v by about three times that; Mochnacki''s (1984) independent integrations agree with Rocheometry at the shared mass ratios (q = 1: r* = 0.379863 in both, Kopal 0.37845; q = 0.1: 0.580314 and 0.205401, Kopal 0.57760 and 0.20414)'}}
+# - {name: v2, datatype: string, description: 'omega^2/(2 pi G rho) = (2/3)(1 + m1/m2) r*^3 for the secondary (eq. 3-17), from Kopal''s volume series (eq. 2-28) in powers of r0, which he says converges well only when the masses are not too unequal; asymptotic solutions were used as one mass becomes negligible', meta: {printed_symbol: v2, rocheometry_quantity: kopal_rotation_density, component: secondary, level: {kind: fill_out_detached, fill_out: '1'}, status: series_approximation, status_reason: 'Kopal''s truncated volume series (eq. 2-28) is too coarse to compare at the printed precision; the column checks only that V, r* and v mean the volume, volume radius and eq. 3-17 of the critical lobe', evidence: 'against Rocheometry, (r*)1 and (r*)2 are low by 0.31-0.61% for q >= 0.05 and by 1.3-5.1% for q <= 0.02, V and v by about three times that; Mochnacki''s (1984) independent integrations agree with Rocheometry at the shared mass ratios (q = 1: r* = 0.379863 in both, Kopal 0.37845; q = 0.1: 0.580314 and 0.205401, Kopal 0.57760 and 0.20414)'}}
+# meta:
+#   title: 'Table 3-2: potential, mean radii and volumes of the Roche limits'
+#   reference: Kopal 1959, Table 3-2
+#   sources:
+#   - title: Kopal Z., 1959, Close Binary Systems (Chapman & Hall / Wiley), section III.3, pp.
+#       135-136
+#     bibcode: 1959cbs..book.....K
+#     url: https://archive.org/details/closebinarysyste00kopa
+#   retrieval:
+#     method: 'two independent readings of the Internet Archive scan: values read from the page
+#       images at 500 dpi, and tesseract OCR of the table crops; 247 of 255 values agreed digit
+#       for digit. The other 8 are the q = 0 row of Table 3-1, which tesseract garbled; the
+#       page image and the scan''s own archive.org text layer both give the visual reading'
+#     date: '2026-10-14'
+#     typography: raised decimal points stored as '.'; the y and z coordinates are printed with
+#       a leading +-, and are stored as the positive value; some extreme-q entries are printed
+#       with fewer decimals and are stored as printed; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: secondary_to_primary_ratio
+#       description: q = m'/m = M2/M1 <= 1; each column names the component it describes
+#     frame:
+#       kind: component_local
+#       description: origin at the primary (the more massive star), secondary at x = 1, separation
+#         1
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: C1 = 2(1-mu) Omega1 + mu^2 (eq. 3-12) = 2U, the same C as Mochnacki and
+#         Plavec & Kratochvil
+#   allowance_half_units: 2.0
+#   allowance_reason: Plavec & Kratochvil (1964) found Kopal's five-decimal values uncertain
+#     by one unit of the fifth decimal, apart from a few larger discrepancies
+#   row_status:
+#     '0': the q = 0 limit; Rocheometry requires a positive mass ratio
+#   notes:
+#     '0.4':
+#       V2:
+#         class: source_error
+#         max_half_units: 4.0
+#         reason: misprint in the last digit, 0.11444 for 0.11440. The column is a series approximation
+#           and is not compared with Rocheometry
+#         evidence: the scan and tesseract both read 0.11444; the row's own (r*)2 = 0.30115
+#           gives 4 pi r*^3/3 = 0.114403, and its v2 = 0.063726 agrees with (r*)2 by eq. 3-17
+#           (0.063727) but not with the printed V2 (0.063748), so V2 alone is wrong
+#     '0.3':
+#       C1:
+#         class: double_rounding
+#         max_half_units: 3.0
+#         reason: C1 is derived from the table's own rounded Omega1 by eq. 3-12, which multiplies
+#           its error by 2/(1+q) = 1.54
+#         evidence: 2 x 2.46622/1.3 + (0.3/1.3)^2 = 3.847439, the printed 3.84744; the printed
+#           Omega1 is itself +1.83 half-units from Rocheometry, inside the allowance
+#     '0.05':
+#       C1:
+#         class: double_rounding
+#         max_half_units: 2.5
+#         reason: C1 is derived from the table's own rounded Omega1 by eq. 3-12, which multiplies
+#           its error by 2/(1+q) = 1.90
+#         evidence: 2 x 1.78886/1.05 + (0.05/1.05)^2 = 3.409620, the printed 3.40962; the printed
+#           Omega1 is itself -1.12 half-units from Rocheometry, inside the allowance
+q C1 r0_1 r0_2 V1 V2 rstar1 rstar2 v1 v2
+1 4.00000 0.36363 0.36363 0.22704 0.22704 0.37845 0.37845 0.072267 0.072267
+0.8 3.99417 0.38212 0.34528 0.26459 0.19374 0.39825 0.35896 0.075799 0.069377
+0.6 3.96993 0.40594 0.32199 0.31974 0.15665 0.42420 0.33441 0.081422 0.066485
+0.4 3.90749 0.43896 0.29025 0.40923 0.11444 0.46057 0.30115 0.091184 0.063726
+0.3 3.84744 0.46163 0.26876 0.48148 0.09089 0.48622 0.27892 0.099619 0.062683
+0.2 3.74900 0.49195 0.24018 0.59399 0.06492 0.52147 0.24933 0.113443 0.061996
+0.15 3.67456 0.51201 0.22121 0.68002 0.05079 0.54552 0.22973 0.124462 0.061967
+0.1 3.57027 0.53789 0.19642 0.80715 0.03564 0.57760 0.20414 0.141308 0.062385
+0.05 3.40962 0.57509 0.15931 1.0289 0.01910 0.62626 0.16584 0.17193 0.063854
+0.02 3.24945 0.61087 0.11974 1.2700 0.007961 0.67179 0.12387 0.2062 0.06462
+0.01 3.16665 0.62928 0.09606 1.4656 0.004042 0.70465 0.09882 0.2356 0.06497
+0.005 3.10959 0.64203 0.07686 1.5950 0.002038 0.7248 0.07865 0.2551 0.06520
+0.001 3.03992 0.65769 0.04549 1.868 0.0004114 0.764 0.04614 0.298 0.06554
+0.0002 3.01414 0.66350 0.02679 2.067 0.0000826 0.790 0.02702 0.329 0.06575
+0 3.00000 0.66667 0.00000 2.26663 0.0000000 0.81488 0.00000 0.36075 0.065843

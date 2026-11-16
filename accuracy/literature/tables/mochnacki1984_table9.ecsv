@@ -1,0 +1,72 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: F=0.2, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.2'}, units: separation^2}}
+# - {name: F=0.3, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.3'}, units: separation^2}}
+# - {name: F=0.4, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.4'}, units: separation^2}}
+# - {name: F=0.5, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.5'}, units: separation^2}}
+# - {name: F=0.6, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.6'}, units: separation^2}}
+# - {name: F=0.7, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.7'}, units: separation^2}}
+# - {name: F=0.8, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.8'}, units: separation^2}}
+# - {name: F=0.9, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.9'}, units: separation^2}}
+# - {name: F=0.95, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '0.95'}, units: separation^2}}
+# - {name: F=1.0, datatype: string, meta: {rocheometry_quantity: surface_area, level: {kind: fill_out_detached, fill_out: '1.0'}, units: separation^2}}
+# meta:
+#   title: 'Table 9: Area of the secondary, detached configurations'
+#   reference: Mochnacki 1984, Table 9
+#   sources:
+#   - title: Mochnacki S. W., 1984, ApJS, 55, 551, Accurate Integrations of the Roche Model
+#     bibcode: 1984ApJS...55..551M
+#     url: https://ui.adsabs.harvard.edu/abs/1984ApJS...55..551M
+#   retrieval:
+#     method: 'two independent readings: values read from the ADS page images at 300 dpi, then
+#       compared digit by digit with the scan''s OCR text layer; the three disagreements (Table
+#       1 q=0.61 X2, q=0.89 C1; Table 17 q=0.60 F=0.95) were OCR misreads, settled on the page
+#       image at 220-600 dpi'
+#     date: '2026-10-14'
+#     typography: FORTRAN-style exponents such as 1.14899-1 and 1.45514+2 are stored as 1.14899e-1
+#       and 1.45514e+2; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: own_mass_ratio
+#       description: q = M2/M1 <= 1; the tabulated component is the secondary, qi = q
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: tabulated C = 2/(1+q)/r1 + 2q/(1+q)/r2 + (x - q/(1+q))^2 + y^2 = 2U, primary
+#         at the origin
+#     fill_out:
+#       kind: fill_out_detached
+#       description: F = C1/C inside the Roche lobe, so U = U_L1/F; F = 1 is the lobe
+#   allowance_half_units: 4.0
+#   allowance_reason: the author states areas and gravities are accurate to +-2 in the last
+#     printed digit
+#   notes:
+#     '0.06':
+#       F=0.2:
+#         class: source_error
+#         max_half_units: 4.5
+#         reason: printed area is 3 units of the last digit above what the paper's own radius
+#           allows
+#         evidence: at F = 0.2 this secondary is spherical to 4e-11 in area, so its area must
+#           be 4 pi r_v^2; Table 5's r_v = 7.82492e-3 gives 7.69431e-4 (+-0.2 half-units), not
+#           the printed 7.69434e-4; Rocheometry gives 7.6943180e-4
+q F=0.2 F=0.3 F=0.4 F=0.5 F=0.6 F=0.7 F=0.8 F=0.9 F=0.95 F=1.0
+0.04 3.80645e-4 1.06177e-3 2.40154e-3 4.93461e-3 9.76167e-3 1.93901e-2 4.04244e-2 9.47867e-2 1.58698e-1 3.09951e-1
+0.06 7.69434e-4 2.11832e-3 4.71377e-3 9.48567e-3 1.82532e-2 3.48953e-2 6.87483e-2 1.46980e-1 2.28724e-1 3.96190e-1
+0.08 1.24771e-3 3.39849e-3 7.46364e-3 1.47730e-2 2.78256e-2 5.16854e-2 9.77570e-2 1.96324e-1 2.91628e-1 4.70356e-1
+0.10 1.79646e-3 4.84882e-3 1.05317e-2 2.05617e-2 3.80591e-2 6.90927e-2 1.26634e-1 2.42842e-1 3.49057e-1 5.36413e-1
+0.12 2.40167e-3 6.43102e-3 1.38354e-2 2.66976e-2 4.86970e-2 8.67492e-2 1.55020e-1 2.86786e-1 4.02119e-1 5.96492e-1
+0.16 3.74053e-3 9.88310e-3 2.09267e-2 3.96136e-2 7.05696e-2 1.22025e-1 2.09766e-1 3.68022e-1 4.98060e-1 7.03543e-1
+0.20 5.20177e-3 1.35937e-2 2.84151e-2 5.29722e-2 9.26413e-2 1.56593e-1 2.61574e-1 4.41881e-1 5.83571e-1 7.97819e-1
+0.24 6.74379e-3 1.74604e-2 3.61067e-2 6.64669e-2 1.14513e-1 1.90092e-1 3.10514e-1 5.09737e-1 6.61119e-1 8.82714e-1
+0.30 9.14740e-3 2.34095e-2 4.77679e-2 8.65885e-2 1.46516e-1 2.38081e-1 3.78998e-1 6.02414e-1 7.65906e-1 9.96846e-1
+0.40 1.32498e-2 3.33971e-2 6.69905e-2 1.19092e-1 1.97071e-1 3.12058e-1 4.81860e-1 7.38107e-1 9.17738e-1 1.16156
+0.50 1.73356e-2 4.31883e-2 8.55132e-2 1.49833e-1 2.43931e-1 3.79183e-1 5.73187e-1 8.56196e-1 1.04890 1.30359
+0.60 2.13213e-2 5.26248e-2 1.03136e-1 1.78681e-1 2.87279e-1 4.40372e-1 6.55255e-1 9.61020e-1 1.16486 1.42917
+0.70 2.51671e-2 6.16436e-2 1.19810e-1 2.05694e-1 3.27438e-1 4.96462e-1 7.29742e-1 1.05542 1.26908 1.54213
+0.80 2.88561e-2 7.02283e-2 1.35555e-1 2.30994e-1 3.64746e-1 5.48161e-1 7.97915e-1 1.14138 1.36388 1.64500
+0.90 3.23836e-2 7.83852e-2 1.50419e-1 2.54724e-1 3.99515e-1 5.96053e-1 8.60745e-1 1.22033 1.45092 1.73960
+1.00 3.57516e-2 8.61322e-2 1.64462e-1 2.77023e-1 4.32022e-1 6.40622e-1 9.18995e-1 1.29338 1.53145 1.82726

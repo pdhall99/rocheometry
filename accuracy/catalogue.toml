@@ -1,0 +1,758 @@
+# Quantity catalogue: every public numerical quantity, and every check of it.
+#
+# One entry per quantity. `hatch run accuracy:report` and `accuracy:check`
+# validate every reference here, and map the contract rows and diagnostics in
+# accuracy/results/ to their entries.
+#
+# Each check column holds one of:
+#   a list of references   the checks that fill the cell
+#   "n/a: <reason>"        the column does not apply to this quantity
+#   "gap: <note>"          the column applies and nothing fills it yet
+# An empty list is not allowed: say n/a or gap.
+#
+# Columns:
+#   structure    tests: exact identities, symmetries, by-construction properties
+#   crosscheck   tests: agreement with an independent method on chosen cases
+#   guard        tests: a contract bound on chosen cases, with a wide margin
+#   fingerprint  tests: exact digests that change only when an output changes
+#   literature   accuracy/literature/ modules (or tests that are really comparisons)
+#   fit          fits/ folders of packaged fits the quantity is read from
+#   timing       operations in speed/grid.py
+# The contract and diagnostic rows come from the results of the recorded
+# release run. A row belongs to the entry whose key is its name
+# or a dotted prefix of it: `integrals.volume.radius` belongs to
+# `integrals.volume`, and the identity check `integrals.mean_gravity.gauss_law`
+# to `integrals.mean_gravity`. `promised` says whether the README or
+# docs/site/guide/accuracy.md states a bound for the quantity; a promised quantity must
+# have contract rows, and contract rows must be promised. `truth` names what the contract rows are measured against;
+# `calibration` says how that truth is itself established:
+#   independent       an independent method (high precision, exact field)
+#   self-convergence  the same method at higher orders only
+#   partial           self-convergence over the contract domain, plus an independent
+#                     truth on part of it: a test, or accuracy/contract/independent_truth.py
+#   n/a               no contract rows
+# `calibration_refs` lists those independent checks. `shares` lists the
+# Roche-specific library components an independent or partial truth still
+# reuses, since a fault in one of them could hide from that truth. Each names
+# `checked_by`, the tests that check the component against an independent
+# truth, or "gap: <note>" when nothing does, and may add a `note` on how.
+# The problem statement and the generic numerics (roots, Gauss-Legendre
+# rules) may be shared freely.
+# `questions` records checks whose placement the catalogue does not settle.
+
+# ---------------------------------------------------------------- critical points
+
+[[quantity]]
+key = "critical.l1"
+name = "L1 point: position, potential, Hessian and its spectrum"
+api = ["ComponentGeometry.l1()", "BinaryGeometry.l1()"]
+promised = true
+truth = "40-digit mpmath force balance and Hessian (accuracy/contract/critical_points.py)"
+calibration = "independent"
+structure = [
+  "tests/computers/critical_point/test_bisection_hessians.py::test_morse_indices_at_every_decade",
+  "tests/test_component_geometry_critical.py::test_l1_obeys_component_exchange",
+  "tests/test_component_geometry_critical.py::test_reciprocal_l1_points_are_the_same_physical_l1",
+  "tests/test_component_geometry_critical.py::test_equal_mass_component_critical_points",
+  "tests/computers/test_defaults_bisection.py::test_equal_mass_l1_is_midpoint",
+  "tests/computers/test_defaults_bisection.py::test_l1_location_is_invariant_under_potential_convention",
+  "tests/computers/critical_point/test_bisection.py::test_extreme_l1_obeys_component_exchange",
+  "tests/roche/test_field.py::test_equal_mass_l1_has_canonical_jacobi_value",
+  "tests/test_geometry_potential_point.py::test_coupled_block_and_strictly_negative_morse_count",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_all_five_binary_points_have_invariant_spectrum_and_laplace_trace",
+]
+crosscheck = [
+  "tests/computers/critical_point/test_bisection.py::test_adaptive_critical_distances_match_high_precision_force_balance",
+  "tests/computers/test_defaults_bisection.py::test_bisection_l1_satisfies_kopal_quintic",
+  "tests/test_component_geometry_critical.py::test_each_component_critical_point_satisfies_stationary_field",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_every_hessian_entry_matches_fourth_order_potential_differences",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_l1_cone_half_angle_matches_critical_section_tangent",
+]
+guard = "n/a: the crosscheck tests already check the Fitted and Reference values against high precision"
+fingerprint = "gap: no digest of the critical points; the fingerprints cover selected surfaces only"
+literature = ["accuracy/literature/seidov.py", "accuracy/literature/literature_tables.py"]
+fit = "n/a: solved directly, no packaged fit"
+timing = "gap: not in the timing grid"
+
+[[quantity]]
+key = "critical.outer"
+name = "Outer saddle (L2 or L3 of the component): position, potential, Hessian"
+api = ["ComponentGeometry.outer()", "BinaryGeometry.l2()", "BinaryGeometry.l3()"]
+promised = true
+truth = "40-digit mpmath force balance and Hessian (accuracy/contract/critical_points.py)"
+calibration = "independent"
+structure = [
+  "tests/computers/critical_point/test_bisection_hessians.py::test_morse_indices_at_every_decade",
+  "tests/test_component_geometry_critical.py::test_equal_mass_binary_outer_points_are_symmetric",
+  "tests/test_component_geometry_critical.py::test_l2_l3_follow_mass_order_and_equal_mass_tie",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_all_five_binary_points_have_invariant_spectrum_and_laplace_trace",
+]
+crosscheck = [
+  "tests/computers/critical_point/test_bisection.py::test_adaptive_critical_distances_match_high_precision_force_balance",
+  "tests/test_component_geometry_critical.py::test_each_component_critical_point_satisfies_stationary_field",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_every_hessian_entry_matches_fourth_order_potential_differences",
+]
+guard = "n/a: the crosscheck tests already check the values against high precision"
+fingerprint = "gap: no digest of the critical points"
+literature = ["accuracy/literature/seidov.py", "accuracy/literature/literature_tables.py"]
+fit = "n/a: solved directly, no packaged fit"
+timing = "gap: not in the timing grid"
+
+[[quantity]]
+key = "critical.triangular"
+name = "Triangular points L4 and L5: position, potential, Hessian"
+api = ["ComponentGeometry.triangular()", "BinaryGeometry.l4()", "BinaryGeometry.l5()"]
+promised = true
+truth = "40-digit mpmath force balance and Hessian (accuracy/contract/critical_points.py)"
+calibration = "independent"
+structure = [
+  "tests/computers/critical_point/test_bisection_hessians.py::test_morse_indices_at_every_decade",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_triangular_point_is_the_closed_form_equilateral_point",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_equal_mass_mirrors_and_triangular_cross_entry_signs",
+  "tests/computers/critical_point/test_bisection_hessians.py::test_all_five_binary_points_have_invariant_spectrum_and_laplace_trace",
+]
+crosscheck = [
+  "tests/computers/critical_point/test_bisection_hessians.py::test_every_hessian_entry_matches_fourth_order_potential_differences",
+]
+guard = "n/a: the crosscheck tests already check the values against high precision"
+fingerprint = "gap: no digest of the critical points"
+literature = "n/a: the position is the closed-form equilateral point"
+fit = "n/a: closed form, no packaged fit"
+timing = "n/a: closed form"
+
+# ---------------------------------------------------------------- the lobe
+
+[[quantity]]
+key = "lobe.volume_radius"
+name = "Roche-lobe volume radius"
+api = ["ComponentGeometry.lobe_volume_radius()", "ComponentGeometry.lobe().volume_radius()"]
+promised = true
+truth = "Reference() at default orders for Fitted; Reference() at higher orders for Reference"
+calibration = "partial"
+calibration_refs = [
+  "accuracy/contract/independent_truth.py",
+  "crosschecks/tests/test_cartesian.py::test_slice_strategy_agrees_with_independent_angular_integration",
+]
+structure = [
+  "tests/computers/lobe_volume_radius/fitted/test_computer.py::test_component_mass_ratio_views_share_one_packaged_computer",
+  "tests/test_component_geometry_surface.py::test_lobe_is_exact_critical_surface_alias",
+  "tests/computers/lobe_volume_radius/fitted/test_computer.py::test_packaged_pieces_join_twice_differentiably_at_equal_mass",
+  "tests/computers/lobe_volume_radius/fitted/test_computer.py::test_packaged_radius_has_the_hill_power_law_and_a_finite_heavy_limit",
+]
+crosscheck = [
+  "tests/test_component_geometry_surface.py::test_integrated_lobe_radius_matches_corrected_polar_quadrature",
+  "tests/computers/section_path/test_reference_component.py::test_lobe_volume_quadrature_converges",
+  "crosschecks/tests/test_cartesian.py::test_slice_strategy_agrees_with_independent_angular_integration",
+]
+guard = "gap: no margin check of Fitted against Reference outside the fit holdout"
+fingerprint = [
+  "tests/computers/lobe_volume_radius/fitted/test_computer.py::test_packaged_piecewise_model_matches_selected_values",
+]
+literature = [
+  "accuracy/literature/asymptotic_limits.py",
+  "accuracy/literature/eggleton.py",
+  "accuracy/literature/literature_tables.py",
+]
+fit = ["fits/lobe_volume_radius"]
+timing = ["lobe_radius"]
+
+[[quantity]]
+key = "lobe.slope"
+name = "Logarithmic slope of the lobe radius, d ln R / d ln qi"
+api = ["ComponentGeometry.lobe_volume_radius_slope()"]
+promised = true
+truth = "Reference() at default orders for Fitted; Reference() at higher orders for Reference"
+calibration = "partial"
+calibration_refs = ["accuracy/contract/independent_truth.py"]
+structure = [
+  "tests/computers/lobe_slope/test_sampled.py::test_lobe_slopes_stay_within_hill_limit_and_decrease_strictly",
+]
+crosscheck = [
+  "tests/computers/lobe_slope/test_sampled.py::test_reference_slope_matches_richardson_log_radius_difference",
+  "tests/roche/test_shape_derivative.py::test_ray_velocity_matches_moving_lobe_intersection",
+]
+guard = ["tests/computers/lobe_slope/test_sampled.py::test_default_lobe_slope_agrees_with_reference"]
+fingerprint = ["tests/computers/lobe_slope/test_sampled.py::test_lobe_slope_regression"]
+literature = ["accuracy/literature/asymptotic_limits.py"]
+fit = "n/a: computed from the lobe radius, no separate fit"
+timing = ["lobe_slope"]
+
+[[quantity]]
+key = "lobe.max_fill"
+name = "Limiting volume-radius fill as the level approaches L2 from above"
+api = ["ComponentGeometry.max_volume_radius_fill()"]
+promised = true
+truth = "Reference() at default orders for Fitted; Reference() at higher orders for Reference"
+calibration = "partial"
+calibration_refs = ["accuracy/contract/independent_truth.py"]
+structure = [
+  "tests/test_component_geometry_max_fill.py::test_maximum_fill_one_sided_limits",
+  "tests/test_component_geometry_max_fill.py::test_maximum_fill_slope_jump",
+]
+crosscheck = ["tests/test_component_geometry_max_fill.py::test_equal_mass_maximum_fill_against_cartesian_envelope"]
+guard = "gap"
+fingerprint = "gap: not in the fingerprint set"
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: measured directly, no packaged fit"
+timing = "gap: not in the timing grid"
+
+# ---------------------------------------------------------------- selecting a surface
+
+[[quantity]]
+key = "selection.by_fill"
+name = "Surface selected by volume-radius fill (its potential and depth)"
+api = ["ComponentGeometry.surface(volume_radius_fill=...)"]
+promised = true
+truth = "the fill of the selected surface as Reference() measures it"
+calibration = "partial"
+calibration_refs = [
+  "crosschecks/tests/test_cartesian.py::test_slice_strategy_agrees_with_independent_angular_integration",
+]
+structure = [
+  "tests/computers/surface_selection/test_volume_inversion.py::test_fill_potential_round_trips_and_exact_endpoints",
+  "tests/computers/section_path/test_reference_component.py::test_volume_radius_fill_one_is_exact_critical_surface",
+  "tests/computers/surface_potential/fitted/test_computer.py::test_exact_endpoints_and_small_fill_asymptote",
+  "tests/computers/surface_potential/fitted/test_computer.py::test_dense_monotonicity_200_mass_ratios_by_400_fills",
+]
+crosscheck = [
+  "tests/computers/surface_selection/test_volume_inversion.py::test_integrated_selection_recovers_tiny_fills",
+  "tests/computers/test_defaults_bisection.py::test_integrated_surface_recovers_requested_fill",
+  "tests/computers/section_path/test_reference_component.py::test_requested_volume_radius_fill_is_recovered",
+]
+guard = [
+  "tests/computers/surface_potential/fitted/test_computer.py::test_forward_selection_reports_independently_measured_fill",
+]
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = "n/a: the fill parametrization is Rocheometry's own; the lobe radius carries the comparison"
+fit = ["fits/fill_map"]
+timing = ["selection"]
+
+[[quantity]]
+key = "selection.by_fill_out_factor"
+name = "Surface selected by fill-out factor F"
+api = ["ComponentGeometry.surface(fill_out_factor=...)", "ComponentSurfaceGeometry.fill_out_factor()"]
+promised = true
+truth = "the exact potential interpolation between L1 and the outer saddle"
+calibration = "independent"
+structure = [
+  "tests/test_levels_depth.py::test_factor_round_trip_uses_depth",
+  "tests/roche/test_opening.py::test_f_round_trip_with_inward_gap_is_within_one_ulp",
+  "tests/computers/test_contact_parts.py::test_fill_out_factor_just_below_one_stays_above_l2",
+]
+crosscheck = "n/a: F is defined by potentials, which the structure tests check exactly"
+guard = "n/a: see crosscheck"
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: closed form in the critical potentials"
+timing = "gap: the grid builds contact surfaces by F but does not time the selection"
+
+[[quantity]]
+key = "selection.fill_for_radius"
+name = "Fill for a given volume radius"
+api = ["ComponentGeometry.volume_radius_fill_for()", "ComponentGeometry.surface(volume_radius=...)"]
+promised = true
+truth = "Reference() lobe radius"
+calibration = "partial"
+calibration_refs = [
+  "crosschecks/tests/test_cartesian.py::test_slice_strategy_agrees_with_independent_angular_integration",
+]
+structure = [
+  "tests/test_component_geometry_selection.py::test_component_surface_radius_selection",
+  "tests/test_component_geometry_selection.py::test_binary_surface_radius_selection_in_view_units",
+]
+crosscheck = "n/a: a division by the lobe radius, whose crosscheck tests apply"
+guard = "n/a: see crosscheck"
+fingerprint = "gap: not in the fingerprint set"
+literature = "n/a: see lobe.volume_radius"
+fit = ["fits/lobe_volume_radius"]
+timing = "n/a: one division after the lobe radius"
+
+[[quantity]]
+key = "level.regime"
+name = "Level regime: detached, critical, contact or open"
+api = ["ComponentGeometry.level_regime()", "ComponentSurfaceGeometry.regime"]
+promised = false
+truth = "n/a"
+calibration = "n/a"
+structure = [
+  "tests/roche/test_regime_components.py::test_geometry_regime_boundaries",
+  "tests/roche/test_regime_components.py::test_binary_regime_symmetry_in_every_convention",
+  "tests/roche/test_regime.py::test_pure_regime_boundaries",
+  "tests/computers/test_contact_closed_level.py::test_guard_has_no_positive_depth_snapping_band",
+]
+crosscheck = "n/a: exact classification by the sign of the stored depth"
+guard = "n/a: exact classification"
+fingerprint = "n/a: exact classification"
+literature = "n/a: a definition"
+fit = "n/a"
+timing = "n/a: a comparison"
+
+[[quantity]]
+key = "points"
+name = "Point queries: potential at a point, containment"
+api = ["ComponentGeometry.potential_at()", "BinaryGeometry.potential_at()", "ComponentSurfaceGeometry.contains()"]
+promised = false
+truth = "n/a: a guarantee (every query carries a running error bound), so its evidence is tests"
+calibration = "n/a"
+structure = [
+  "tests/test_component_geometry_point_queries.py::test_every_balanced_quadrature_node_just_inside_and_outside",
+  "tests/test_component_geometry_point_queries.py::test_same_ray_radius_consistency_and_bounded_region",
+  "tests/test_component_geometry_point_queries.py::test_binary_frames_and_both_component_charts",
+]
+crosscheck = [
+  "tests/test_component_geometry_point_queries.py::test_potential_at_100_digit_running_bound",
+  "tests/test_component_geometry_point_queries.py::test_binary_potential_100_digit_bound_includes_frame_arithmetic",
+]
+guard = "n/a: every query carries a certified bound, checked by the crosscheck tests"
+fingerprint = "n/a: closed-form evaluation with a certified bound"
+literature = "n/a: a definition"
+fit = "n/a"
+timing = "gap: not in the timing grid"
+
+# ---------------------------------------------------------------- surface integrals
+
+[[quantity]]
+key = "integrals.volume"
+name = "Volume and volume radius of a surface"
+api = ["ComponentSurfaceGeometry.volume()", "ComponentSurfaceGeometry.volume_radius()"]
+promised = true
+truth = "Reference() at default orders for Fitted; 512x192 and 1024x192 at the same depth for Reference"
+calibration = "partial"
+calibration_refs = [
+  "accuracy/contract/independent_truth.py",
+  "crosschecks/tests/test_cartesian.py::test_slice_strategy_agrees_with_independent_angular_integration",
+]
+structure = [
+  "tests/computers/surface_volume/test_sampled.py::test_sampled_volume_is_bit_identical_to_direct_node_radius_integration",
+  "tests/test_component_geometry_measurements.py::test_surface_measurement_radii_are_ordered",
+  "tests/test_component_geometry_measurements.py::test_minkowski_integral_identity",
+]
+crosscheck = [
+  "crosschecks/tests/test_cartesian.py::test_cross_section_quadrature_reproduces_sphere_volume",
+  "crosschecks/tests/test_cartesian.py::test_cross_section_quadrature_reproduces_triaxial_ellipsoid_volume",
+  "crosschecks/tests/test_cartesian.py::test_slice_strategy_agrees_with_independent_angular_integration",
+  "tests/test_component_geometry_measurements.py::test_small_surface_measurement_radii_approach_the_sphere",
+  "tests/computers/test_contact_parts.py::test_gauss_volume_against_all_boundary_rays",
+  "tests/computers/test_contact_parts.py::test_tiling_against_cartesian_envelope",
+]
+guard = [
+  "tests/test_component_geometry_measurements.py::test_default_surface_measurements_agree_with_reference",
+  "tests/test_component_geometry_measurements.py::test_near_critical_detached_measurements_agree_with_reference",
+]
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: integrated directly"
+timing = ["volume", "sample"]
+
+[[quantity]]
+key = "integrals.fill"
+name = "Measured volume-radius fill of a surface"
+api = ["ComponentSurfaceGeometry.volume_radius_fill()"]
+promised = true
+truth = "Reference() volume over Reference() lobe volume"
+calibration = "partial"
+calibration_refs = [
+  "accuracy/contract/independent_truth.py",
+  "crosschecks/tests/test_cartesian.py::test_slice_strategy_agrees_with_independent_angular_integration",
+]
+structure = [
+  "tests/computers/surface_volume/test_sampled_measured.py::test_volume_and_fill_are_measured_with_one_lobe_normalization",
+  "tests/computers/surface_volume/test_sampled_measured.py::test_shallow_depth_never_becomes_a_critical_surface",
+  "tests/computers/surface_volume/test_sampled_measured.py::test_measured_fill_is_first_order_in_depth_until_the_noise_floor",
+  "tests/computers/test_contact_parts.py::test_fill_increases_through_contact",
+  "tests/computers/test_contact_parts.py::test_contact_fill_round_trips",
+]
+crosscheck = "n/a: a ratio of two volumes, whose crosscheck tests apply"
+guard = "gap"
+fingerprint = "gap: the fill is not in the fingerprint set"
+literature = "n/a: see integrals.volume"
+fit = "n/a: measured, never read from the fill map"
+timing = ["fill"]
+
+[[quantity]]
+key = "integrals.area"
+name = "Area and area radius of a surface"
+api = ["ComponentSurfaceGeometry.area()", "ComponentSurfaceGeometry.area_radius()"]
+promised = true
+truth = "Reference() at default orders for Fitted; 512x192 and 1024x192 at the same depth for Reference"
+calibration = "partial"
+calibration_refs = ["accuracy/contract/independent_truth.py"]
+structure = [
+  "tests/test_component_geometry_measurements.py::test_surface_measurement_radii_are_ordered",
+  "tests/test_surface_quadrature.py::test_reader_consistency_and_node_geometry",
+]
+crosscheck = [
+  "tests/test_component_geometry_measurements.py::test_small_surface_measurement_radii_approach_the_sphere",
+  "tests/test_surface_quadrature.py::test_closed_detached_integral_identities",
+]
+guard = ["tests/test_component_geometry_measurements.py::test_default_surface_measurements_agree_with_reference"]
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: integrated directly"
+timing = "gap: area is not in the timing grid"
+
+[[quantity]]
+key = "integrals.mean_curvature"
+name = "Integrated mean curvature and mean-curvature radius"
+api = ["ComponentSurfaceGeometry.integrated_mean_curvature()", "ComponentSurfaceGeometry.mean_curvature_radius()"]
+promised = true
+truth = "Reference() at default orders for Fitted; 512x192 and 1024x192 at the same depth for Reference"
+calibration = "partial"
+calibration_refs = ["accuracy/contract/independent_truth.py"]
+structure = [
+  "tests/test_component_geometry_measurements.py::test_minkowski_integral_identity",
+  "tests/test_component_geometry_measurements.py::test_surface_measurement_radii_are_ordered",
+]
+crosscheck = [
+  "tests/test_surface_quadrature.py::test_sphere_curvature_conventions_and_gaussian_formula",
+  "tests/test_component_geometry_measurements.py::test_small_surface_measurement_radii_approach_the_sphere",
+]
+guard = ["tests/test_component_geometry_measurements.py::test_default_surface_measurements_agree_with_reference"]
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = "gap: no published source identified yet"
+fit = "n/a: integrated directly"
+timing = "gap: not in the timing grid"
+
+[[quantity]]
+key = "integrals.mean_gravity"
+name = "Mean surface gravity"
+api = ["ComponentSurfaceGeometry.mean_gravity()"]
+promised = true
+truth = "Reference() at higher orders; Gauss's law for the enclosed mass"
+calibration = "independent"
+calibration_refs = ["accuracy/contract/independent_truth.py"]
+structure = [
+  "tests/test_component_geometry_measurements.py::test_mean_gravity_gauss_law_matches_direct_surface_integral",
+  "tests/test_surface_quadrature.py::test_reference_gravity_gauss_law",
+]
+crosscheck = "n/a: Gauss's law gives the exact flux, checked as structure"
+guard = ["tests/test_component_geometry_measurements.py::test_default_surface_measurements_agree_with_reference"]
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: integrated directly"
+timing = "gap: not in the timing grid"
+
+# ---------------------------------------------------------------- radii
+
+[[quantity]]
+key = "radii.named"
+name = "Named radii: point, back, side and pole"
+api = ["ComponentSurfaceGeometry.named_radius()"]
+promised = true
+truth = "independent ray root solve (crosschecks/radii.py)"
+calibration = "independent"
+shares = [
+  { component = "the watershed tracer, for directions inside a contact cut", checked_by = "gap: property tests only (symmetry, ordering, the L1 limit, ray consistency); no independent trace" },
+]
+structure = [
+  "tests/test_component_geometry_surface.py::test_component_exchange_preserves_intrinsic_radii",
+  "tests/test_component_geometry_surface.py::test_critical_point_radius_reuses_l1_without_radius_solve",
+]
+crosscheck = [
+  "tests/computers/test_neck_displacements.py::test_neck_radii_and_tangents_match_independent_80_digit_roots",
+  "tests/computers/surface_radius/test_brent.py::test_brent_radii_agree_with_bisection_on_all_default_directions",
+  "tests/test_component_geometry_resolution.py::test_both_residual_policies_against_40_digit_geometry",
+]
+guard = "n/a: the crosscheck tests check against high precision"
+fingerprint = "gap: not in the fingerprint set"
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: solved directly"
+timing = "gap: not in the timing grid"
+
+[[quantity]]
+key = "radii.direction"
+name = "Radius in an arbitrary direction"
+api = ["ComponentSurfaceGeometry.radius()"]
+promised = true
+truth = "independent ray root solve (crosschecks/radii.py)"
+calibration = "independent"
+shares = [
+  { component = "the watershed tracer, for directions inside a contact cut", checked_by = "gap: property tests only (symmetry, ordering, the L1 limit, ray consistency); no independent trace" },
+]
+structure = [
+  "tests/test_component_geometry_surface.py::test_radius_accepts_arbitrary_direction",
+  "tests/test_component_geometry_surface.py::test_directional_radii_use_three_dimensional_field",
+  "tests/test_binary_geometry.py::test_binary_radius_uses_output_frame_direction",
+]
+crosscheck = [
+  "tests/computers/surface_radius/test_radial_brackets.py::test_enclosing_bracket_returns_an_exact_contracted_root",
+  "tests/computers/test_neck_displacements.py::test_neck_radii_and_tangents_match_independent_80_digit_roots",
+]
+guard = "n/a: the crosscheck tests check against high precision"
+fingerprint = "gap: not in the fingerprint set"
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: solved directly"
+timing = "gap: not in the timing grid"
+
+# ---------------------------------------------------------------- quadrature
+
+[[quantity]]
+key = "quadrature.nodes"
+name = "Surface quadrature nodes: positions, normals, gravities, curvatures, weights"
+api = ["ComponentSurfaceGeometry.quadrature()"]
+promised = true
+truth = "exact ray roots (crosschecks/ray_root.py), against the running error bounds the library's node arithmetic carries, replayed in 100 digits (crosschecks/instrumented/)"
+calibration = "independent"
+structure = [
+  "tests/test_surface_quadrature.py::test_quadrature_nodes_are_outward_and_mirrored_at_every_decade",
+  "tests/test_surface_quadrature.py::test_reader_consistency_and_node_geometry",
+  "tests/computers/surface_sample/test_sample.py::test_sampler_quadrant_rays_have_full_sphere_weights_and_ordered_radii",
+  "tests/test_component_geometry_point_queries.py::test_every_balanced_quadrature_node_just_inside_and_outside",
+  "tests/computers/surface_sample/test_angular_clustering.py::test_angular_maps_have_ordered_nodes_and_positive_exact_measure",
+]
+crosscheck = ["tests/test_accuracy.py::test_portable_fingerprint_checks_run_when_platform_differs"]
+guard = "n/a: every node carries a running bound, checked by the crosscheck test"
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = "n/a: an internal representation"
+fit = "n/a"
+timing = ["sample"]
+
+[[quantity]]
+key = "quadrature.integrals"
+name = "Smooth surface integrals from the quadrature, and their consistency with the surface measurement methods"
+api = ["SurfaceQuadrature weights with positions, gravities and curvatures"]
+promised = true
+truth = "Reference() at higher orders"
+calibration = "partial"
+calibration_refs = ["accuracy/contract/independent_truth.py"]
+structure = [
+  "tests/test_surface_quadrature.py::test_closed_detached_integral_identities",
+  "tests/test_surface_quadrature.py::test_gauss_bonnet_with_measured_near_critical_bounds",
+  "tests/test_surface_quadrature.py::test_critical_gauss_bonnet_includes_hessian_cone_deficit",
+  "tests/test_surface_quadrature.py::test_quadrature_and_readers_share_solved_radii",
+]
+crosscheck = [
+  "tests/test_surface_quadrature.py::test_circular_cone_apex_angle_matches_analytic_circumference",
+  "tests/test_surface_quadrature.py::test_sphere_curvature_conventions_and_gaussian_formula",
+  "tests/numerics/test_quadrature.py::test_gauss_legendre_integrates_quartic_with_three_points",
+]
+guard = "gap"
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = "n/a: an internal representation"
+fit = "n/a"
+timing = "gap: the quadrature() method is not timed"
+
+# ---------------------------------------------------------------- outlines
+
+[[quantity]]
+key = "outlines.section"
+name = "Plane section of a surface"
+api = ["ComponentSurfaceGeometry.section()"]
+promised = true
+truth = "the exact level set in the plane (crosschecks/distance/outlines.py)"
+calibration = "independent"
+shares = [
+  { component = "the library's binary64 field, as the level residual and its gradient", checked_by = ["tests/roche/test_field.py::test_potential_difference_retains_neck_precision", "tests/test_component_geometry_point_queries.py::test_potential_at_100_digit_running_bound", "tests/roche/test_field.py::test_analytic_gradient_matches_central_difference"] },
+  { component = "the watershed cut-section tracer, for cut segments of contact sections", checked_by = "gap: property tests only (symmetry, ordering, the L1 limit, ray consistency); no independent trace" },
+]
+structure = [
+  "tests/computers/section_path/test_reference_orbital.py::test_closed_section_has_exact_reflection_symmetry",
+  "tests/computers/section_path/test_reference_orbital.py::test_component_exchange_preserves_component_centred_shape",
+  "tests/computers/section_path/test_traced.py::test_negative_offsets_have_identical_shapes",
+  "tests/test_planes.py::test_component_section_points_lift_onto_surface",
+]
+crosscheck = [
+  "tests/computers/section_path/test_reference_component.py::test_component_section_lies_on_one_equipotential",
+  "tests/computers/section_path/test_reference_centreline.py::test_inclined_section_lies_on_one_equipotential",
+  "tests/computers/section_path/test_traced.py::test_centreline_dense_radial_error",
+  "tests/computers/section_path/test_traced.py::test_section_dense_radial_error_and_containment",
+  "tests/computers/section_path/test_reference_component.py::test_low_fill_surface_is_nearly_spherical",
+]
+guard = [
+  "tests/computers/section_path/test_gauge_fixed.py::test_fast_accuracy_subset",
+  "tests/computers/section_path/test_contact.py::test_fast_contact_subset",
+  "tests/computers/section_path/test_axis_contact.py::test_axial_contact_section_structure_and_corners",
+]
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a: traced, no packaged fit"
+timing = ["section"]
+
+[[quantity]]
+key = "outlines.section_envelope"
+name = "Section of one component's envelope share; both components' arcs together draw the common envelope in contact"
+api = ["ComponentSurfaceGeometry.section_envelope()"]
+promised = true
+truth = "the exact level set in the plane (crosschecks/distance/outlines.py)"
+calibration = "independent"
+shares = [
+  { component = "the library's binary64 field, as the level residual and its gradient", checked_by = ["tests/roche/test_field.py::test_potential_difference_retains_neck_precision", "tests/test_component_geometry_point_queries.py::test_potential_at_100_digit_running_bound", "tests/roche/test_field.py::test_analytic_gradient_matches_central_difference"] },
+]
+structure = [
+  "tests/computers/section_path/test_contact.py::test_envelope_is_whole_loop_below_contact",
+  "tests/computers/section_path/test_contact.py::test_binary_envelope_arc_is_transformed_without_closing",
+  "tests/computers/section_path/test_axis_contact.py::test_axial_contact_section_structure_and_corners",
+]
+crosscheck = [
+  "tests/computers/section_path/test_contact.py::test_orbital_part_areas_tile_independent_envelope",
+  "tests/computers/section_path/test_contact_compound.py::test_separated_parts_tile_independent_envelope_slice",
+]
+guard = "gap"
+fingerprint = "gap: the fingerprints cover the component section only"
+literature = "n/a"
+fit = "n/a: traced, no packaged fit"
+timing = "gap: not in the timing grid"
+
+[[quantity]]
+key = "outlines.silhouette"
+name = "Silhouette of one component at quadrature"
+api = ["ComponentSurfaceGeometry.silhouette()"]
+promised = true
+truth = "the exact line-of-sight maximum (crosschecks/distance/outlines.py)"
+calibration = "independent"
+shares = [
+  { component = "the projected field, for the line-of-sight maximum", checked_by = ["tests/computers/silhouette/test_projected_outlines.py::test_reference_outline_matches_independent_brute_force_shadow"], note = "by brute-force maximization on a grid, to 1e-6 of the pole radius" },
+  { component = "the library's binary64 field gradient", checked_by = ["tests/roche/test_field.py::test_analytic_gradient_matches_central_difference"] },
+]
+structure = [
+  "tests/computers/silhouette/test_projected_outlines.py::test_special_views_equal_the_corresponding_sections",
+  "tests/test_planes.py::test_face_on_silhouette_agrees_with_section_to_roundoff",
+  "tests/computers/silhouette/test_projected_global.py::test_query_order_and_deliberately_bad_warm_starts_do_not_change_bits",
+  "tests/computers/silhouette/test_projected_global.py::test_limb_radii_are_bit_identical_when_queries_are_shuffled",
+]
+crosscheck = [
+  "tests/computers/silhouette/test_projected_outlines.py::test_reference_outline_matches_independent_brute_force_shadow",
+  "tests/test_planes.py::test_view_silhouette_contains_reference_quadrature_and_touches_limb",
+  "tests/computers/silhouette/test_projected_outlines.py::test_critical_l1_corner_uses_projected_hessian_cone",
+]
+guard = ["tests/computers/silhouette/test_projected_outlines.py::test_silhouette_accuracy_and_limb_property"]
+fingerprint = "gap: the fingerprints cover the silhouette envelope only"
+literature = "n/a"
+fit = "n/a: traced, no packaged fit"
+timing = "gap: the grid times the envelope only"
+
+[[quantity]]
+key = "outlines.silhouette_envelope"
+name = "Silhouette of one component's envelope share; both components' arcs together draw the common envelope in contact"
+api = ["ComponentSurfaceGeometry.silhouette_envelope()"]
+promised = true
+truth = "the exact line-of-sight maximum (crosschecks/distance/outlines.py)"
+calibration = "independent"
+shares = [
+  { component = "the projected field, for the line-of-sight maximum", checked_by = ["tests/computers/silhouette/test_projected_outlines.py::test_reference_outline_matches_independent_brute_force_shadow"], note = "by brute-force maximization on a grid, to 1e-6 of the pole radius" },
+  { component = "the library's binary64 field gradient", checked_by = ["tests/roche/test_field.py::test_analytic_gradient_matches_central_difference"] },
+]
+structure = [
+  "tests/computers/silhouette/test_projected_heavy_contact.py::test_binary_limb_crossings_join_in_both_frames",
+]
+crosscheck = ["tests/computers/silhouette/test_projected_heavy_contact.py::test_heavy_contact_reference_and_fitted_containment"]
+guard = "gap"
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = "n/a"
+fit = "n/a: traced, no packaged fit"
+timing = ["silhouette_60", "silhouette_85"]
+
+[[quantity]]
+key = "outlines.shape"
+name = "Shape guarantees of every outline: closed, symmetric, knots on the surface, L1 cone, continuity"
+api = ["section(), section_envelope(), silhouette(), silhouette_envelope()"]
+promised = true
+truth = "exact field and exact L1 cone"
+calibration = "independent"
+shares = [
+  { component = "the watershed tracer's rim at the stored depth", checked_by = "gap: property tests only (symmetry, ordering, the L1 limit, ray consistency); no independent trace" },
+  { component = "the library's binary64 field gradient", checked_by = ["tests/roche/test_field.py::test_analytic_gradient_matches_central_difference"] },
+]
+structure = [
+  "tests/test_component_geometry_surface.py::test_outline_shape_guarantees_at_every_decade",
+  "tests/test_component_geometry_section.py::test_section_returns_closed_fifty_two_segment_path",
+  "tests/computers/section_path/test_contact.py::test_neck_tangents_converge_to_l1_cone",
+  "tests/computers/section_path/test_contact.py::test_fitted_controls_continue_through_l1",
+  "tests/computers/section_path/test_gauge_fixed.py::test_control_points_vary_smoothly_in_q",
+  "tests/computers/section_path/test_gauge_fixed.py::test_control_points_approach_contact_continuously",
+  "tests/computers/silhouette/test_paths_gauge.py::test_heavy_silhouette_retains_exact_knot_tangents",
+  "tests/computers/silhouette/test_paths_gauge.py::test_heavy_gauge_control_points_are_smooth_in_q",
+  "tests/computers/silhouette/test_projected_outlines.py::test_fixed_silhouette_controls_vary_smoothly_with_inclination",
+  "tests/computers/silhouette/test_projected_outlines.py::test_silhouette_controls_continue_through_l1_at_quarter_power",
+  "tests/test_component_geometry_surface.py::test_fitted_outline_controls_are_continuous_in_fill",
+]
+crosscheck = "n/a: shape guarantees are checked against the exact field as structure"
+guard = "n/a"
+fingerprint = ["tests/test_accuracy.py::test_accuracy_settings_are_bit_identical_to_previous_graphs"]
+literature = "n/a"
+fit = "n/a"
+timing = "n/a: no separate operation"
+
+# ---------------------------------------------------------------- binaries and conventions
+
+[[quantity]]
+key = "binary.join"
+name = "Contact outlines of the two components meet"
+api = ["BinaryGeometry component views: section_envelope(), silhouette_envelope()"]
+promised = true
+truth = "the exact L1-plane crossing at the stored depth (crosschecks/geometry.py)"
+calibration = "independent"
+shares = [
+  { component = "the watershed tracer's rim at the stored depth", checked_by = "gap: property tests only (symmetry, ordering, the L1 limit, ray consistency); no independent trace" },
+  { component = "the library's binary64 field gradient", checked_by = ["tests/roche/test_field.py::test_analytic_gradient_matches_central_difference"] },
+]
+structure = [
+  "tests/computers/silhouette/test_projected_outlines.py::test_binary_contact_limbs_meet_and_follow_frame_transforms",
+  "tests/computers/silhouette/test_projected_heavy_contact.py::test_binary_limb_crossings_join_in_both_frames",
+  "tests/computers/section_path/test_contact.py::test_binary_envelope_arc_is_transformed_without_closing",
+]
+crosscheck = "n/a: the join is checked against the exact crossing as structure"
+guard = "n/a"
+fingerprint = "gap: no binary digest"
+literature = "n/a"
+fit = "n/a"
+timing = "gap: binary outlines are not timed"
+
+[[quantity]]
+key = "binary.frames"
+name = "Frames and component views of a binary"
+api = ["BinaryGeometry.frame()", "BinaryGeometry.component()", "BinaryGeometry.centre_of_mass"]
+promised = false
+truth = "n/a"
+calibration = "n/a"
+structure = [
+  "tests/test_frames.py::test_all_frame_transforms_round_trip",
+  "tests/test_frames.py::test_component_two_frame_is_right_handed_pi_rotation_about_z",
+  "tests/test_frames.py::test_binary_to_centre_of_mass_affine_transform_uses_barycentre",
+  "tests/test_binary_geometry.py::test_component_exchange_preserves_local_section",
+  "tests/test_binary_geometry.py::test_separation_scales_binary_section",
+  "tests/test_binary_geometry.py::test_equal_mass_binary_is_mirror_symmetric_about_midpoint",
+]
+crosscheck = "n/a: exact affine maps"
+guard = "n/a"
+fingerprint = "n/a: exact affine maps"
+literature = "n/a: a definition"
+fit = "n/a"
+timing = "n/a"
+
+[[quantity]]
+key = "potential.conventions"
+name = "Potential conventions: Jacobi and Kopal"
+api = ["convert_potential()", "BinaryGeometry.convert_potential()", "Potential"]
+promised = false
+truth = "n/a"
+calibration = "n/a"
+structure = [
+  "tests/roche/test_potential.py::test_kopal_round_trip_through_canonical",
+  "tests/roche/test_potential.py::test_kopal_conversion_between_component_charts_preserves_level",
+  "tests/roche/test_field.py::test_jacobi_potential_obeys_component_exchange_symmetry",
+]
+crosscheck = [
+  "tests/roche/test_potential.py::test_kopal_formula_matches_canonical_field_in_each_component_chart",
+  "tests/roche/test_potential.py::test_documented_component_one_kopal_conversion",
+]
+guard = "n/a"
+fingerprint = "n/a: exact affine conversions"
+literature = ["accuracy/literature/literature_tables.py"]
+fit = "n/a"
+timing = "n/a"
+
+[[quantity]]
+key = "orbit.separation"
+name = "Kepler separation from period and total mass"
+api = ["kepler_separation()"]
+promised = false
+truth = "n/a"
+calibration = "n/a"
+structure = ["tests/test_orbit.py::test_scales_as_mass_third_period_two_thirds"]
+crosscheck = ["tests/test_orbit.py::test_earth_orbit_is_one_au", "tests/test_orbit.py::test_one_solar_mass_one_day"]
+guard = "n/a"
+fingerprint = "n/a: closed form"
+literature = "n/a: closed form with IAU constants"
+fit = "n/a"
+timing = "n/a"

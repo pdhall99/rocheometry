@@ -1,0 +1,91 @@
+{
+  "provenance": "Integrated mean curvature, the largest normal error and the fill from a baseline residual without the exact L1 anchor (unfactored, or factored about a rounded anchor), on the same binary64 rays at common absolute potentials. Normal errors are measured against independent 40-digit roots. Fills use sampled volumes, not the fitted selection map.",
+  "cases": [
+    {
+      "reference": false,
+      "qi": 0.0010693356832132954,
+      "potential": 1.5396135583467543,
+      "factor": null,
+      "baseline_integrated_mean_curvature": 0.32337823720118275,
+      "baseline_normal_error": 2.5644345819497487e-15,
+      "baseline_fill": 0.522080235744778
+    },
+    {
+      "reference": false,
+      "qi": 1e-06,
+      "potential": 1.5002584694552592,
+      "factor": null,
+      "baseline_integrated_mean_curvature": 0.04961058226465708,
+      "baseline_normal_error": 7.036182373417261e-13,
+      "baseline_fill": 0.800000002018558
+    },
+    {
+      "reference": false,
+      "qi": 1e-08,
+      "potential": 1.5000120488344864,
+      "factor": null,
+      "baseline_integrated_mean_curvature": 0.010709287700037108,
+      "baseline_normal_error": 1.2090189043448209e-11,
+      "baseline_fill": 0.7999999992145969
+    },
+    {
+      "reference": false,
+      "qi": 0.001,
+      "potential": 1.5199616328835792,
+      "factor": 1e-06,
+      "baseline_integrated_mean_curvature": 0.6196919013397958,
+      "baseline_normal_error": 0.0005506250155073119
+    },
+    {
+      "reference": false,
+      "qi": 1000.0,
+      "potential": 1.5196285665433142,
+      "factor": 0.5,
+      "baseline_integrated_mean_curvature": 9.989843741866759,
+      "baseline_normal_error": 9.549322575889185e-12
+    },
+    {
+      "reference": true,
+      "qi": 0.0010693356832132954,
+      "potential": 1.5396135583467543,
+      "factor": null,
+      "baseline_integrated_mean_curvature": 0.32337823720118214,
+      "baseline_normal_error": 2.620609032428019e-15,
+      "baseline_fill": 0.5220802357447776
+    },
+    {
+      "reference": true,
+      "qi": 1e-06,
+      "potential": 1.5002584694552592,
+      "factor": null,
+      "baseline_integrated_mean_curvature": 0.0496105822646461,
+      "baseline_normal_error": 8.824550119965034e-13,
+      "baseline_fill": 0.8000000020184797
+    },
+    {
+      "reference": true,
+      "qi": 1e-08,
+      "potential": 1.5000120488344864,
+      "factor": null,
+      "baseline_integrated_mean_curvature": 0.010709287700018144,
+      "baseline_normal_error": 1.55050235338966e-11,
+      "baseline_fill": 0.7999999992143582
+    },
+    {
+      "reference": true,
+      "qi": 0.001,
+      "potential": 1.5199616328835792,
+      "factor": 1e-06,
+      "baseline_integrated_mean_curvature": 0.6196919015434124,
+      "baseline_normal_error": 0.0005560879506311913
+    },
+    {
+      "reference": true,
+      "qi": 1000.0,
+      "potential": 1.5196285665433142,
+      "factor": 0.5,
+      "baseline_integrated_mean_curvature": 9.989843741866482,
+      "baseline_normal_error": 1.0278834908122478e-11
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: q, datatype: string, description: mass ratio M2/M1 as printed}
+# - {name: F=1.0, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.0'}}}
+# - {name: F=1.05, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.05'}}}
+# - {name: F=1.1, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.1'}}}
+# - {name: F=1.2, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.2'}}}
+# - {name: F=1.4, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.4'}}}
+# - {name: F=1.6, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.6'}}}
+# - {name: F=1.8, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.8'}}}
+# - {name: F=1.9, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.9'}}}
+# - {name: F=1.95, datatype: string, meta: {rocheometry_quantity: envelope_mean_gravity, partners: [mochnacki1984_table15, mochnacki1984_table10, mochnacki1984_table11], units: '|grad C|', level: {kind: fill_out_contact, fill_out: '1.95'}}}
+# - {name: F=2.0, datatype: string, meta: {units: '|grad C|', status: 'the outer contact surface: Rocheometry''s contact levels stop strictly below L2'}}
+# meta:
+#   title: 'Table 14: Mean gravity of the primary, contact configurations'
+#   reference: Mochnacki 1984, Table 14
+#   sources:
+#   - title: Mochnacki S. W., 1984, ApJS, 55, 551, Accurate Integrations of the Roche Model
+#     bibcode: 1984ApJS...55..551M
+#     url: https://ui.adsabs.harvard.edu/abs/1984ApJS...55..551M
+#   retrieval:
+#     method: 'three readings of the ADS scan: its OCR text layer and tesseract passes over
+#       the page images at 400 and 600 dpi. A row of Table 14 that the readings split differently,
+#       and nine other cells where they disagreed or one missed a value, were settled on the
+#       600 dpi image; three of those corrected a digit two readings had agreed on (Table 6
+#       q=0.12 F=1.8, Table 10 q=0.50 F=1.0, Table 11 q=0.50 F=1.9). Every value then passes
+#       the tables'' identities: Table 2 is C1/F and Table 3 linear in F between C1 and C2 of
+#       Table 1; the F = 1 columns equal the detached tables'' F = 1 columns; and Gauss''s law
+#       summed over both components ties Tables 6, 7, 10, 11, 14 and 15 (worst 0.78 of the propagated
+#       rounding)'
+#     date: '2026-11-09'
+#     typography: FORTRAN-style exponents such as 6.45428-1 and 1.68243+1 are stored as 6.45428e-1
+#       and 1.68243e+1; no digit changed
+#   conventions:
+#     mass_parameter:
+#       column: q
+#       kind: companion_mass_ratio
+#       description: q = M2/M1 <= 1; the tabulated component is the primary, qi = 1/q
+#     potential:
+#       kind: jacobi_centre_of_mass
+#       scale: 2
+#       description: tabulated C = 2/(1+q)/r1 + 2q/(1+q)/r2 + (x - q/(1+q))^2 + y^2 = 2U, primary
+#         at the origin
+#     fill_out:
+#       kind: fill_out_contact
+#       description: F = (C1 - C)/(C1 - C2) + 1 between the inner and outer contact surfaces,
+#         so Rocheometry's fill-out factor is F - 1
+#   contact_split: Mochnacki divides a contact envelope by the plane through L1 normal to the
+#     line of centres; Rocheometry divides it along the gravity watershed. Only the envelope totals
+#     are comparable, so the primary table's columns compare the totals over both components
+#     with Rocheometry's two parts
+#   allowance_half_units: 4.0
+#   allowance_reason: the author states areas and gravities are accurate to +-2 in the last
+#     printed digit
+q F=1.0 F=1.05 F=1.1 F=1.2 F=1.4 F=1.6 F=1.8 F=1.9 F=1.95 F=2.0
+0.04 3.72965 3.71809 3.70682 3.68460 3.64076 3.59734 3.55414 3.53260 3.52183 3.51107
+0.06 4.08645 4.06961 4.05328 4.02113 3.95785 3.89529 3.83312 3.80212 3.78664 3.77116
+0.08 4.36708 4.34510 4.32385 4.28210 4.20009 4.11912 4.03873 3.99866 3.97865 3.95865
+0.10 4.59839 4.57140 4.54537 4.49431 4.39418 4.29546 4.19750 4.14870 4.12433 4.09997
+0.12 4.79435 4.76246 4.73178 4.67168 4.55401 4.43812 4.32320 4.26597 4.23738 4.20882
+0.16 5.11095 5.06963 5.03003 4.95263 4.80148 4.65291 4.50573 4.43245 4.39586 4.35929
+0.20 5.35661 5.30632 5.25827 5.16456 4.98193 4.80270 4.62530 4.53698 4.49289 4.44881
+0.24 5.55227 5.49346 5.43742 5.32831 5.11606 4.90804 4.70226 4.59983 4.54868 4.49754
+0.30 5.77867 5.70786 5.64064 5.51002 5.25654 5.00852 4.76331 4.64123 4.58024 4.51925
+0.40 6.03531 5.94645 5.86250 5.69984 5.38518 5.07792 4.77422 4.62284 4.54713 4.47135
+0.50 6.19489 6.09015 5.99155 5.80096 5.43316 5.07451 4.71975 4.54254 4.45373 4.36468
+0.60 6.29253 6.17375 6.06228 5.84721 5.43300 5.02941 4.62953 4.42905 4.32826 4.22691
+0.70 6.34859 6.21736 6.09452 5.85790 5.40292 4.95970 4.51938 4.29742 4.18528 4.07195
+0.80 6.37581 6.23349 6.10057 5.84489 5.35388 4.87546 4.39830 4.15583 4.03234 3.90644
+0.90 6.38256 6.23033 6.08845 5.81582 5.29283 4.78287 4.27149 4.00852 3.87269 3.73156
+1.00 6.37456 6.21346 6.06354 5.77581 5.22426 4.68582 4.14193 3.85695 3.70533 3.53312

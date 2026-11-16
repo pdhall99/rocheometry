@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  If you use Rocheometry in published work, please cite the archived software
+  release when available and record the version or commit used.
+title: Rocheometry
+type: software
+version: 0.1.0
+date-released: "2026-11-DD"
+authors:
+  - family-names: Hall
+    given-names: Philip D.
+    orcid: "https://orcid.org/0000-0002-9460-2939"
+repository-code: https://github.com/pdhall99/rocheometry
+repository-artifact: https://pypi.org/project/rocheometry/
+url: https://pdhall99.github.io/rocheometry/
+license: MIT
+abstract: >-
+  Rocheometry computes the equipotential geometry of binary systems in the classical Roche model.
+keywords:
+  - astronomy
+  - astrophysics
+  - "binaries: close"
+  - equipotential surfaces
+  - "methods: numerical"
+  - Roche lobe
+  - Roche model
+  - Roche potential
+  - "software: public release"
