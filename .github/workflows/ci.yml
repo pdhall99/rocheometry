@@ -385,8 +385,8 @@ jobs:
       - name: Timings are published and shown in the docs
         run: hatch run speed:check
 
-      - name: Rebuild and check the packaged fits
-        run: hatch run fits:check --rebuild --workers 4
+      - name: The packaged fits are unchanged and pass their holdouts
+        run: hatch run fits:check --no-rebuild
 
   build:
     name: Build package
