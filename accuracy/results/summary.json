@@ -1,0 +1,156 @@
+{
+  "passed": true,
+  "complete": true,
+  "commit": "5bbbc38a569b913f1e64b19d2ca05258dcfddb2b",
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "python": "3.11.18 (main, Oct 26 2026, 13:58:42) [Clang 23.1.3 ]",
+  "logical_cpus": 10,
+  "workers": 8,
+  "seconds": 17411.97643154199,
+  "studies": [
+    {
+      "name": "critical_points",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 17,
+      "requested_jobs": 17,
+      "errors": []
+    },
+    {
+      "name": "radii",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 17,
+      "requested_jobs": 17,
+      "errors": []
+    },
+    {
+      "name": "selection",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 164,
+      "requested_jobs": 164,
+      "errors": []
+    },
+    {
+      "name": "scalars",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 1460,
+      "requested_jobs": 1460,
+      "errors": []
+    },
+    {
+      "name": "independent_truth",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 17,
+      "requested_jobs": 17,
+      "errors": []
+    },
+    {
+      "name": "saddle_quadrature",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 159,
+      "requested_jobs": 159,
+      "errors": []
+    },
+    {
+      "name": "quadrature",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 1460,
+      "requested_jobs": 1460,
+      "errors": []
+    },
+    {
+      "name": "outlines",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 1460,
+      "requested_jobs": 1460,
+      "errors": []
+    },
+    {
+      "name": "guarantees",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 17,
+      "requested_jobs": 17,
+      "errors": []
+    },
+    {
+      "name": "joins",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 17,
+      "requested_jobs": 17,
+      "errors": []
+    },
+    {
+      "name": "outline_corners",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 50,
+      "requested_jobs": 50,
+      "errors": []
+    },
+    {
+      "name": "outline_holdouts",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 400,
+      "requested_jobs": 400,
+      "errors": []
+    },
+    {
+      "name": "joint_holdout",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 400,
+      "requested_jobs": 400,
+      "errors": []
+    },
+    {
+      "name": "literature_tables",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 25,
+      "requested_jobs": 25,
+      "errors": []
+    },
+    {
+      "name": "asymptotic_limits",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 12,
+      "requested_jobs": 12,
+      "errors": []
+    },
+    {
+      "name": "seidov",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 17,
+      "requested_jobs": 17,
+      "errors": []
+    },
+    {
+      "name": "eggleton",
+      "passed": true,
+      "complete": true,
+      "observed_jobs": 17,
+      "requested_jobs": 17,
+      "errors": []
+    },
+    {
+      "name": "continuity",
+      "passed": true,
+      "complete": true,
+      "errors": []
+    }
+  ],
+  "no_observations_reused": true,
+  "clean_checkout": true
+}

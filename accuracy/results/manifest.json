@@ -1,0 +1,119 @@
+{
+  "commit": "5bbbc38a569b913f1e64b19d2ca05258dcfddb2b",
+  "source_tree": "2ca145c399cb7c303176048a932b6b04cfcb277a",
+  "code_hash": "7656b050b21d939503bb0902e1301307ad23fcec4d61e3d488a5722bc8b61190",
+  "grids": {
+    "holdout-joint.json": {
+      "sha256": "3bd22845ff8f98381d4b43189b16143f6698df7924467d04ec403112a8a42835",
+      "cases": 400,
+      "seed": 202610280602,
+      "drawn": "2026-10-28 (75f917a)"
+    },
+    "holdout-outline-corners.json": {
+      "sha256": "92f8c1a3896d7ee87b549786fd610512d7148c42a8a06db3822d21d35e99b164",
+      "cases": 50,
+      "seed": 2026102604,
+      "drawn": "2026-10-26 (3e7aab4)"
+    },
+    "holdout-silhouettes-a.json": {
+      "sha256": "7aaefd3e12d3594217e5578489a87b04805f52c493a90f3e8f13f3c4d666cc0e",
+      "cases": 200,
+      "seed": 2026102421,
+      "drawn": "2026-10-25 (c01ef70)"
+    },
+    "holdout-silhouettes-b.json": {
+      "sha256": "09d0f6715caa60e03dfe330d1803595c2518e9c12a5aa89c3099a2e59df94b62",
+      "cases": 200,
+      "seed": 2026102509,
+      "drawn": "2026-10-25 (c01ef70)"
+    },
+    "permanent.json": {
+      "sha256": "2cac1883ef6db49c0164723f9055687b5b3a28cf898a027725027569edf796fe",
+      "cases": null,
+      "seed": 20261022,
+      "drawn": "2026-10-26 (b08ac80)"
+    },
+    "saddle.json": {
+      "sha256": "9a8b1559a3ffe65ce3ab6c577a0352859abc766682699601e1f095602700bd1f",
+      "cases": 159,
+      "seed": null,
+      "drawn": "2026-10-28 (8ace866)"
+    },
+    "selection.json": {
+      "sha256": "6b5a45997f8b273c872266ec049619956d248bfb1c5f08af5cf1a17dc64aa3be",
+      "cases": 3271,
+      "seed": null,
+      "drawn": "2026-10-23 (609d9e2)"
+    }
+  },
+  "studies": {
+    "critical_points": 17,
+    "radii": 17,
+    "selection": 164,
+    "scalars": 1460,
+    "independent_truth": 17,
+    "saddle_quadrature": 159,
+    "quadrature": 1460,
+    "outlines": 1460,
+    "guarantees": 17,
+    "joins": 17,
+    "outline_corners": 50,
+    "outline_holdouts": 400,
+    "joint_holdout": 400,
+    "literature_tables": 25,
+    "asymptotic_limits": 12,
+    "seidov": 17,
+    "eggleton": 17
+  },
+  "derived": [
+    "continuity"
+  ],
+  "workers": 8,
+  "fresh_run": true,
+  "no_observations_reused": true,
+  "observation_store": {
+    "accuracy.json": "a35f1422799f136c8c1ec3ae326f61d87482904edacef2e2918e4e7ad726cf40",
+    "asymptotic_limits.csv.gz": "dd0b067f20575df6b588f0a8252ffbdc0fbd2ac8d4d9c97243592e3fada30e9a",
+    "asymptotic_limits.summary.json": "f585916cad5c4fb401d9a2bcba8fbf44adf12405c1ce55b6a76871a520684618",
+    "continuity.csv.gz": "3d6353bfa5cdc6ddd29be7ad7865deb0c795fcfa5d593e6cb053d63d3e0a28aa",
+    "continuity.summary.json": "78b8c05e435a8d58c34e47a6fa6927b84c147438083d1ce3fbe8ed171c19eacb",
+    "contract-cases.json.gz": "1bfce6c67e38c325061c378918025ea9a2d85811b563f3e523870d4e405e906e",
+    "critical_points.csv.gz": "1720fd4e0f49614d99e4a21a64044c32b8723ca308f462b22031c6b5f38f2e2c",
+    "critical_points.summary.json": "a85eb22021279406c0b45a7fefc35a758b7d24b95860ee17c05e1fbc726b7df3",
+    "eggleton.csv.gz": "d7a083daa112e45b7bbc388da25e3d3ac4f459f9c7549e3747dd862057f71948",
+    "eggleton.summary.json": "54f577f2f8d0b533388070ea0462439a9c63b71b1757b2f751fab23e201f289d",
+    "failures.json": "d03539a060b2fccc11dc2f5a2b466a85f357a6cb9f406826589c5093d118a309",
+    "guarantees.csv.gz": "42f0985adfe6f16b439c5b1dc4a528a6f32f688700d846941cda191d514e18c9",
+    "guarantees.summary.json": "e6b092206ad5d57c3ac994b7d2fa141f29fd534872e3be7c3d8087a7bde81309",
+    "independent_truth.csv.gz": "62cc09390fc5e97e6b75747752577c92ef1885f1e5c5fc5690aaddef1d559169",
+    "independent_truth.summary.json": "e59327bd1fb6a671d76a85c1323a9b8f7eb03a2f843e8e9be006d6b75032e468",
+    "joins.csv.gz": "119cb34175f036cdf1229e19d1732d0950bb2e41e8b99bbb7850daba640a200a",
+    "joins.summary.json": "4a3411147d387bfe09f27832234f5d5192baa9a6ff90d9968e1e584828c0ccfa",
+    "joint_holdout.csv.gz": "39ddab8e4b4ee4fe5c9b43be37f57b3a637fedae8bdb0014df824d39ff978224",
+    "joint_holdout.summary.json": "c68313578b56b32510d70001d8ee9d8f1c100092b45a15b1023c71c7e97db45c",
+    "known-limitations.json": "a91a963f7a9af7b5c1351584f2dbd3913286bc8b2e268cf7e3d1bb6edd07e1c9",
+    "literature_tables.csv.gz": "c859430d11d43262b87c761c87cc3f37c013b0fb7a73e958ebb60dbf0a3830d6",
+    "literature_tables.summary.json": "7ebd53de2740ff708c667bcfd1322d54727e53629f44738211f83fa177f746c2",
+    "manifest.json": "9380bdbede130d384137c640490b263dfa421f7d7871f2ffff1c898b4ac73193",
+    "outline_corners.csv.gz": "06b3d49a972a000ad02996bd634325f4493904af96348bda12f71280fdc5fcf3",
+    "outline_corners.summary.json": "27210df6445e2f4beb4674bfeadeb31c6f3d441d6dae67096702d39c3c148ddf",
+    "outline_holdouts.csv.gz": "47992d45016996423930c90bc0e38bd6b800e7708e8d754e7ed925c6b3f8740e",
+    "outline_holdouts.summary.json": "44608048f525b476105ba997e066674914f8f0cccf51da3783b693d68bd3499d",
+    "outlines.csv.gz": "0a30ab8fb2f287e8cd17b44fb63c56bc749d501a0633f9b1529b7c8e0c03029d",
+    "outlines.summary.json": "cf2f475e27ee09dcc827012558b4f7d76daa6b18139c681b0f79ee97d14e6b55",
+    "quadrature.csv.gz": "cf3bace35673517ab672f410b6d00f784e8dac81428b162d734fc687c5773511",
+    "quadrature.summary.json": "3f39d2fea15f2323d36aad65c2df3ed97039c5f6676e3eed9ce92cecb092e27c",
+    "radii.csv.gz": "49f158c82f1ca68ec5c6f9a5117f091e02718202bb1cbe5051b804f1ea6142a5",
+    "radii.summary.json": "5cd0fad156b20ec6fabcf193dc99e0e7e5a20c081c71e2a500d6bda13fdc4917",
+    "saddle_quadrature.csv.gz": "82cf4412f07a8aa617763ac09046e5a0e9bc59a5953fdee06cf81cf063732ff9",
+    "saddle_quadrature.summary.json": "81dd1316faa2a3da8952b04e4358a93eed1b48a6190cdf078ebe7cd62681d26b",
+    "scalars.csv.gz": "4270b9f630bb43a1c5b173f8f9a2017f5c3784f09d0ebf53d2a559dc3a8a0466",
+    "scalars.summary.json": "404383458db15e0bd5764446cd899ceafcc2bd75caee56646e3cb8fe220154a1",
+    "seidov.csv.gz": "6e3ff0c50bd8303e2eb448d132136dd1bae4e8a69bfa93fca297c2d8e6c380ac",
+    "seidov.summary.json": "a473f55f3cae7bed16f06c73cb087ac771324a782e7fe5022ac3f02604d79bc0",
+    "selection.csv.gz": "3efcc1f618c8551cf6f4307e65d566a5fbf11aff11a8baefd6018f8a3e71a177",
+    "selection.summary.json": "f3a0321481ca327e7073748b7694198eb2bce97c879e0b31146601b641451203",
+    "summary.json": "6b913205867ba16c075764ec2d1b0e2a71a153b745394e1f1cd381a32e580300",
+    "unmeasured.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  }
+}
