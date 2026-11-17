@@ -1,11 +1,12 @@
 cff-version: 1.2.0
 message: >-
   If you use Rocheometry in published work, please cite the archived software
-  release when available and record the version or commit used.
+  release and record the version or commit used.
 title: Rocheometry
 type: software
 version: 0.1.0
 date-released: "2026-11-17"
+doi: 10.5281/zenodo.24325522
 authors:
   - family-names: Hall
     given-names: Philip D.
