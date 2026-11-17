@@ -235,9 +235,9 @@ Typical times with `Fitted()` for a detached surface, across the measured mass r
 
 - selecting a surface: **0.0089–0.01 ms**;
 - measuring its volume: **11–13 ms**;
-- a section: **0.4–0.44 ms**;
-- a silhouette at 60° inclination: **6.4–8.7 ms**;
-- reading a volume already measured: **0.0005–0.00054 ms**.
+- a section: **0.4–0.43 ms**;
+- a silhouette at 60° inclination: **6.3–8.3 ms**;
+- reading a volume already measured: **0.0005–0.00083 ms**.
 
 These are medians on one machine.
 [The timing table](https://pdhall99.github.io/rocheometry/guide/accuracy/#speed) also gives the costs with `Reference()`, for contact surfaces, and of building a geometry for the first time.

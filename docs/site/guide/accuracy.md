@@ -1,7 +1,7 @@
 # Accuracy and speed
 
 <!-- generated:summary -->
-The release run measured commit `d1250649b67b` (source tree `2cfc3eccae32`) on macOS-26.6.1-arm64-arm-64bit in 4.8 h with 8 workers.
+The release run measured commit `5bbbc38a569b` (source tree `2ca145c399cb`) on macOS-27.2.1-arm64-arm-64bit in 4.8 h with 8 workers.
 The failure list has **0** entries.
 Summaries: [`accuracy/results/`](https://github.com/pdhall99/rocheometry/tree/main/accuracy/results).
 <!-- /generated:summary -->
@@ -231,9 +231,31 @@ The bound is the publication's rounding, so these rows test definitions and conv
 <!-- generated:literature -->
 | Quantity | Accuracy setting | Metric / units | Cases | Closest to its bound | Value / bound | Source |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| radii.direction | reference | absolute, separation units | 2 | 1.55e-08 of 5e-08 | 0.31 | Leahy & Leahy (2015), Table 1 |
-| radii.named.point | reference | absolute, separation units | 1 | 0 of 5e-08 | 0.00 | Leahy & Leahy (2015), Table 1 |
-| radii.named.side | reference | absolute, separation units | 1 | 4.84e-08 of 5e-08 | 0.97 | Leahy & Leahy (2015), Table 1 |
+| critical.l1.hessian | reference | half-units of the last printed digit | 46 | 1.54 of 2 | 0.77 | Plavec & Kratochvil 1964, Table 1 |
+| critical.l1.position | reference | half-units of the last printed digit | 448 | 0.993 of 1 | 0.99 | Leahy & Leahy 2015, RocheTable.txt |
+| critical.l1.position | reference | relative | 17 | 1.97e-15 of 1e-10 | 0.00 | Seidov 2004, ApJ, 603, 283 (2004ApJ...603..283S; arXiv:astro-ph/0311272) |
+| critical.l1.potential | reference | half-units of the last printed digit | 382 | 1.49 of 1.5 | 0.99 | Kuiper & Johnson 1956, Table 1 |
+| critical.l1.potential | reference | relative | 17 | 1.64e-16 of 1e-10 | 0.00 | Seidov 2004, ApJ, 603, 283 (2004ApJ...603..283S; arXiv:astro-ph/0311272) |
+| critical.outer.position | reference | half-units of the last printed digit | 616 | 0.996 of 1 | 1.00 | Leahy & Leahy 2015, RocheTable.txt |
+| critical.outer.position | reference | relative | 17 | 1.88e-15 of 1e-10 | 0.00 | Seidov 2004, ApJ, 603, 283 (2004ApJ...603..283S; arXiv:astro-ph/0311272) |
+| critical.outer.potential | reference | half-units of the last printed digit | 221 | 1.33 of 1.5 | 0.89 | Kuiper & Johnson 1956, Table 2 |
+| critical.outer.potential | reference | relative | 17 | 1.56e-16 of 1e-10 | 0.00 | Seidov 2004, ApJ, 603, 283 (2004ApJ...603..283S; arXiv:astro-ph/0311272) |
+| integrals.area | reference | half-units of the last printed digit | 320 | 4.39 of 4.5 | 0.98 | Mochnacki 1984, Table 9 |
+| integrals.area.envelope | reference | half-units of the last printed digit | 144 | 2.85 of 4 | 0.71 | Mochnacki 1984, Table 10 |
+| integrals.mean_gravity | reference | half-units of the last printed digit | 320 | 2.96 of 4 | 0.74 | Mochnacki 1984, Table 13 |
+| integrals.mean_gravity.envelope | reference | half-units of the last printed digit | 144 | 3.41 of 4 | 0.85 | Mochnacki 1984, Table 14 |
+| integrals.volume | reference | half-units of the last printed digit | 571 | 1.97 of 2 | 0.98 | Mochnacki 1984, Table 4 |
+| integrals.volume.envelope | reference | half-units of the last printed digit | 144 | 1.11 of 1.5 | 0.74 | Mochnacki 1984, Table 6 |
+| lobe.max_fill.envelope_volume | reference | half-units of the last printed digit | 16 | 0.854 of 1.5 | 0.57 | Mochnacki 1984, Table 6 |
+| lobe.slope | reference | absolute | 10 | 1.13e-07 of 3.68e-07 | 0.31 | Guillochon & Prochaska 2026 (manuscript), eqs. hillexp and logexp |
+| lobe.volume_radius | reference | relative | 27 | 0.00751 of 0.01 | 0.75 | Eggleton 1983, ApJ, 268, 368 (1983ApJ...268..368E) |
+| lobe.volume_radius | reference | half-units of the last printed digit | 226 | 1.55 of 2.17 | 0.71 | Leahy & Leahy 2015, RocheTable.txt |
+| lobe.volume_radius.limit | fitted | relative | 2 | 2.63e-13 of 1e-10 | 0.00 | Guillochon & Prochaska 2026 (manuscript), eqs. hillexp and logexp |
+| outlines.section.extent | reference | half-units of the last printed digit | 120 | 12.6 of 13 | 0.97 | Kopal 1959, Table 3-1 |
+| potential.conventions.kopal | reference | half-units of the last printed digit | 550 | 1 of 1 | 1.00 | Leahy & Leahy 2015, RocheTable.txt |
+| radii.direction | reference | half-units of the last printed digit | 124 | 0.967 of 1 | 0.97 | Leahy & Leahy 2015, Table 1 |
+| radii.named | reference | half-units of the last printed digit | 811 | 20.9 of 21 | 1.00 | Leahy & Leahy 2015, RocheLobe.f90 |
+| selection.by_fill_out_factor | reference | half-units of the last printed digit | 144 | 1.05 of 1.5 | 0.70 | Mochnacki 1984, Table 3 |
 <!-- /generated:literature -->
 
 ### Diagnostic rows
@@ -285,170 +307,170 @@ These are medians on one machine, not speed guarantees.
 <summary>Timings for every measured mass ratio and level</summary>
 
 <!-- generated:timings -->
-Medians of 5 draws in milliseconds on macOS-26.6.1-arm64-arm-64bit. Cold is a fresh geometry with empty caches; new level is a second level at the same mass ratio; cached repeats the new-level call.
+Medians of 5 draws in milliseconds on macOS-27.2.1-arm64-arm-64bit. Cold is a fresh geometry with empty caches; new level is a second level at the same mass ratio; cached repeats the new-level call.
 
 | Accuracy setting | qi | Regime | Operation | Cold ms | New level ms | Cached ms |
 | --- | ---: | --- | --- | ---: | ---: | ---: |
-| fitted | 0.001 | contact | fill | 237.51 | 30.8662 | 0.000500004 |
-| fitted | 0.001 | contact | sample | 215.954 | 28.5082 | 0.000500004 |
-| fitted | 0.001 | contact | section | 190.082 | 2.87579 | 0.63625 |
-| fitted | 0.001 | contact | selection | 335.566 | 93.0718 | 0.00499998 |
-| fitted | 0.001 | contact | silhouette_60 | 203.845 | 15.7076 | 8.12767 |
-| fitted | 0.001 | contact | silhouette_85 | 205.195 | 16.1518 | 8.55667 |
-| fitted | 0.001 | contact | volume | 217.774 | 30.7763 | 0.000583008 |
-| fitted | 0.001 | detached | fill | 33.5566 | 13.3557 | 0.000458036 |
-| fitted | 0.001 | detached | lobe_radius | 0.00229204 | — | 0.000415952 |
-| fitted | 0.001 | detached | lobe_slope | 0.00191701 | — | 0.00029197 |
-| fitted | 0.001 | detached | sample | 13.2565 | 12.8924 | 0.000500004 |
-| fitted | 0.001 | detached | section | 0.4225 | 0.421667 | 0.413833 |
-| fitted | 0.001 | detached | selection | 0.200292 | 0.0102081 | 0.00208302 |
-| fitted | 0.001 | detached | silhouette_60 | 7.06938 | 7.01708 | 6.99846 |
-| fitted | 0.001 | detached | silhouette_85 | 8.96983 | 8.96137 | 8.95163 |
-| fitted | 0.001 | detached | volume | 13.4335 | 13.2999 | 0.00054203 |
-| fitted | 1 | contact | fill | 267.409 | 25.2156 | 0.000500004 |
-| fitted | 1 | contact | sample | 247.849 | 22.8572 | 0.000541972 |
-| fitted | 1 | contact | section | 227.753 | 2.73717 | 0.574 |
-| fitted | 1 | contact | selection | 347.513 | 75.0658 | 0.004542 |
-| fitted | 1 | contact | silhouette_60 | 235.005 | 9.72908 | 8.58846 |
-| fitted | 1 | contact | silhouette_85 | 236.996 | 10.9905 | 9.82842 |
-| fitted | 1 | contact | volume | 250.431 | 25.121 | 0.000666012 |
-| fitted | 1 | detached | fill | 28.4758 | 11.5233 | 0.000458036 |
-| fitted | 1 | detached | lobe_radius | 0.00279199 | — | 0.000333996 |
-| fitted | 1 | detached | lobe_slope | 0.00191596 | — | 0.000250002 |
-| fitted | 1 | detached | sample | 11.4021 | 11.1136 | 0.000500004 |
-| fitted | 1 | detached | section | 0.408291 | 0.399541 | 0.394042 |
-| fitted | 1 | detached | selection | 0.088958 | 0.00891602 | 0.00187499 |
-| fitted | 1 | detached | silhouette_60 | 6.46842 | 6.42821 | 6.42237 |
-| fitted | 1 | detached | silhouette_85 | 8.70479 | 8.71554 | 8.69692 |
-| fitted | 1 | detached | volume | 11.5155 | 11.4836 | 0.000499946 |
-| fitted | 1000 | contact | fill | 234.515 | 30.0666 | 0.000500004 |
-| fitted | 1000 | contact | sample | 214.242 | 27.6029 | 0.000500004 |
-| fitted | 1000 | contact | section | 190.122 | 2.88733 | 0.662833 |
-| fitted | 1000 | contact | selection | 295.352 | 59.7875 | 0.00462501 |
-| fitted | 1000 | contact | silhouette_60 | 202.776 | 14.8314 | 11.5135 |
-| fitted | 1000 | contact | silhouette_85 | 207.204 | 19.1244 | 15.7689 |
-| fitted | 1000 | contact | volume | 216.925 | 30.0053 | 0.000583008 |
-| fitted | 1000 | detached | fill | 31.1598 | 13.4143 | 0.000459026 |
-| fitted | 1000 | detached | lobe_radius | 0.00208302 | — | 0.000333996 |
-| fitted | 1000 | detached | lobe_slope | 0.00183296 | — | 0.000250002 |
-| fitted | 1000 | detached | sample | 13.3868 | 13.0022 | 0.000458036 |
-| fitted | 1000 | detached | section | 0.448292 | 0.440291 | 0.432042 |
-| fitted | 1000 | detached | selection | 0.19475 | 0.00945904 | 0.00204198 |
-| fitted | 1000 | detached | silhouette_60 | 8.81096 | 8.70846 | 8.69613 |
-| fitted | 1000 | detached | silhouette_85 | 12.063 | 12.0117 | 12.0268 |
-| fitted | 1000 | detached | volume | 13.412 | 13.396 | 0.000541972 |
-| fitted | 1e+06 | contact | fill | 179.879 | 34.2613 | 0.000500004 |
-| fitted | 1e+06 | contact | sample | 160.831 | 31.7787 | 0.000500004 |
-| fitted | 1e+06 | contact | section | 131.951 | 2.97675 | 0.750041 |
-| fitted | 1e+06 | contact | selection | 214.781 | 34.137 | 0.00441598 |
-| fitted | 1e+06 | contact | silhouette_60 | 148.382 | 18.4706 | 15.1235 |
-| fitted | 1e+06 | contact | silhouette_85 | 150.917 | 20.717 | 17.3558 |
-| fitted | 1e+06 | contact | volume | 163.143 | 34.2086 | 0.000583008 |
-| fitted | 1e+06 | detached | fill | 30.4703 | 13.37 | 0.000457978 |
-| fitted | 1e+06 | detached | lobe_radius | 0.00204198 | — | 0.000333006 |
-| fitted | 1e+06 | detached | lobe_slope | 0.00145898 | — | 0.000250002 |
-| fitted | 1e+06 | detached | sample | 13.3059 | 13.0181 | 0.000500004 |
-| fitted | 1e+06 | detached | section | 0.440958 | 0.437417 | 0.429292 |
-| fitted | 1e+06 | detached | selection | 0.198 | 0.00937498 | 0.00191695 |
-| fitted | 1e+06 | detached | silhouette_60 | 8.625 | 8.52213 | 8.50758 |
-| fitted | 1e+06 | detached | silhouette_85 | 11.882 | 11.8304 | 11.8342 |
-| fitted | 1e+06 | detached | volume | 13.5165 | 13.4129 | 0.000540982 |
-| fitted | 1e+08 | contact | fill | 144.392 | 37.2367 | 0.000500004 |
-| fitted | 1e+08 | contact | sample | 124.761 | 34.7311 | 0.00054203 |
-| fitted | 1e+08 | contact | section | 92.7205 | 3.04421 | 0.808208 |
-| fitted | 1e+08 | contact | selection | 144.514 | 0.00804197 | 0.00237499 |
-| fitted | 1e+08 | contact | silhouette_60 | 110.42 | 19.554 | 16.0499 |
-| fitted | 1e+08 | contact | silhouette_85 | 112.425 | 21.3975 | 17.823 |
-| fitted | 1e+08 | contact | volume | 127.168 | 37.0815 | 0.000624976 |
-| fitted | 1e+08 | detached | fill | 30.8972 | 13.3707 | 0.000500004 |
-| fitted | 1e+08 | detached | lobe_radius | 0.00208302 | — | 0.000333006 |
-| fitted | 1e+08 | detached | lobe_slope | 0.00162504 | — | 0.000250002 |
-| fitted | 1e+08 | detached | sample | 13.3262 | 12.9505 | 0.000500004 |
-| fitted | 1e+08 | detached | section | 0.444791 | 0.432583 | 0.430333 |
-| fitted | 1e+08 | detached | selection | 0.195375 | 0.00937498 | 0.00199996 |
-| fitted | 1e+08 | detached | silhouette_60 | 8.58762 | 8.50021 | 8.51729 |
-| fitted | 1e+08 | detached | silhouette_85 | 11.9481 | 11.8751 | 11.8297 |
-| fitted | 1e+08 | detached | volume | 13.4498 | 13.4002 | 0.000500004 |
-| reference | 0.001 | contact | fill | 760.642 | 156.642 | 0.00054104 |
-| reference | 0.001 | contact | sample | 612.724 | 145.512 | 0.00054203 |
-| reference | 0.001 | contact | section | 799.363 | 331.453 | 295.325 |
-| reference | 0.001 | contact | selection | 1409.12 | 627.109 | 0.00508298 |
-| reference | 0.001 | contact | silhouette_60 | 609.802 | 139.101 | 118.595 |
-| reference | 0.001 | contact | silhouette_85 | 615.565 | 146.476 | 128.105 |
-| reference | 0.001 | contact | volume | 625.51 | 157.012 | 0.000708038 |
-| reference | 0.001 | detached | fill | 244.59 | 107.828 | 0.000624976 |
-| reference | 0.001 | detached | lobe_radius | 136.031 | — | 0.000375032 |
-| reference | 0.001 | detached | lobe_slope | 145.283 | — | 0.00029197 |
-| reference | 0.001 | detached | sample | 107.44 | 107.106 | 0.000667002 |
-| reference | 0.001 | detached | section | 8.33254 | 8.27967 | 8.28021 |
-| reference | 0.001 | detached | selection | 773.648 | 538.066 | 0.004042 |
-| reference | 0.001 | detached | silhouette_60 | 81.9736 | 82.0912 | 82.0726 |
-| reference | 0.001 | detached | silhouette_85 | 103.66 | 103.652 | 103.561 |
-| reference | 0.001 | detached | volume | 107.785 | 107.902 | 0.000708969 |
-| reference | 1 | contact | fill | 798.712 | 125.986 | 0.000583008 |
-| reference | 1 | contact | sample | 681.325 | 114.831 | 0.000583008 |
-| reference | 1 | contact | section | 579.142 | 12.4207 | 11.278 |
-| reference | 1 | contact | selection | 1325.98 | 500.687 | 0.00491698 |
-| reference | 1 | contact | silhouette_60 | 672.531 | 104.382 | 103.127 |
-| reference | 1 | contact | silhouette_85 | 684.387 | 117.987 | 116.743 |
-| reference | 1 | contact | volume | 703.087 | 126.039 | 0.000750006 |
-| reference | 1 | detached | fill | 191.404 | 85.479 | 0.000709028 |
-| reference | 1 | detached | lobe_radius | 105.547 | — | 0.000333996 |
-| reference | 1 | detached | lobe_slope | 114.104 | — | 0.00029098 |
-| reference | 1 | detached | sample | 85.1001 | 84.8128 | 0.000624976 |
-| reference | 1 | detached | section | 8.63183 | 8.61542 | 8.61729 |
-| reference | 1 | detached | selection | 618.059 | 343.113 | 0.00316696 |
-| reference | 1 | detached | silhouette_60 | 84.7231 | 84.6311 | 84.6519 |
-| reference | 1 | detached | silhouette_85 | 110.339 | 110.178 | 110.349 |
-| reference | 1 | detached | volume | 85.7705 | 85.8487 | 0.000625034 |
-| reference | 1000 | contact | fill | 738.531 | 152.38 | 0.000540982 |
-| reference | 1000 | contact | sample | 607.239 | 140.439 | 0.000541972 |
-| reference | 1000 | contact | section | 647.54 | 172.844 | 19.3653 |
-| reference | 1000 | contact | selection | 1195.01 | 454.53 | 0.00504096 |
-| reference | 1000 | contact | silhouette_60 | 752.991 | 284.571 | 266.309 |
-| reference | 1000 | contact | silhouette_85 | 776.968 | 308.667 | 292.455 |
-| reference | 1000 | contact | volume | 620.391 | 152.376 | 0.000667002 |
-| reference | 1000 | detached | fill | 225.371 | 106.56 | 0.000500004 |
-| reference | 1000 | detached | lobe_radius | 118.105 | — | 0.000333996 |
-| reference | 1000 | detached | lobe_slope | 126.836 | — | 0.000250002 |
-| reference | 1000 | detached | sample | 106.49 | 105.835 | 0.000624976 |
-| reference | 1000 | detached | section | 9.03813 | 9.0465 | 9.00563 |
-| reference | 1000 | detached | selection | 755.302 | 427.102 | 0.00599999 |
-| reference | 1000 | detached | silhouette_60 | 109.909 | 105.861 | 102.777 |
-| reference | 1000 | detached | silhouette_85 | 132.469 | 132.48 | 132.54 |
-| reference | 1000 | detached | volume | 106.914 | 106.842 | 0.000624976 |
-| reference | 1e+06 | contact | fill | 617.215 | 174.578 | 0.000583008 |
-| reference | 1e+06 | contact | sample | 483.85 | 162.838 | 0.00054203 |
-| reference | 1e+06 | contact | section | 390.56 | 66.7627 | 20.8892 |
-| reference | 1e+06 | contact | selection | 966.188 | 347.59 | 0.00466697 |
-| reference | 1e+06 | contact | silhouette_60 | 836.745 | 498.43 | 492.642 |
-| reference | 1e+06 | contact | silhouette_85 | 1449.79 | 1130.73 | 1119.46 |
-| reference | 1e+06 | contact | volume | 496.431 | 174.875 | 0.000666012 |
-| reference | 1e+06 | detached | fill | 228.52 | 106.998 | 0.000540982 |
-| reference | 1e+06 | detached | lobe_radius | 121.019 | — | 0.000333006 |
-| reference | 1e+06 | detached | lobe_slope | 130.052 | — | 0.000250002 |
-| reference | 1e+06 | detached | sample | 106.807 | 106.34 | 0.000708038 |
-| reference | 1e+06 | detached | section | 9.17454 | 9.1245 | 9.14604 |
-| reference | 1e+06 | detached | selection | 652.828 | 323.726 | 0.00595901 |
-| reference | 1e+06 | detached | silhouette_60 | 102.003 | 101.982 | 102.017 |
-| reference | 1e+06 | detached | silhouette_85 | 135.913 | 135.803 | 135.789 |
-| reference | 1e+06 | detached | volume | 107.194 | 107.195 | 0.000791973 |
-| reference | 1e+08 | contact | fill | 539.126 | 190.418 | 0.000583008 |
-| reference | 1e+08 | contact | sample | 400.213 | 178.275 | 0.000583008 |
-| reference | 1e+08 | contact | section | 260.41 | 32.0834 | 21.2863 |
-| reference | 1e+08 | contact | selection | 919.624 | 378.5 | 0.00491703 |
-| reference | 1e+08 | contact | silhouette_60 | 808.074 | 584.995 | 576.925 |
-| reference | 1e+08 | contact | silhouette_85 | 1164.51 | 941.511 | 935.667 |
-| reference | 1e+08 | contact | volume | 413.24 | 190.322 | 0.000750006 |
-| reference | 1e+08 | detached | fill | 234.055 | 107.218 | 0.000624976 |
-| reference | 1e+08 | detached | lobe_radius | 125.794 | — | 0.000333996 |
-| reference | 1e+08 | detached | lobe_slope | 134.753 | — | 0.000291038 |
-| reference | 1e+08 | detached | sample | 106.829 | 106.274 | 0.000625034 |
-| reference | 1e+08 | detached | section | 9.19883 | 9.13617 | 9.14088 |
-| reference | 1e+08 | detached | selection | 659.624 | 322.252 | 0.00329199 |
-| reference | 1e+08 | detached | silhouette_60 | 102.079 | 102.019 | 102.011 |
-| reference | 1e+08 | detached | silhouette_85 | 135.89 | 136.245 | 141.686 |
-| reference | 1e+08 | detached | volume | 107.401 | 107.675 | 0.000624976 |
+| fitted | 0.001 | contact | fill | 232.898 | 30.3998 | 0.000540982 |
+| fitted | 0.001 | contact | sample | 210.576 | 27.8208 | 0.000500004 |
+| fitted | 0.001 | contact | section | 185.529 | 2.79296 | 0.623042 |
+| fitted | 0.001 | contact | selection | 328.823 | 90.5132 | 0.00483304 |
+| fitted | 0.001 | contact | silhouette_60 | 198.403 | 15.3069 | 7.916 |
+| fitted | 0.001 | contact | silhouette_85 | 199.046 | 15.7843 | 8.35021 |
+| fitted | 0.001 | contact | volume | 212.474 | 30.0412 | 0.000583008 |
+| fitted | 0.001 | detached | fill | 33.5423 | 13.3653 | 0.000583008 |
+| fitted | 0.001 | detached | lobe_radius | 0.00245799 | — | 0.000374974 |
+| fitted | 0.001 | detached | lobe_slope | 0.00187504 | — | 0.00029098 |
+| fitted | 0.001 | detached | sample | 12.989 | 12.6992 | 0.000500004 |
+| fitted | 0.001 | detached | section | 0.422375 | 0.41525 | 0.404 |
+| fitted | 0.001 | detached | selection | 0.208958 | 0.010375 | 0.00200002 |
+| fitted | 0.001 | detached | silhouette_60 | 6.95142 | 6.83079 | 6.82683 |
+| fitted | 0.001 | detached | silhouette_85 | 8.75629 | 8.75096 | 8.74104 |
+| fitted | 0.001 | detached | volume | 13.5923 | 12.9831 | 0.00083301 |
+| fitted | 1 | contact | fill | 260.342 | 24.6464 | 0.000500004 |
+| fitted | 1 | contact | sample | 242.283 | 22.3362 | 0.00054104 |
+| fitted | 1 | contact | section | 223.095 | 3.00358 | 0.5655 |
+| fitted | 1 | contact | selection | 338.222 | 73.2535 | 0.00462501 |
+| fitted | 1 | contact | silhouette_60 | 229.39 | 9.54008 | 8.34438 |
+| fitted | 1 | contact | silhouette_85 | 230.007 | 10.7375 | 9.56025 |
+| fitted | 1 | contact | volume | 244.294 | 24.5898 | 0.000667002 |
+| fitted | 1 | detached | fill | 27.6305 | 11.3223 | 0.000500004 |
+| fitted | 1 | detached | lobe_radius | 0.00308303 | — | 0.000333006 |
+| fitted | 1 | detached | lobe_slope | 0.00204198 | — | 0.00029098 |
+| fitted | 1 | detached | sample | 11.114 | 10.7714 | 0.000541972 |
+| fitted | 1 | detached | section | 0.40975 | 0.396625 | 0.389791 |
+| fitted | 1 | detached | selection | 0.086541 | 0.00895804 | 0.00183395 |
+| fitted | 1 | detached | silhouette_60 | 6.31004 | 6.268 | 6.25817 |
+| fitted | 1 | detached | silhouette_85 | 8.50304 | 8.48079 | 8.44083 |
+| fitted | 1 | detached | volume | 11.207 | 11.2519 | 0.000500004 |
+| fitted | 1000 | contact | fill | 228.727 | 29.436 | 0.000500004 |
+| fitted | 1000 | contact | sample | 209.091 | 26.9115 | 0.00054203 |
+| fitted | 1000 | contact | section | 184.744 | 2.82563 | 0.647417 |
+| fitted | 1000 | contact | selection | 287.632 | 58.5029 | 0.00462501 |
+| fitted | 1000 | contact | silhouette_60 | 197.627 | 14.4816 | 11.2269 |
+| fitted | 1000 | contact | silhouette_85 | 201.726 | 18.8237 | 15.4692 |
+| fitted | 1000 | contact | volume | 211.539 | 29.2584 | 0.000583008 |
+| fitted | 1000 | detached | fill | 30.4311 | 13.193 | 0.000458036 |
+| fitted | 1000 | detached | lobe_radius | 0.00216597 | — | 0.000333006 |
+| fitted | 1000 | detached | lobe_slope | 0.00195898 | — | 0.000250002 |
+| fitted | 1000 | detached | sample | 12.9857 | 12.7122 | 0.00054104 |
+| fitted | 1000 | detached | section | 0.431916 | 0.430375 | 0.417875 |
+| fitted | 1000 | detached | selection | 0.198459 | 0.00920799 | 0.00191701 |
+| fitted | 1000 | detached | silhouette_60 | 8.41392 | 8.32242 | 8.338 |
+| fitted | 1000 | detached | silhouette_85 | 11.5565 | 11.5167 | 11.5094 |
+| fitted | 1000 | detached | volume | 13.0914 | 13.0575 | 0.000540982 |
+| fitted | 1e+06 | contact | fill | 175.711 | 33.456 | 0.00054203 |
+| fitted | 1e+06 | contact | sample | 156.551 | 30.9905 | 0.00054203 |
+| fitted | 1e+06 | contact | section | 128.032 | 2.90171 | 0.730667 |
+| fitted | 1e+06 | contact | selection | 208.695 | 33.2608 | 0.00487495 |
+| fitted | 1e+06 | contact | silhouette_60 | 144.612 | 18.0448 | 14.7522 |
+| fitted | 1e+06 | contact | silhouette_85 | 146.7 | 20.2327 | 16.9468 |
+| fitted | 1e+06 | contact | volume | 158.84 | 33.3683 | 0.000624976 |
+| fitted | 1e+06 | detached | fill | 29.827 | 13.158 | 0.000500004 |
+| fitted | 1e+06 | detached | lobe_radius | 0.00200002 | — | 0.000333996 |
+| fitted | 1e+06 | detached | lobe_slope | 0.00204204 | — | 0.000250002 |
+| fitted | 1e+06 | detached | sample | 13.0268 | 12.8243 | 0.000457978 |
+| fitted | 1e+06 | detached | section | 0.452541 | 0.432083 | 0.443834 |
+| fitted | 1e+06 | detached | selection | 0.1915 | 0.00887498 | 0.00179204 |
+| fitted | 1e+06 | detached | silhouette_60 | 8.33925 | 8.30925 | 8.31704 |
+| fitted | 1e+06 | detached | silhouette_85 | 11.5886 | 11.549 | 11.5178 |
+| fitted | 1e+06 | detached | volume | 13.0333 | 13.0533 | 0.000500004 |
+| fitted | 1e+08 | contact | fill | 140.894 | 36.5376 | 0.00058295 |
+| fitted | 1e+08 | contact | sample | 121.47 | 34.0078 | 0.00054203 |
+| fitted | 1e+08 | contact | section | 90.6002 | 3.28892 | 0.789625 |
+| fitted | 1e+08 | contact | selection | 140.934 | 0.00804104 | 0.00233302 |
+| fitted | 1e+08 | contact | silhouette_60 | 107.729 | 19.1775 | 15.6856 |
+| fitted | 1e+08 | contact | silhouette_85 | 109.671 | 20.9829 | 17.5147 |
+| fitted | 1e+08 | contact | volume | 123.734 | 36.226 | 0.000666012 |
+| fitted | 1e+08 | detached | fill | 30.1105 | 13.0801 | 0.000458036 |
+| fitted | 1e+08 | detached | lobe_radius | 0.00200002 | — | 0.000333006 |
+| fitted | 1e+08 | detached | lobe_slope | 0.00154204 | — | 0.000250002 |
+| fitted | 1e+08 | detached | sample | 13.0014 | 12.6757 | 0.000500004 |
+| fitted | 1e+08 | detached | section | 0.436 | 0.427333 | 0.42175 |
+| fitted | 1e+08 | detached | selection | 0.193459 | 0.00912498 | 0.00187499 |
+| fitted | 1e+08 | detached | silhouette_60 | 8.38492 | 8.2785 | 8.26675 |
+| fitted | 1e+08 | detached | silhouette_85 | 11.5645 | 11.5132 | 11.4822 |
+| fitted | 1e+08 | detached | volume | 13.2468 | 13.1725 | 0.00054203 |
+| reference | 0.001 | contact | fill | 742.688 | 153.575 | 0.000583008 |
+| reference | 0.001 | contact | sample | 597.086 | 141.291 | 0.000583008 |
+| reference | 0.001 | contact | section | 780.847 | 324.09 | 290.804 |
+| reference | 0.001 | contact | selection | 1379.96 | 611.874 | 0.00583299 |
+| reference | 0.001 | contact | silhouette_60 | 591.97 | 135.546 | 115.393 |
+| reference | 0.001 | contact | silhouette_85 | 599.027 | 142.99 | 125.024 |
+| reference | 0.001 | contact | volume | 607.927 | 153.325 | 0.00070798 |
+| reference | 0.001 | detached | fill | 238.71 | 105.37 | 0.00054203 |
+| reference | 0.001 | detached | lobe_radius | 133.231 | — | 0.000333006 |
+| reference | 0.001 | detached | lobe_slope | 141.808 | — | 0.000250002 |
+| reference | 0.001 | detached | sample | 104.844 | 104.499 | 0.000791973 |
+| reference | 0.001 | detached | section | 8.28479 | 8.32554 | 8.36775 |
+| reference | 0.001 | detached | selection | 755.732 | 526.209 | 0.00424997 |
+| reference | 0.001 | detached | silhouette_60 | 80.0076 | 79.8709 | 80.0328 |
+| reference | 0.001 | detached | silhouette_85 | 100.942 | 100.861 | 100.81 |
+| reference | 0.001 | detached | volume | 105.297 | 105.1 | 0.000790984 |
+| reference | 1 | contact | fill | 778.848 | 123.453 | 0.000540982 |
+| reference | 1 | contact | sample | 674.912 | 112.583 | 0.000792032 |
+| reference | 1 | contact | section | 564.714 | 12.1392 | 10.9496 |
+| reference | 1 | contact | selection | 1293.98 | 488.993 | 0.00562501 |
+| reference | 1 | contact | silhouette_60 | 653.352 | 101.644 | 100.356 |
+| reference | 1 | contact | silhouette_85 | 664.257 | 115.343 | 113.9 |
+| reference | 1 | contact | volume | 673.329 | 123.088 | 0.00070798 |
+| reference | 1 | detached | fill | 187.038 | 83.7344 | 0.000583997 |
+| reference | 1 | detached | lobe_radius | 103.239 | — | 0.000332948 |
+| reference | 1 | detached | lobe_slope | 111.471 | — | 0.000291038 |
+| reference | 1 | detached | sample | 83.2901 | 82.6566 | 0.000667002 |
+| reference | 1 | detached | section | 8.42871 | 8.38675 | 8.37258 |
+| reference | 1 | detached | selection | 604.284 | 335.271 | 0.00429101 |
+| reference | 1 | detached | silhouette_60 | 82.3182 | 82.3558 | 82.2969 |
+| reference | 1 | detached | silhouette_85 | 107.497 | 107.186 | 107.199 |
+| reference | 1 | detached | volume | 83.8585 | 83.8369 | 0.000667002 |
+| reference | 1000 | contact | fill | 721.527 | 149.193 | 0.000624976 |
+| reference | 1000 | contact | sample | 592.281 | 137.35 | 0.000666012 |
+| reference | 1000 | contact | section | 631.312 | 168.311 | 18.8031 |
+| reference | 1000 | contact | selection | 1166.97 | 445.287 | 0.00554201 |
+| reference | 1000 | contact | silhouette_60 | 733.505 | 277.654 | 259.89 |
+| reference | 1000 | contact | silhouette_85 | 756.836 | 301.136 | 285.107 |
+| reference | 1000 | contact | volume | 604.201 | 148.819 | 0.000792032 |
+| reference | 1000 | detached | fill | 220.494 | 104.438 | 0.000625034 |
+| reference | 1000 | detached | lobe_radius | 115.858 | — | 0.000333996 |
+| reference | 1000 | detached | lobe_slope | 123.92 | — | 0.000250002 |
+| reference | 1000 | detached | sample | 103.854 | 103.493 | 0.000791973 |
+| reference | 1000 | detached | section | 8.835 | 8.82329 | 8.79933 |
+| reference | 1000 | detached | selection | 737.504 | 416.472 | 0.00395905 |
+| reference | 1000 | detached | silhouette_60 | 100.105 | 99.6708 | 100.159 |
+| reference | 1000 | detached | silhouette_85 | 129.407 | 129.323 | 129.171 |
+| reference | 1000 | detached | volume | 104.135 | 104.121 | 0.000667002 |
+| reference | 1e+06 | contact | fill | 602.228 | 170.578 | 0.00054104 |
+| reference | 1e+06 | contact | sample | 471.773 | 158.449 | 0.000667002 |
+| reference | 1e+06 | contact | section | 380.67 | 65.3788 | 20.2764 |
+| reference | 1e+06 | contact | selection | 947.422 | 339.479 | 0.00504102 |
+| reference | 1e+06 | contact | silhouette_60 | 813.602 | 499.006 | 495.518 |
+| reference | 1e+06 | contact | silhouette_85 | 1413.07 | 1101.16 | 1090.87 |
+| reference | 1e+06 | contact | volume | 482.276 | 169.983 | 0.000667002 |
+| reference | 1e+06 | detached | fill | 223.544 | 104.746 | 0.000916014 |
+| reference | 1e+06 | detached | lobe_radius | 118.555 | — | 0.000333006 |
+| reference | 1e+06 | detached | lobe_slope | 126.742 | — | 0.000250002 |
+| reference | 1e+06 | detached | sample | 104.476 | 103.589 | 0.000750006 |
+| reference | 1e+06 | detached | section | 8.93608 | 8.84808 | 8.8785 |
+| reference | 1e+06 | detached | selection | 637.197 | 313.037 | 0.00333303 |
+| reference | 1e+06 | detached | silhouette_60 | 99.3343 | 99.4445 | 99.3516 |
+| reference | 1e+06 | detached | silhouette_85 | 132.751 | 132.489 | 132.741 |
+| reference | 1e+06 | detached | volume | 104.242 | 104.472 | 0.000750006 |
+| reference | 1e+08 | contact | fill | 524.693 | 185.869 | 0.000541972 |
+| reference | 1e+08 | contact | sample | 389.161 | 173.692 | 0.000500004 |
+| reference | 1e+08 | contact | section | 253.006 | 30.8289 | 20.7393 |
+| reference | 1e+08 | contact | selection | 897.095 | 369.125 | 0.00483298 |
+| reference | 1e+08 | contact | silhouette_60 | 785.232 | 569.548 | 561.91 |
+| reference | 1e+08 | contact | silhouette_85 | 1133.36 | 923.299 | 1054.24 |
+| reference | 1e+08 | contact | volume | 402.093 | 185.403 | 0.00083301 |
+| reference | 1e+08 | detached | fill | 227.754 | 104.581 | 0.00054203 |
+| reference | 1e+08 | detached | lobe_radius | 126.015 | — | 0.000333006 |
+| reference | 1e+08 | detached | lobe_slope | 131.78 | — | 0.000250002 |
+| reference | 1e+08 | detached | sample | 107.262 | 104.279 | 0.00125001 |
+| reference | 1e+08 | detached | section | 8.9035 | 8.85429 | 8.85671 |
+| reference | 1e+08 | detached | selection | 664.386 | 317.815 | 0.00508298 |
+| reference | 1e+08 | detached | silhouette_60 | 99.0371 | 99.1544 | 99.1223 |
+| reference | 1e+08 | detached | silhouette_85 | 131.984 | 132.253 | 132.059 |
+| reference | 1e+08 | detached | volume | 104.428 | 104.675 | 0.000750006 |
 <!-- /generated:timings -->
 
 </details>
