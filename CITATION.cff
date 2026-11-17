@@ -5,7 +5,7 @@ message: >-
 title: Rocheometry
 type: software
 version: 0.1.0
-date-released: "2026-11-DD"
+date-released: "2026-11-17"
 authors:
   - family-names: Hall
     given-names: Philip D.
