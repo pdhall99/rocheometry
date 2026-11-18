@@ -1,3 +1,7 @@
+---
+description: "Integrate a gravity-darkened luminosity and a projected area over a component surface, using the quadrature nodes' gravities and normals."
+---
+
 # Calculate luminosity and projected area
 
 Integrate a gravity-darkened luminosity and the projected area towards the pole.

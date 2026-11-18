@@ -1,3 +1,7 @@
+---
+description: "Install Rocheometry from PyPI: it needs Python 3.11 or later, has no runtime dependencies, and has an optional plot extra for Matplotlib."
+---
+
 # Installation
 
 `rocheometry` requires Python 3.11 or later (see [compatibility and versioning](../project/compatibility-and-versioning.md)).

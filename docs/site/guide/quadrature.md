@@ -1,3 +1,7 @@
+---
+description: "Surface quadrature nodes with positions, normals, gravities, curvatures and area weights, for your own integrals over a component surface."
+---
+
 # Surface quadrature
 
 `surface.quadrature()` returns a frozen `SurfaceQuadrature` for your own surface integrals.

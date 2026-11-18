@@ -1,3 +1,7 @@
+---
+description: "Draw a Roche potential diagram: the level curves of the potential in the orbital plane, including the branches beyond L2 and around L3."
+---
+
 # Draw a Roche potential diagram
 
 Draw the potential's level curves in the orbital plane, including branches beyond L2 and around L3.

@@ -1,3 +1,7 @@
+---
+description: "The Jacobi and Kopal conventions for the Roche potential, conversions between them, and the Lagrange points with their Hessians."
+---
+
 # Potentials and critical points
 
 ## The Jacobi potential

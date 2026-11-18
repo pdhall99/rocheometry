@@ -1,3 +1,7 @@
+---
+description: "An example of using Rocheometry: create a binary, select a component surface by how far it fills its Roche lobe, read its radii and draw its outline."
+---
+
 # Quickstart
 
 Create a binary from its masses and separation.

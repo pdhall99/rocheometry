@@ -1,3 +1,7 @@
+---
+description: "Build a triangle mesh of a binary system's component surfaces and export it as a Wavefront OBJ file for Blender, MeshLab or ParaView."
+---
+
 # Export a 3D mesh
 
 Build triangle meshes of both components of a contact binary and prepare a Wavefront OBJ export for Blender, MeshLab or ParaView.

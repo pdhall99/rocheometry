@@ -1,3 +1,7 @@
+---
+description: "Draw a contour map of a contact envelope seen from above, from exact sections at equally spaced heights, with the neck as a saddle."
+---
+
 # Draw a surface contour map
 
 Draw height contours of a contact envelope seen from above, with its neck showing as a saddle.

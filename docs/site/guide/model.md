@@ -1,3 +1,7 @@
+---
+description: "The classical Roche model as Rocheometry uses it: its assumptions, the Roche potential, Roche lobes, contact envelopes, the watershed and the fill-out factor."
+---
+
 # The Roche model
 
 In the classical Roche model of a binary system, each component's gravity is that of a point mass at its centre, the orbit is circular, and each component rotates synchronously with it ([Kopal 1959](https://scixplorer.org/abs/1959cbs..book.....K), [full text](https://archive.org/details/closebinarysyste00kopa/page/125/mode/1up)).

@@ -1,3 +1,7 @@
+---
+description: "Select a component surface by potential, volume radius, fill or fill-out factor, then measure its radii, volume, area, curvature and gravity."
+---
+
 # Surfaces
 
 A [component surface](model.md#component-surfaces) is one component at one level.

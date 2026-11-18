@@ -1,3 +1,7 @@
+---
+description: "Exact outlines of component surfaces as cubic Bézier paths: sections in any plane and silhouettes at any inclination, with SVG and Matplotlib export."
+---
+
 # Sections and silhouettes
 
 A section is the outline of a component surface's region in a plane, including the watershed cut in contact.
