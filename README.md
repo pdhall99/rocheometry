@@ -6,7 +6,7 @@
 [![PyPI](https://img.shields.io/pypi/v/rocheometry)](https://pypi.org/project/rocheometry/)
 [![Documentation](https://img.shields.io/badge/docs-latest-blue)](https://pdhall99.github.io/rocheometry/)
 [![Python](https://img.shields.io/pypi/pyversions/rocheometry)](https://pypi.org/project/rocheometry/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24325522.svg)](https://doi.org/10.5281/zenodo.24325522)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24325522-blue)](https://doi.org/10.5281/zenodo.24325522)
 [![Runtime dependencies](https://img.shields.io/badge/runtime%20dependencies-0-brightgreen)](https://github.com/pdhall99/rocheometry/blob/main/pyproject.toml)
 [![License](https://img.shields.io/github/license/pdhall99/rocheometry)](https://github.com/pdhall99/rocheometry/blob/main/LICENSE)
 
