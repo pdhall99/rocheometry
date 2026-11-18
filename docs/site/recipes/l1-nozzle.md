@@ -1,3 +1,7 @@
+---
+description: "Calculate the L1 nozzle factor and the cone half-angle of the critical surface at L1 from the potential's Hessian."
+---
+
 # Calculate the L1 nozzle factor and cone angle
 
 Calculate the nozzle's geometric factor and the critical surface's cone half-angle at L1.

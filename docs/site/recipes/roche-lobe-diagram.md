@@ -1,3 +1,7 @@
+---
+description: "Draw a Roche lobe diagram from exact sections: both Roche lobes, detached levels and a contact envelope as vector outlines."
+---
+
 # Draw a Roche lobe diagram
 
 Draw both Roche lobes, two detached levels and a contact envelope as vector outlines.

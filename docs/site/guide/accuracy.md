@@ -1,3 +1,7 @@
+---
+description: "The measured accuracy and speed of Rocheometry across mass ratios and levels, with the bounds each quantity meets and the evidence behind them."
+---
+
 # Accuracy and speed
 
 <!-- generated:summary -->

@@ -1,3 +1,7 @@
+---
+description: "How to build a binary and reach its components in Rocheometry, with mass ratios, frames, units, separations and Kepler's third law."
+---
+
 # Binaries and components
 
 Binaries and components are how you reach a [component surface](model.md#component-surfaces): they fix the component, and their `surface()` and `lobe()` methods fix the level.

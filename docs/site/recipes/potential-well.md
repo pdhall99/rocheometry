@@ -1,3 +1,7 @@
+---
+description: "Plot the effective potential along the line of centres of a binary system, with a well around each component and peaks at L1, L2 and L3."
+---
+
 # Plot the potential along the line of centres
 
 Plot the effective potential along the binary centreline and mark L1, L2 and L3.

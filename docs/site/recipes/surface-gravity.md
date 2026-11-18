@@ -1,3 +1,7 @@
+---
+description: "Convert the gravity of a component surface to log g in cgs units, from masses in solar masses and a separation in nominal solar radii."
+---
+
 # Convert surface gravity to physical units
 
 Calculate the mean effective gravity and the range at quadrature nodes as `log g` in cgs.

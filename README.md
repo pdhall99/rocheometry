@@ -1,15 +1,19 @@
 # Rocheometry
 
+<img src="https://pdhall99.github.io/rocheometry/assets/favicon.svg" alt="Rocheometry logo: the two Roche lobes of a binary system" width="96" align="right">
+
 [![CI](https://img.shields.io/github/actions/workflow/status/pdhall99/rocheometry/ci.yml?branch=main)](https://github.com/pdhall99/rocheometry/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/rocheometry)](https://pypi.org/project/rocheometry/)
 [![Documentation](https://img.shields.io/badge/docs-latest-blue)](https://pdhall99.github.io/rocheometry/)
 [![Python](https://img.shields.io/pypi/pyversions/rocheometry)](https://pypi.org/project/rocheometry/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24325522.svg)](https://doi.org/10.5281/zenodo.24325522)
 [![Runtime dependencies](https://img.shields.io/badge/runtime%20dependencies-0-brightgreen)](https://github.com/pdhall99/rocheometry/blob/main/pyproject.toml)
 [![License](https://img.shields.io/github/license/pdhall99/rocheometry)](https://github.com/pdhall99/rocheometry/blob/main/LICENSE)
 
 Compute the equipotential geometry of binary systems in the classical Roche model.
 
 Rocheometry computes the geometry of equipotential surfaces around the components of a binary system in the classical Roche model: their radii, volumes, areas, curvatures and gravities, and their outlines as cubic Bézier paths for visualisation.
+The Roche model is widely used in astrophysics to describe close binary systems, from interacting binary stars and contact binaries to planets close to their host stars.
 A surface can be at any level from detached surfaces through the critical Roche lobes to contact envelopes approaching the L2 opening.
 A surface can be selected by its potential, its volume radius, how far it fills its lobe, or its fill-out factor.
 
@@ -253,9 +257,7 @@ Its radii also agree with the published values of [Leahy & Leahy (2015)](https:/
 
 ## Citation
 
-If you use this project in your research, please cite it using the information provided in [CITATION.cff](https://github.com/pdhall99/rocheometry/blob/main/CITATION.cff).
-
-On GitHub, you can also use the **Cite this repository** button to generate a citation in APA or BibTeX format.
+If you use this project in published work, please cite it as detailed on [the citation page](https://pdhall99.github.io/rocheometry/project/citation/).
 
 ## Compatibility and versioning
 

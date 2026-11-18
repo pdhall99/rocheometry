@@ -1,3 +1,7 @@
+---
+description: "Map the gravity-darkened temperature of a component surface in longitude and latitude, from the quadrature nodes."
+---
+
 # Map surface temperature
 
 Map gravity-darkened temperature in longitude and latitude using the quadrature nodes.

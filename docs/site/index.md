@@ -1,8 +1,13 @@
+---
+title: Equipotential geometry of binaries in Python
+---
+
 # Rocheometry
 
 Compute the equipotential geometry of binary systems in the classical Roche model.
 
 Rocheometry computes the geometry of equipotential surfaces around the components of a binary system in the classical Roche model: their radii, volumes, areas, curvatures and gravities, and their outlines as cubic Bézier paths for visualisation.
+The Roche model is widely used in astrophysics to describe close binary systems, from interacting binary stars and contact binaries to planets close to their host stars.
 A surface can be at any level from detached surfaces through the critical Roche lobes to contact envelopes approaching the L2 opening.
 A surface can be selected by its potential, its volume radius, how far it fills its lobe, or its fill-out factor.
 

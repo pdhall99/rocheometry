@@ -1,3 +1,7 @@
+---
+description: "Compare Roche lobe radii across mass ratios with Eggleton's formula and an ellipsoid, using the point, back, side and pole radii."
+---
+
 # Compare Roche lobe radii
 
 Compare Roche lobe radii across mass ratios with [Eggleton's formula](https://doi.org/10.1086/160960) and an ellipsoid approximation.

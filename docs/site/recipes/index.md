@@ -1,3 +1,7 @@
+---
+description: "Worked examples with Rocheometry, from converting PHOEBE solutions and surface gravities to Roche lobe diagrams, temperature maps and 3D meshes."
+---
+
 # Recipes
 
 Some recipes that use Rocheometry.

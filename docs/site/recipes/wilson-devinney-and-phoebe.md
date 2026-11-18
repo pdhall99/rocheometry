@@ -1,3 +1,7 @@
+---
+description: "Convert a Wilson–Devinney or PHOEBE solution to Rocheometry: the reciprocal mass ratio and a Kopal potential select both components."
+---
+
 # Convert a Wilson–Devinney or PHOEBE solution
 
 Select both components from a fitted mass ratio and potential.
