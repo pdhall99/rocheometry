@@ -97,13 +97,13 @@ accuracy = [
     "pyyaml>=6,<7",
 ]
 check-code = [
-    "ruff==0.17.5", # keep consistent with pre-commit-config.yaml
+    "ruff==0.17.6", # keep consistent with pre-commit-config.yaml
 ]
 check-fmt = [
     { include-group = "check-code" },
 ]
 check-types = [
-    "pyrefly==1.4.1",
+    "pyrefly==1.5",
     # The accuracy, fits and speed tools are type-checked too.
     "scipy",
     "types-pyyaml",

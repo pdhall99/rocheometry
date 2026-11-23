@@ -21,7 +21,7 @@ env:
   RUNNER: &runner "ubuntu-24.04"
   TOOL_PYTHON_VERSION: "3.11"
   HATCH_VERSION: "1.18.2"
-  UV_VERSION: "0.13.8"
+  UV_VERSION: "0.13.9"
 
 concurrency:
   group: ${{ github.workflow }}
