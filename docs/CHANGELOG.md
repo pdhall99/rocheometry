@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- `Import-Name` package metadata ([PEP 794](https://peps.python.org/pep-0794/)), declaring `rocheometry` as the import name
+
 ## [0.1.0] - 2026-11-17
 
 ### Added

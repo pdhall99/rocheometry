@@ -145,7 +145,9 @@ def test_selections_have_identity_equality_and_independent_bounded_caches() -> N
 
 
 @pytest.mark.parametrize(
-    "factory", [rocheometry.Fitted()._computers, rocheometry.Reference()._computers]
+    "factory",
+    [rocheometry.Fitted()._computers, rocheometry.Reference()._computers],
+    ids=["fitted", "reference"],
 )
 @pytest.mark.parametrize("qi", [0.03, 1.0, 4.0])
 def test_fill_potential_round_trips_and_exact_endpoints(

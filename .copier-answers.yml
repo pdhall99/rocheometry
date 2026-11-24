@@ -1,0 +1,27 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 16ecf4e
+_src_path: gh:pdhall99/python-project-template
+author_email: 20580126+pdhall99@users.noreply.github.com
+author_name: PD Hall
+copyright_year: 2026
+docs_enabled: true
+github_owner: pdhall99
+keywords:
+- astronomy
+- astrophysics
+- bezier curves
+- binary stars
+- close binaries
+- contact binaries
+- equipotential surfaces
+- lagrange points
+- roche lobe
+- roche model
+- roche potential
+- svg
+package_name: rocheometry
+project_description: Compute the equipotential geometry of binary systems in the classical
+    Roche model
+project_name: rocheometry
+python_support: eol
+runtime_dependencies: []
