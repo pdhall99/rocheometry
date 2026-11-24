@@ -7,7 +7,6 @@ on:
       - "[0-9]+.[0-9]+.[0-9]+"
   pull_request:
     branches: ["main"]
-    types: [ready_for_review]
   workflow_dispatch:
 
 permissions:
@@ -16,14 +15,10 @@ permissions:
 env:
   RUNNER: &runner "ubuntu-24.04"
   JOB_TIMEOUT: &job_timeout 30
+  # The oldest supported Python: runs the tools, type checks and release checks.
   TOOL_PYTHON_VERSION: "3.11"
-  COVERAGE_PYTHON: "3.14"
   HATCH_VERSION: "1.18.2"
   UV_VERSION: "0.13.9"
-  DISTRIBUTION_NAME: "rocheometry"
-  IMPORT_NAME: "rocheometry"
-  DOCS_ENABLED: "true"
-  DOCS_DIR: "site"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -35,7 +30,7 @@ jobs:
     runs-on: *runner
     timeout-minutes: *job_timeout
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -63,10 +58,9 @@ jobs:
     timeout-minutes: *job_timeout
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
-      coverage_env: ${{ steps.matrix.outputs.coverage_env }}
       coverage_python: ${{ steps.matrix.outputs.coverage_python }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -107,19 +101,13 @@ jobs:
           if not rows:
               raise SystemExit("No Python versions found in the Hatch test matrix")
 
-          coverage = next(
-              (
-                  row
-                  for row in rows
-                  if row["python"] == os.environ["COVERAGE_PYTHON"]
-              ),
-              rows[0],
-          )
+          # Coverage is measured on one Python only, the newest: its tracer
+          # (sys.monitoring with branches, 3.14+) has the lowest overhead.
+          coverage = max(rows, key=lambda row: tuple(map(int, row["python"].split("."))))
 
           with open(os.environ["GITHUB_OUTPUT"], "a") as output:
               matrix = json.dumps({"include": rows}, separators=(",", ":"))
               print(f"matrix={matrix}", file=output)
-              print(f"coverage_env={coverage['environment']}", file=output)
               print(f"coverage_python={coverage['python']}", file=output)
           PY
 
@@ -135,7 +123,7 @@ jobs:
       matrix: ${{ fromJSON(needs.discover-tests.outputs.matrix) }}
 
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           # Required for hatch-vcs to resolve the version from tags
           fetch-depth: 0
@@ -154,11 +142,8 @@ jobs:
       - name: Install hatch
         run: uv tool install "hatch==$HATCH_VERSION"
 
-      # Coverage is measured on one Python only: its low-overhead tracer
-      # (sys.monitoring with branches, 3.14+) takes the default tier in about
-      # 15 minutes, where the other tracers take close to an hour.
       - name: Run tests with coverage
-        if: matrix.python == env.COVERAGE_PYTHON
+        if: matrix.python == needs.discover-tests.outputs.coverage_python
         env:
           TEST_ENVIRONMENT: ${{ matrix.environment }}
           TEST_PYTHON: ${{ matrix.python }}
@@ -167,75 +152,13 @@ jobs:
           hatch run "$TEST_ENVIRONMENT:cov-report-markdown" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Run tests
-        if: matrix.python != env.COVERAGE_PYTHON
+        if: matrix.python != needs.discover-tests.outputs.coverage_python
         env:
           TEST_PYTHON: ${{ matrix.python }}
         run: hatch test -vv --python "$TEST_PYTHON" --parallel
 
-      - name: Rename coverage files
-        if: matrix.python == env.COVERAGE_PYTHON
-        env:
-          TEST_PYTHON: ${{ matrix.python }}
-        run: |
-          shopt -s nullglob
-          files=(.coverage*)
-          if ((${#files[@]} == 0)); then
-            echo "No coverage files found" >&2
-            exit 1
-          fi
-          for f in "${files[@]}"; do
-            mv "$f" "$f.$TEST_PYTHON"
-          done
-
-      - name: Upload coverage files
-        if: matrix.python == env.COVERAGE_PYTHON
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: coverage-${{ matrix.python }}
-          path: .coverage*
-          compression-level: 0
-          include-hidden-files: true
-          if-no-files-found: ignore
-
-  coverage:
-    name: Coverage report
-    if: github.ref_type != 'tag'
-    runs-on: *runner
-    timeout-minutes: *job_timeout
-    needs: [discover-tests, test]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
-        with:
-          version: ${{ env.UV_VERSION }}
-          enable-cache: ${{ !startsWith(github.ref, 'refs/tags/') }} # zizmor: ignore[cache-poisoning] disabled for release tags
-
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: ${{ needs.discover-tests.outputs.coverage_python }}
-
-      - name: Install hatch
-        run: uv tool install "hatch==$HATCH_VERSION"
-
-      - name: Download coverage artifacts
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-        with:
-          pattern: coverage*
-          merge-multiple: true
-
-      - name: Combine and report
-        env:
-          COVERAGE_ENVIRONMENT: ${{ needs.discover-tests.outputs.coverage_env }}
-        run: |
-          hatch run "$COVERAGE_ENVIRONMENT:cov-combine"
-          hatch run "$COVERAGE_ENVIRONMENT:cov-report"
-          hatch run "$COVERAGE_ENVIRONMENT:cov-report-markdown" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Upload HTML report
+      - name: Upload HTML coverage report
+        if: matrix.python == needs.discover-tests.outputs.coverage_python
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: coverage-report
@@ -246,7 +169,7 @@ jobs:
     runs-on: *runner
     timeout-minutes: *job_timeout
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -270,7 +193,7 @@ jobs:
     runs-on: *runner
     timeout-minutes: *job_timeout
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -301,47 +224,36 @@ jobs:
     if: github.ref_type != 'tag'
     runs-on: *runner
     timeout-minutes: *job_timeout
-    outputs:
-      enabled: ${{ steps.config.outputs.enabled }}
     steps:
-      - name: Read docs configuration
-        id: config
-        run: echo "enabled=$DOCS_ENABLED" >> "$GITHUB_OUTPUT"
-
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        if: steps.config.outputs.enabled == 'true'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
 
       - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
-        if: steps.config.outputs.enabled == 'true'
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: ${{ !startsWith(github.ref, 'refs/tags/') }} # zizmor: ignore[cache-poisoning] disabled for release tags
 
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        if: steps.config.outputs.enabled == 'true'
         with:
           python-version: ${{ env.TOOL_PYTHON_VERSION }}
 
       - name: Install hatch
-        if: steps.config.outputs.enabled == 'true'
         run: uv tool install "hatch==$HATCH_VERSION"
 
       - name: Build docs
-        if: steps.config.outputs.enabled == 'true'
         run: hatch run docs:build
 
       - name: Upload Pages artifact
-        if: steps.config.outputs.enabled == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         with:
-          path: ${{ env.DOCS_DIR }}
+          path: site
 
   pages:
     name: Deploy docs
-    if: needs.docs.outputs.enabled == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: docs
     runs-on: *runner
     timeout-minutes: *job_timeout
@@ -354,7 +266,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
 
   release-checks:
     name: Release checks
@@ -362,7 +274,7 @@ jobs:
     runs-on: *runner
     timeout-minutes: 120
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -393,8 +305,10 @@ jobs:
     runs-on: *runner
     timeout-minutes: *job_timeout
     needs: [precommit, test, accuracy-smoke, evidence]
+    outputs:
+      distribution_name: ${{ steps.project.outputs.name }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -410,6 +324,19 @@ jobs:
 
       - name: Install hatch
         run: uv tool install "hatch==$HATCH_VERSION"
+
+      - name: Read project name
+        id: project
+        run: |
+          python - <<'PY'
+          import os
+          import tomllib
+          from pathlib import Path
+
+          project = tomllib.loads(Path("pyproject.toml").read_text())["project"]
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              print(f"name={project['name']}", file=output)
+          PY
 
       - name: Validate release tag
         if: github.ref_type == 'tag'
@@ -432,6 +359,8 @@ jobs:
 
       - name: Extract release notes
         if: github.ref_type == 'tag'
+        env:
+          DISTRIBUTION_NAME: ${{ steps.project.outputs.name }}
         run: |
           mkdir -p release-notes
           awk -v heading="## [$GITHUB_REF_NAME]" '
@@ -472,18 +401,37 @@ jobs:
               assert "rocheometry/_data/surface-potential-map.json" in wheel.namelist()
           PY
 
-      - name: Smoke-test release wheel
-        if: github.ref_type == 'tag'
+      # Runs on every build, so packaging problems show up before a release.
+      # Only a release tag also checks the version against the tag.
+      - name: Smoke-test wheel
+        env:
+          TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
         run: |
           uv venv --python "$TOOL_PYTHON_VERSION" /tmp/package-smoke
           uv pip install --python /tmp/package-smoke/bin/python dist/*.whl
-          TAG="$GITHUB_REF_NAME" /tmp/package-smoke/bin/python - <<'PY'
+          /tmp/package-smoke/bin/python - <<'PY'
           import os
+          from email.parser import HeaderParser
           from importlib import import_module
           from importlib.metadata import version
+          from pathlib import Path
+          from zipfile import ZipFile
 
-          assert version(os.environ["DISTRIBUTION_NAME"]) == os.environ["TAG"]
-          import_module(os.environ["IMPORT_NAME"])
+          # Both names come from the wheel's own metadata (PEP 794 Import-Name).
+          (wheel,) = Path("dist").glob("*.whl")
+          with ZipFile(wheel) as zf:
+              (meta,) = [n for n in zf.namelist() if n.endswith(".dist-info/METADATA")]
+              metadata = HeaderParser().parsestr(zf.read(meta).decode())
+
+          name = metadata["Name"]
+          import_names = [
+              n.split(";")[0].strip() for n in metadata.get_all("Import-Name", [])
+          ]
+          assert import_names, f"{wheel.name} has no Import-Name: set import-names"
+          if os.environ["TAG"]:
+              assert version(name) == os.environ["TAG"], (version(name), os.environ["TAG"])
+          for import_name in import_names:
+              import_module(import_name)
           PY
 
       - name: Upload release distributions
@@ -535,7 +483,7 @@ jobs:
     runs-on: *runner
     environment:
       name: pypi
-      url: https://pypi.org/project/rocheometry/
+      url: ${{ format('https://pypi.org/project/{0}/', needs.build.outputs.distribution_name) }}
     timeout-minutes: *job_timeout
     needs: [build, release-checks]
     permissions:
@@ -556,7 +504,7 @@ jobs:
     if: github.ref_type == 'tag'
     runs-on: *runner
     timeout-minutes: *job_timeout
-    needs: pypi
+    needs: [build, pypi]
     permissions:
       contents: write
     steps:
@@ -576,6 +524,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          DISTRIBUTION_NAME: ${{ needs.build.outputs.distribution_name }}
         run: |
           gh release create "$GITHUB_REF_NAME" dist/* \
             --title "$DISTRIBUTION_NAME $GITHUB_REF_NAME" \

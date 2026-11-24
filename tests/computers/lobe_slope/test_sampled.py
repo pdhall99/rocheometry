@@ -65,7 +65,11 @@ def test_default_lobe_slope_agrees_with_reference(qi: float) -> None:
     assert actual == pytest.approx(reference, abs=1e-6, rel=0)
 
 
-@pytest.mark.parametrize("factory", [Fitted()._computers, Reference()._computers])
+@pytest.mark.parametrize(
+    "factory",
+    [Fitted()._computers, Reference()._computers],
+    ids=["fitted", "reference"],
+)
 def test_lobe_slopes_stay_within_hill_limit_and_decrease_strictly(
     factory: Callable[[], ComputerSet],
 ) -> None:
