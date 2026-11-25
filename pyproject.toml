@@ -98,7 +98,7 @@ accuracy = [
     "pyyaml>=6,<7",
 ]
 check-code = [
-    "ruff==0.17.6", # keep consistent with pre-commit-config.yaml
+    "ruff==0.17.6", # checked by the ruff-version pre-commit hook
 ]
 check-fmt = [
     { include-group = "check-code" },
@@ -130,9 +130,6 @@ local_scheme = "no-local-version"
 
 [tool.hatch.version]
 source = "vcs"
-
-[tool.hatch.metadata]
-allow-direct-references = true
 
 [tool.hatch.build.hooks.vcs]
 version-file = "src/rocheometry/_version.py"
@@ -182,7 +179,7 @@ dependencies = []
 dependency-groups = [ "docs" ]
 
 [tool.hatch.envs.docs.scripts]
-build = "zensical build"
+build = "zensical build --strict"
 check = "python docs/figures.py check {args}"
 figures = "python docs/figures.py write {args}"
 serve = "zensical serve"
@@ -307,9 +304,6 @@ quote-style = "double"
 # A hashed build input of both fits: editing it, docstrings included, changes
 # their provenance, so it waits for the next rebuild.
 "fits/common.py" = [ "D401" ]
-
-[tool.ruff.lint.flake8-quotes]
-inline-quotes = "double"
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"

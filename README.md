@@ -57,7 +57,7 @@ Rocheometry is a dependency-free Python library that computes these surfaces dir
 
 ## Installation
 
-`rocheometry` requires Python 3.11 or later (see [compatibility and versioning](#compatibility-and-versioning)).
+`rocheometry` requires Python 3.11 or later (see [Compatibility and versioning](#compatibility-and-versioning)).
 It has no runtime dependencies by default.
 
 `rocheometry` is available from [PyPI](https://pypi.org/project/rocheometry/).

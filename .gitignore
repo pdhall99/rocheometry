@@ -219,8 +219,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-src/rocheometry/_version.py
-
-# Not covered above
-.pyrefly_cache/
+# macOS
 .DS_Store
+
+src/rocheometry/_version.py

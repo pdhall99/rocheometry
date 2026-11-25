@@ -4,7 +4,7 @@ description: "Install Rocheometry from PyPI: it needs Python 3.11 or later, has 
 
 # Installation
 
-`rocheometry` requires Python 3.11 or later (see [compatibility and versioning](../project/compatibility-and-versioning.md)).
+`rocheometry` requires Python 3.11 or later (see [Compatibility and versioning](../project/compatibility-and-versioning.md)).
 It has no runtime dependencies by default.
 
 `rocheometry` is available from [PyPI](https://pypi.org/project/rocheometry/).
